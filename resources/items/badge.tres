@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://x24ae5hu0ojh"]
+
+[ext_resource type="Texture2D" uid="uid://c2lh7ev6s26w8" path="res://assets/sprites/item.png" id="1_q5dg1"]
+[ext_resource type="Script" uid="uid://c4rw8efovyv70" path="res://autoload/inventory/item.gd" id="2_m4q7k"]
+
+[resource]
+script = ExtResource("2_m4q7k")
+id = "badge"
+name = "Badge"
+icon = ExtResource("1_q5dg1")
+metadata/_custom_type_script = "uid://c4rw8efovyv70"

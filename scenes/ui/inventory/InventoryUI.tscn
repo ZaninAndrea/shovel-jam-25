@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://djmxp0glt8f8u"]
+
+[ext_resource type="Script" uid="uid://bcige102n84l6" path="res://scenes/ui/inventory/inventory_ui.gd" id="1_vyf8a"]
+
+[node name="InventoryUI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_vyf8a")
+
+[node name="Slot1" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 72.0
+offset_top = 542.0
+offset_right = 112.0
+offset_bottom = 582.0
+grow_vertical = 0
+
+[node name="Slot2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 154.0
+offset_top = 541.0
+offset_right = 194.0
+offset_bottom = 581.0
+grow_vertical = 0

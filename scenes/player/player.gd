@@ -7,8 +7,8 @@ class_name Player
 @onready var sprite := $Sprite2D
 @onready var interaction_area := $InteractionArea
 
-var can_push : bool = false
-var push_target : CharacterBody2D = null
+var can_push: bool = false
+var push_target: CharacterBody2D = null
 
 signal interacted_with(object)
 signal item_used(item)
@@ -41,3 +41,12 @@ func _on_push_area_body_exited(body: Node2D) -> void:
 	if body == push_target:
 		push_target = null
 		can_push = false
+	rotation = velocity.angle()
+
+func _input(event):
+	if event.is_action_pressed("select_slot_1"): # custom action mapped to key "1"
+		var overlapping = interaction_area.get_overlapping_areas()
+		for area in overlapping:
+			if area is DroppedItem:
+				Inventory.set_item(area.item, 1)
+				area.queue_free()

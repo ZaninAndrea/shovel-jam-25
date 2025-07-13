@@ -24,6 +24,7 @@ texture = ExtResource("1_8afob")
 shape = SubResource("CircleShape2D_dovo2")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_8afob")
