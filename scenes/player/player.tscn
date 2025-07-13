@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cfjtgy2w2c04l"]
+[gd_scene load_steps=6 format=3 uid="uid://cfjtgy2w2c04l"]
 
 [ext_resource type="Texture2D" uid="uid://cem51lka5eu55" path="res://assets/sprites/player.png" id="1_8afob"]
 [ext_resource type="Script" uid="uid://doqvxyu2lonkd" path="res://scenes/player/player.gd" id="1_dovo2"]
@@ -8,6 +8,9 @@ radius = 21.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8afob"]
 radius = 34.1321
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
+size = Vector2(20, 29)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -24,3 +27,13 @@ shape = SubResource("CircleShape2D_dovo2")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_8afob")
+
+[node name="PushArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
+position = Vector2(18, 0)
+scale = Vector2(0.602131, 1)
+shape = SubResource("RectangleShape2D_dovo2")
+
+[connection signal="body_entered" from="PushArea" to="." method="_on_push_area_body_entered"]
+[connection signal="body_exited" from="PushArea" to="." method="_on_push_area_body_exited"]
