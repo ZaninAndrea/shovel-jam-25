@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b2evmjpyxf41w"]
+
+[ext_resource type="Script" uid="uid://btv6rg5bw1geo" path="res://scenes/objects/temporary_floor/temporary_floor.gd" id="1_k25g3"]
+
+[node name="TemporaryFloor" type="Sprite2D"]
+script = ExtResource("1_k25g3")
