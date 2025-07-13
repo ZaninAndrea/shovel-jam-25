@@ -4,8 +4,9 @@ class_name Player
 @export var speed := 200
 @export var push_force := 50.0
 
-@onready var sprite := $Sprite2D
+@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var interaction_area := $InteractionArea
+@onready var push_area: Area2D = $PushArea
 
 var can_push: bool = false
 var push_target: CharacterBody2D = null
@@ -14,21 +15,28 @@ signal interacted_with(object)
 signal item_used(item)
 
 func _physics_process(delta):
-	var input_vector = Vector2(
+	var direction  = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	).normalized()
 
-	velocity = input_vector * speed
+	velocity = direction  * speed
 	move_and_slide()
 	
-	if velocity.length() > 0:
-		rotation = velocity.angle()
+	# Flip sprite
+	if velocity.x > 0:
+		sprite_2d.flip_h = true
+	elif velocity.x < 0:
+		sprite_2d.flip_h = false
+	
+	# Flip push area so that it is in front
+	var offset_distance = 35
+	push_area.position = direction * offset_distance
 	
 	# Push logic
 	if can_push and push_target and Input.is_action_pressed("push"):
-		if input_vector != Vector2.ZERO:
-			push_target.push(input_vector * push_force)
+		if direction  != Vector2.ZERO:
+			push_target.push(direction  * push_force)
 
 
 func _on_push_area_body_entered(body: Node2D) -> void:
