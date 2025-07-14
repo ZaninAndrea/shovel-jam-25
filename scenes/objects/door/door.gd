@@ -1,11 +1,16 @@
-extends Area2D
+class_name Door extends Area2D
 
 @export var other_room_path: String = ""
 @export var door_id: String = ""  # Unique ID for this door (e.g. "engine_entry")
+@export var key: Item = null # Optional key, if set the player must hold the key to pass through the door
 var is_loading_new_scene = false
 
 func _on_body_entered(body: Node2D):
 	if not body.is_in_group("player"):
+		return
+
+	if key != null and Inventory.find_item(key) == -1:
+		print("This door is locked")
 		return
 
 	if other_room_path == "":
