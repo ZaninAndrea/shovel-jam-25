@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
-@export var speed := 200
-@export var push_force := 50.0
+@export var speed := 400
+@export var push_force := speed / 3
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var interaction_area := $InteractionArea
@@ -35,8 +35,14 @@ func _physics_process(delta):
 	
 	# Push logic
 	if can_push and push_target and Input.is_action_pressed("push"):
-		if direction  != Vector2.ZERO:
-			push_target.push(direction  * push_force)
+		if direction != Vector2.ZERO:
+			var push_dir = direction
+			# Force push direction to cardinal
+			if abs(direction.x) > abs(direction.y):
+				push_dir = Vector2(sign(direction.x), 0)
+			else:
+				push_dir = Vector2(0, sign(direction.y))
+			push_target.push(push_dir  * push_force)
 
 
 func _on_push_area_body_entered(body: Node2D) -> void:
