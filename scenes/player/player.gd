@@ -5,7 +5,7 @@ class_name Player
 @export var push_force := speed / 3
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var interaction_area := $InteractionArea
+@onready var interaction_area: Area2D = $InteractionArea
 @onready var push_area: Area2D = $PushArea
 
 var can_push: bool = false
@@ -61,6 +61,10 @@ func _input(event):
 	if event.is_action_pressed("select_slot_1"): # custom action mapped to key "1"
 		var overlapping = interaction_area.get_overlapping_areas()
 		for area in overlapping:
-			if area is DroppedItem:
-				Inventory.set_item(area.item, 1)
-				area.queue_free()
+			if area is Interactable:
+				area.interact()
+				
+		overlapping = interaction_area.get_overlapping_bodies()
+		for body in overlapping:
+			if body is Interactable:
+				body.interact()

@@ -1,5 +1,5 @@
 @tool
-class_name DroppedItem extends Node2D
+class_name DroppedItem extends Interactable
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 @export var item: Item:
@@ -15,3 +15,7 @@ func _update_icon():
 		sprite_2d.texture = item.icon
 	elif sprite_2d:
 		sprite_2d.texture = null
+
+func interact():
+	Inventory.set_item(item, 1)
+	self.queue_free()
