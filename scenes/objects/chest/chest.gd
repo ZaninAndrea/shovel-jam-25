@@ -21,7 +21,7 @@ func interact():
 	if drop:
 		var dropped = DROPPED_ITEM.instantiate()
 		dropped.item = drop
-		get_tree().current_scene.add_child(dropped)
+		get_parent().add_child(dropped)
 		dropped.global_position = self.global_position + drop_offset
 		print("Dropped item spawned at ", dropped.global_position)
 

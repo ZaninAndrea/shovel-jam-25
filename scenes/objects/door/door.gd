@@ -1,11 +1,14 @@
 class_name Door extends Area2D
 
-@export var other_room_path: String = ""
-@export var door_id: String = ""  # Unique ID for this door (e.g. "engine_entry")
-@export var key: Item = null # Optional key, if set the player must hold the key to pass through the door
-var is_loading_new_scene = false
+@export var other_door: Door = null
+@export var key: Item = null # Optional key, if set the player must hold the key to pass through the doo
+@export var exit_shift: Vector2 = Vector2.ZERO
+var is_changing_room: bool = false
 
 func _on_body_entered(body: Node2D):
+	if is_changing_room:
+		return
+		
 	if not body.is_in_group("player"):
 		return
 
@@ -13,56 +16,41 @@ func _on_body_entered(body: Node2D):
 		print("This door is locked")
 		return
 
-	if other_room_path == "":
+	if other_door == null:
 		push_warning("No scene assigned to this door.")
 		return
 
-	if !is_loading_new_scene:
-		is_loading_new_scene = true
-		call_deferred("_change_scene_for_body", body)
-
-func _load_other_scene() -> Node:
-	if other_room_path.is_empty():
-		push_warning("No scene path specified.")
-		return null
-
-	var scene_res = load(other_room_path)
-	if scene_res is PackedScene:
-		return scene_res.instantiate()
-	else:
-		push_error("Failed to load scene at: %s" % other_room_path)
-		return null
-
-func _change_scene_for_body(body):
-	var old_scene = get_tree().current_scene
-	var new_scene = _load_other_scene()
-	if new_scene == null:
-		is_loading_new_scene = false		
+	var parent_room = find_parent_room(other_door)
+	if parent_room == null:
+		push_warning("Other door is not inside a room")
 		return
-
-	get_tree().root.add_child(new_scene)
-	get_tree().current_scene = new_scene
-
-	old_scene.queue_free()
+		
+	# Enable the new room
+	parent_room.enable()
 	
-	var target_door = _find_matching_door(new_scene)
-	var player = _find_player(new_scene)
-	if target_door and player:
-		player.position = target_door.position
-	else:
-		push_warning("Matching door not found in new scene.")
+	# Move the player to the new room
+	is_changing_room = true
+	call_deferred("_move_player", body, parent_room)
 	
+	# Move the player over the door
 	
-	is_loading_new_scene = false
-
-func _find_matching_door(scene: Node) -> Node:
-	for node in scene.get_tree().get_nodes_in_group("doors"):
-		if node != self and node.door_id == door_id:
-			return node
-	return null
-
-func _find_player(scene: Node) -> Node:
-	for node in scene.get_tree().get_nodes_in_group("player"):
+func _move_player(player: Node, new_room: Room):
+	player.get_parent().remove_child(player)
+	new_room.add_child(player)
+	player.global_position = other_door.global_position + other_door.exit_shift
+	is_changing_room = false
+	
+func _find_player() -> Node:
+	for node in get_tree().get_nodes_in_group("player"):
 		return node
+		
 	return null
 	
+func find_parent_room(node: Node) -> Room:
+	while node != null:
+		if node is Room:
+			return node
+		
+		node = node.get_parent()
+
+	return null

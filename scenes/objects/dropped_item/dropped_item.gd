@@ -17,5 +17,6 @@ func _update_icon():
 		sprite_2d.texture = null
 
 func interact():
+	print("Picked item ", item)
 	Inventory.set_item(item, 1)
 	self.queue_free()

@@ -1,14 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://cvbwr4ufmwluc"]
+[gd_scene load_steps=13 format=3 uid="uid://cvbwr4ufmwluc"]
 
+[ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_6s8b5"]
 [ext_resource type="PackedScene" uid="uid://b2evmjpyxf41w" path="res://scenes/objects/temporary_floor/temporary_floor.tscn" id="1_8nmus"]
-[ext_resource type="PackedScene" uid="uid://cfjtgy2w2c04l" path="res://scenes/player/player.tscn" id="1_pgw2t"]
 [ext_resource type="Texture2D" uid="uid://dh2gp0r10vwo6" path="res://assets/textures/room_background.JPG" id="2_kcbey"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="2_u631n"]
 [ext_resource type="PackedScene" uid="uid://draqa2nk5ddel" path="res://scenes/objects/door/door.tscn" id="4_07vwx"]
 [ext_resource type="PackedScene" uid="uid://ccccyck8raxp2" path="res://scenes/objects/crate/crate.tscn" id="5_1j8gf"]
 [ext_resource type="PackedScene" uid="uid://bi1b1x3qm07g3" path="res://scenes/objects/dropped_item/dropped_item.tscn" id="5_kcbey"]
 [ext_resource type="Resource" uid="uid://x24ae5hu0ojh" path="res://resources/items/badge.tres" id="6_5l60j"]
-[ext_resource type="PackedScene" uid="uid://djmxp0glt8f8u" path="res://scenes/ui/inventory/InventoryUI.tscn" id="7_5l60j"]
 [ext_resource type="PackedScene" uid="uid://k4jkbv3qye3q" path="res://scenes/objects/chest/chest.tscn" id="10_6s8b5"]
 [ext_resource type="Resource" uid="uid://cy1nygipa7857" path="res://resources/items/prize.tres" id="11_kvyvl"]
 
@@ -25,6 +24,7 @@ data = {
 image = SubResource("Image_kvyvl")
 
 [node name="Cockpit" type="Node2D"]
+script = ExtResource("1_6s8b5")
 
 [node name="Floor" type="Sprite2D" parent="."]
 texture = ExtResource("2_kcbey")
@@ -60,17 +60,10 @@ scale = Vector2(25.11, 1.09)
 
 [node name="Door" parent="." instance=ExtResource("4_07vwx")]
 position = Vector2(960, 339)
-other_room_path = "res://scenes/rooms/engine_room/engine_room.tscn"
-door_id = "cockpit-engine"
 key = ExtResource("11_kvyvl")
-
-[node name="Player" parent="." instance=ExtResource("1_pgw2t")]
-position = Vector2(636, 657)
 
 [node name="Crate" parent="." instance=ExtResource("5_1j8gf")]
 position = Vector2(1086, 722)
-
-[node name="InventoryUI" parent="." instance=ExtResource("7_5l60j")]
 
 [node name="DroppedItem" parent="." instance=ExtResource("5_kcbey")]
 position = Vector2(353, 512)
@@ -81,3 +74,6 @@ position = Vector2(1487, 594)
 scale = Vector2(3.72, 3.72)
 key = ExtResource("6_5l60j")
 drop = ExtResource("11_kvyvl")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(960, 540)
