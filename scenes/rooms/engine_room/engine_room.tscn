@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://r7vdat7ui1fr"]
 
 [ext_resource type="PackedScene" uid="uid://b2evmjpyxf41w" path="res://scenes/objects/temporary_floor/temporary_floor.tscn" id="1_7kxa8"]
-[ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_xnxt0"]
+[ext_resource type="Script" path="res://scripts/components/room.gd" id="1_xnxt0"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="2_fuylo"]
 [ext_resource type="PackedScene" uid="uid://draqa2nk5ddel" path="res://scenes/objects/door/door.tscn" id="4_onk1x"]
 

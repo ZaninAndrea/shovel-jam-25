@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://d33fgv3s6g48v"]
+
+[ext_resource type="Script" uid="uid://dsp6f0p1s1427" path="res://scenes/objects/mirror/mirror.gd" id="1_0yg36"]
+[ext_resource type="Texture2D" uid="uid://dxw5snykyx0nn" path="res://assets/sprites/prize.png" id="1_ud0q1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0yg36"]
+size = Vector2(55.1543, 19.799)
+
+[node name="Mirror" type="CharacterBody2D" groups=["mirror", "pushable"]]
+script = ExtResource("1_0yg36")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+rotation = 0.785398
+scale = Vector2(1, 1)
+texture = ExtResource("1_ud0q1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_0yg36")

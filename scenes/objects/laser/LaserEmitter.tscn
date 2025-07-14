@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://duxhi2q5pdwdb"]
+
+[ext_resource type="Script" uid="uid://yi3upsexgqkx" path="res://scenes/objects/laser/laser_emitter.gd" id="1_eleo1"]
+
+[node name="LaserEmitter" type="Node2D"]
+script = ExtResource("1_eleo1")
+
+[node name="LaserBeam" type="Line2D" parent="."]
+top_level = true
+default_color = Color(0.266667, 0.905882, 0.101961, 1)
