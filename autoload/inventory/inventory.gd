@@ -14,6 +14,7 @@ func set_item(item: Item, slot: int):
 
 func remove_item(slot: int):
 	items[slot-1] = null
+	item_set.emit(null, slot)
 
 func get_item(slot: int) -> Item:
 	if slot <= 0 or slot > 2:
