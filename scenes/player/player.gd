@@ -66,6 +66,10 @@ func _input(event):
 				area.interact()
 				
 		overlapping = interaction_area.get_overlapping_bodies()
+		
+		if (!len(overlapping)):
+			UIManager.show_feedback("There is nothing here.", 3)
+		
 		for body in overlapping:
 			if body is Interactable:
 				body.interact()

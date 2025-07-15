@@ -1,0 +1,30 @@
+[gd_scene load_steps=3 format=3 uid="uid://4c6gwmwuyerm"]
+
+[ext_resource type="Script" uid="uid://cx55nff0di0mi" path="res://scenes/ui/text_feedback/interaction_ui.gd" id="1_4dfp4"]
+[ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="1_52o3f"]
+
+[node name="InteractionUI" type="CanvasLayer"]
+script = ExtResource("1_4dfp4")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1557.0
+offset_top = 822.0
+offset_right = 1597.0
+offset_bottom = 862.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("1_52o3f")
+
+[node name="InteractionFeedback" type="Label" parent="Control"]
+layout_mode = 1
+offset_left = -190.0
+offset_top = -29.0
+offset_right = 210.0
+offset_bottom = 13.0
+theme_override_font_sizes/font_size = 30
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
