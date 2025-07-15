@@ -67,7 +67,9 @@ position = Vector2(849, 1015)
 other_door = NodePath("../../EngineRoom/Door")
 exit_shift = Vector2(0, -100)
 
-[node name="InventoryUI" parent="." instance=ExtResource("4_82ana")]
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="InventoryUI" parent="HUD" instance=ExtResource("4_82ana")]
 z_index = 100
 
 [editable path="Rooms/EngineRoom"]
