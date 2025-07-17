@@ -59,7 +59,6 @@ func _on_push_area_body_exited(body: Node2D) -> void:
 
 func _input(event):
 	if event.is_action_pressed("select_slot_1"): # custom action mapped to key "1"
-		print("pressed 1")
 		var overlapping_areas = interaction_area.get_overlapping_areas()
 		for area in overlapping_areas:
 			if area is Interactable:

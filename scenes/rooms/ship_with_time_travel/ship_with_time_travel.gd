@@ -20,4 +20,7 @@ func reset_time():
 	get_tree().reload_current_scene()
 
 func _input(event: InputEvent) -> void:
-	sub_viewport.push_input(event)
+	if event.is_action_pressed("skip_time"):
+		start_reset_sequence()
+	else:
+		sub_viewport.push_input(event)
