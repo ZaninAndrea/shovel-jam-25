@@ -6,5 +6,5 @@ extends CanvasLayer
 var hide_timer : Timer = null
 
 func _ready():
-	UIManager.set_interaction_ui(self)
+	UIManager.set_interaction_ui(self, sprite_2d)
 	UIManager.set_feedback_label(interaction_feedback)
