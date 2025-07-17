@@ -83,6 +83,7 @@ _data = {
 
 [node name="ShipWithTimeTravel" type="Node2D"]
 script = ExtResource("1_xxee6")
+time_between_travels = 180
 
 [node name="WarpedView" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_52plv")
