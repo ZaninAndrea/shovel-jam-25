@@ -10,6 +10,7 @@ func _ready():
 
 	var has_player_warp_animation = (warped_view.material as ShaderMaterial).get_shader_parameter("time") != 0
 	if has_player_warp_animation:
+		Clock.reset()
 		animation_player.play("after_reset")
 		
 	

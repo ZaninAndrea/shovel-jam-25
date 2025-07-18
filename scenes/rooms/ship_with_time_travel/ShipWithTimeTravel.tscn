@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://1e2fft1obrw8"]
+[gd_scene load_steps=11 format=3 uid="uid://1e2fft1obrw8"]
 
 [ext_resource type="Script" uid="uid://bf6yffuuoi18m" path="res://scenes/rooms/ship_with_time_travel/ship_with_time_travel.gd" id="1_xxee6"]
 [ext_resource type="PackedScene" uid="uid://b73umic6cn61s" path="res://scenes/rooms/ship/Ship.tscn" id="2_naywl"]
 [ext_resource type="Shader" uid="uid://q8xnb4e8l5y3" path="res://scenes/rooms/ship_with_time_travel/time_travel_warp.gdshader" id="2_p1y4u"]
+[ext_resource type="PackedScene" uid="uid://c7mespaw1x775" path="res://scenes/ui/clock/clock.tscn" id="4_52plv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52plv"]
 shader = ExtResource("2_p1y4u")
@@ -99,3 +100,5 @@ size = Vector2i(1920, 1080)
 libraries = {
 &"": SubResource("AnimationLibrary_5to18")
 }
+
+[node name="Clock" parent="." instance=ExtResource("4_52plv")]
