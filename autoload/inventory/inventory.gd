@@ -5,12 +5,26 @@ var items: Array[Item] = [null, null]
 
 signal item_set(item: Item, slot:int)
 
-func set_item(item: Item, slot: int):
-	if slot <= 0 or slot > 2:
-		push_error("Cannot set slot ", slot)
+func set_item(item: Item):
+	if item.double_slot:
+		# Double slot items overwrite everything
+		items[0] = item
+		items[1] = null
+	elif items[0] == null:
+		# If the first slot is free use it
+		items[0] = item
+	elif items[0].double_slot:
+		# If the inventory contained a double slot item replace it
+		items[0] = item
+	elif items[1] == null:
+		# If the second slot is free use it
+		items[1] = item
+	else:
+		# If all slots are used up replace the first slot
+		items[0] = item
 	
-	items[slot-1] = item
-	item_set.emit(item, slot)
+	item_set.emit(items[0], 1)
+	item_set.emit(items[1], 2)
 
 func remove_item(slot: int):
 	items[slot-1] = null

@@ -8,4 +8,5 @@ script = ExtResource("2_m4q7k")
 id = "badge"
 name = "Badge"
 icon = ExtResource("1_q5dg1")
+double_slot = false
 metadata/_custom_type_script = "uid://c4rw8efovyv70"
