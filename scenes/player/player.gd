@@ -8,33 +8,40 @@ class_name Player
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var push_area: Area2D = $PushArea
 
-var can_push: bool = false
+var can_push: bool
 var push_target: CharacterBody2D = null
+var relative : Vector2
 
 signal interacted_with(object)
 signal item_used(item)
 
-func _physics_process(delta):
-	var direction  = Vector2(
+func _physics_process(_delta):
+	var direction = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	).normalized()
-
-	velocity = direction  * speed
-	move_and_slide()
 	
-	# Flip sprite
-	if velocity.x > 0:
-		sprite_2d.flip_h = true
-	elif velocity.x < 0:
-		sprite_2d.flip_h = false
-	
-	# Flip push area so that it is in front
+	var is_pushing : bool = can_push and push_target and Input.get_action_strength("push") > 0
 	var offset_distance = 35
-	push_area.position = direction * offset_distance
+	
+	if !is_pushing && direction.length() > 0:
+		relative = direction
+	push_area.position = relative * offset_distance
+	
+	if !is_pushing:
+		# Flip sprite
+		if velocity.x > 0:
+			sprite_2d.flip_h = true
+		elif velocity.x < 0:
+			sprite_2d.flip_h = false
+		velocity = direction  * speed
+		move_and_slide()
 	
 	# Push logic
-	if can_push and push_target and Input.is_action_pressed("push"):
+	if is_pushing:
+		# Don't change facing direction but change movement direction
+		velocity = direction * push_force
+		move_and_slide()
 		if direction != Vector2.ZERO:
 			var push_dir = direction
 			# Force push direction to cardinal
@@ -42,7 +49,7 @@ func _physics_process(delta):
 				push_dir = Vector2(sign(direction.x), 0)
 			else:
 				push_dir = Vector2(0, sign(direction.y))
-			push_target.push(push_dir  * push_force)
+			push_target.push(push_dir * push_force)
 
 
 func _on_push_area_body_entered(body: Node2D) -> void:
@@ -55,7 +62,7 @@ func _on_push_area_body_exited(body: Node2D) -> void:
 	if body == push_target:
 		push_target = null
 		can_push = false
-	rotation = velocity.angle()
+
 
 func _input(event):
 	if event.is_action_pressed("select_slot_1"): # custom action mapped to key "1"

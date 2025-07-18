@@ -10,7 +10,7 @@ radius = 36.0555
 radius = 58.0345
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dovo2"]
-size = Vector2(20, 29.75)
+size = Vector2(20, 19.875)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
@@ -35,8 +35,6 @@ shape = SubResource("CircleShape2D_8afob")
 [node name="PushArea" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
-position = Vector2(0, 8.875)
-scale = Vector2(0.602131, 1)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [connection signal="body_entered" from="PushArea" to="." method="_on_push_area_body_entered"]
