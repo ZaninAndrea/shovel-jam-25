@@ -4,13 +4,14 @@ class_name Player
 @export var speed := 400
 @export var push_force := speed / 3
 
-@onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var push_area: Area2D = $PushArea
 
 var can_push: bool
 var push_target: CharacterBody2D = null
 var relative : Vector2
+var last_facing_direction : float
 
 signal interacted_with(object)
 signal item_used(item)
@@ -20,6 +21,16 @@ func _physics_process(_delta):
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	).normalized()
+	if direction.x > 0.1 || direction.x < -0.1:
+		last_facing_direction = direction.x
+	
+	# Play animations
+	if direction.y < 0 || (direction.y == 0 && direction.x != 0):
+		animated_sprite_2d.play("walk_up")
+	elif direction.y > 0:
+		animated_sprite_2d.play("walk_down")
+	else:
+		animated_sprite_2d.play("idle")
 	
 	var is_pushing : bool = can_push and push_target and Input.get_action_strength("push") > 0
 	var offset_distance = 35
@@ -29,11 +40,17 @@ func _physics_process(_delta):
 	push_area.position = relative * offset_distance
 	
 	if !is_pushing:
-		# Flip sprite
-		if velocity.x > 0:
-			sprite_2d.flip_h = true
-		elif velocity.x < 0:
-			sprite_2d.flip_h = false
+		# Flip sprite only if we are not pushing
+		if direction.x > 0:
+			animated_sprite_2d.flip_h = false
+		elif direction.x < 0:
+			animated_sprite_2d.flip_h = true
+		else:
+			#print(last_facing_direction)
+			if last_facing_direction > 0:
+				animated_sprite_2d.flip_h = true
+			elif last_facing_direction < 0:
+				animated_sprite_2d.flip_h = false
 		velocity = direction  * speed
 		move_and_slide()
 	
