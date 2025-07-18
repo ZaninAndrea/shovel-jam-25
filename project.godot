@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="shovel-jam-25"
-run/main_scene="uid://1e2fft1obrw8"
+run/main_scene="uid://qlyvx7wx83y0"
 config/features=PackedStringArray("4.4", "Forward Plus")
 
 [autoload]
