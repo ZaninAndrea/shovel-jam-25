@@ -52,7 +52,7 @@ scale = Vector2(2.3, 2.3)
 [node name="Cockpit" parent="Rooms" instance=ExtResource("2_g8w7e")]
 
 [node name="CockpitDoor" parent="Rooms/Cockpit" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-position = Vector2(954, 1223)
+position = Vector2(956, 1178)
 rotation = 3.14159
 scale = Vector2(10, 1)
 other_door = NodePath("../../SalaComune/SalaComuneSopra")
@@ -63,7 +63,7 @@ position = Vector2(6, 3083)
 
 [node name="EngineDoor" parent="Rooms/EngineRoom" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
 visible = false
-position = Vector2(973, 677)
+position = Vector2(977, 730)
 scale = Vector2(3, 1)
 other_door = NodePath("../../SalaComune/SalaComuneBasso")
 exit_shift = Vector2(0, 100)
@@ -72,6 +72,7 @@ exit_shift = Vector2(0, 100)
 position = Vector2(2896, 1635)
 
 [node name="CuccetteBasso" parent="Rooms/Cuccette" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
+visible = false
 position = Vector2(984, 1245)
 rotation = 3.14159
 scale = Vector2(5, 1)
@@ -80,11 +81,11 @@ exit_shift = Vector2(0, -200)
 
 [node name="CuccetteLato" parent="Rooms/Cuccette" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
 visible = false
-position = Vector2(1767, 804)
-rotation = 0.436332
+position = Vector2(1762, 830)
+rotation = 0.488692
 scale = Vector2(1.5, 1)
 other_door = NodePath("../../StanzaB/StanzaBDoor")
-exit_shift = Vector2(-150, 0)
+exit_shift = Vector2(-150, 50)
 
 [node name="StanzaA" parent="Rooms" instance=ExtResource("6_lf6ba")]
 position = Vector2(-2564, 1756)
@@ -103,7 +104,7 @@ position = Vector2(164, 824)
 rotation = -0.523599
 scale = Vector2(1.92, 1)
 other_door = NodePath("../../Ripostiglio/RipostiglioDoor")
-exit_shift = Vector2(150, 0)
+exit_shift = Vector2(200, 50)
 
 [node name="Ripostiglio" parent="Rooms" instance=ExtResource("10_resca")]
 position = Vector2(-2002, 4716)
@@ -121,7 +122,7 @@ position = Vector2(1532, 4703)
 position = Vector2(22, 623)
 rotation = 4.71239
 other_door = NodePath("../../Cuccette/CuccetteLato")
-exit_shift = Vector2(150, 0)
+exit_shift = Vector2(200, 0)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 

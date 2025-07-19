@@ -8,7 +8,12 @@ y_sort_enabled = true
 script = ExtResource("1_q2skh")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-66.2, -328.5)
 texture = ExtResource("2_q2skh")
+offset = Vector2(1.51, 0)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-polygon = PackedVector2Array(-24, 203, -126, 199, 156, 413, 237, 414, 240, 382)
+y_sort_enabled = true
+position = Vector2(-66.2, -328.5)
+polygon = PackedVector2Array(-120.8, 161.5, -121.8, 200.5, 156, 413, 213.2, 415.5, 212.2, 166.5)

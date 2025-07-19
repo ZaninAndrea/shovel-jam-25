@@ -20,19 +20,19 @@ offset = Vector2(960, 540)
 
 [node name="StaticBody2D2" parent="." instance=ExtResource("2_u631n")]
 visible = false
-position = Vector2(996, 659)
+position = Vector2(944, 776)
 scale = Vector2(39.0841, 1.20078)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("2_u631n")]
 visible = false
-position = Vector2(1621, 861)
-rotation = -2.44346
+position = Vector2(1528, 958)
+rotation = -2.53073
 scale = Vector2(25.11, 1.09)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("2_u631n")]
 visible = false
-position = Vector2(291, 876)
-rotation = 2.44346
+position = Vector2(423, 915)
+rotation = 2.53073
 scale = Vector2(25.11, 1.09)
 
 [node name="Camera2D" type="Camera2D" parent="."]

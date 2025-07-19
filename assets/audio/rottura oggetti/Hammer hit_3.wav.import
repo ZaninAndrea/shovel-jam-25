@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ci37amnueae8"
+path="res://.godot/imported/Hammer hit_3.wav-e6e0ba07983e875d6270a7322fd7c946.sample"
+
+[deps]
+
+source_file="res://assets/audio/rottura oggetti/Hammer hit_3.wav"
+dest_files=["res://.godot/imported/Hammer hit_3.wav-e6e0ba07983e875d6270a7322fd7c946.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

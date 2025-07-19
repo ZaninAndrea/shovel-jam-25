@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://dmoh7spbvfxa8"
+path="res://.godot/imported/Menu Navigation_3.wav-dfc048ff0b440f52fb17a15f919e2a14.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx digitali/Menu Navigation_3.wav"
+dest_files=["res://.godot/imported/Menu Navigation_3.wav-dfc048ff0b440f52fb17a15f919e2a14.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

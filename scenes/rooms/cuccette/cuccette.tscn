@@ -9,8 +9,7 @@
 y_sort_enabled = true
 script = ExtResource("1_g8m8x")
 speed = Vector2(150, 300)
-bottom_scale = 4.0
-top_scale = 2.5
+bottom_scale = 3.5
 top_position = 0.3
 movement_rotation = 4.71239
 
@@ -73,4 +72,4 @@ scale = Vector2(3, 1)
 position = Vector2(960, 540)
 
 [node name="Armadio" parent="." instance=ExtResource("4_3e5rd")]
-position = Vector2(1683, 699)
+position = Vector2(1750, 1048)

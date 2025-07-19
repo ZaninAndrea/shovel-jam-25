@@ -73,26 +73,29 @@ motion_mode = 1
 script = ExtResource("1_dovo2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -48)
+y_sort_enabled = true
+position = Vector2(6, -64)
 scale = Vector2(0.1, 0.1)
 sprite_frames = SubResource("SpriteFrames_5gtgg")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(7, 23)
+position = Vector2(-1, 7)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_h17s1")
 
 [node name="InteractionArea" type="Area2D" parent="."]
+position = Vector2(6, -16)
 collision_mask = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_8afob")
 
 [node name="PushArea" type="Area2D" parent="."]
+position = Vector2(6, -16)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PushArea"]
-position = Vector2(9, 12.5)
+position = Vector2(-5, 12.5)
 shape = SubResource("RectangleShape2D_dovo2")
 
 [connection signal="body_entered" from="PushArea" to="." method="_on_push_area_body_entered"]

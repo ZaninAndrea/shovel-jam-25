@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://jdytwi2v7422"
+path="res://.godot/imported/Hammer Loop_2.wav-714ccc26cc4d6eb2ee3453820ee6e694.sample"
+
+[deps]
+
+source_file="res://assets/audio/rottura oggetti/Hammer Loop_2.wav"
+dest_files=["res://.godot/imported/Hammer Loop_2.wav-714ccc26cc4d6eb2ee3453820ee6e694.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

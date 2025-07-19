@@ -21,15 +21,15 @@ position = Vector2(1920, 0)
 scale = Vector2(-1, 1)
 
 [node name="StaticBody2D2" parent="Walls" instance=ExtResource("3_er5tl")]
-position = Vector2(1056, 790)
+position = Vector2(1056, 809)
 scale = Vector2(7.52, 1.78)
 
 [node name="StaticBody2D10" parent="Walls" instance=ExtResource("3_er5tl")]
-position = Vector2(204, 791)
+position = Vector2(203, 810)
 scale = Vector2(7.52, 1.78)
 
 [node name="StaticBody2D9" parent="Walls" instance=ExtResource("3_er5tl")]
-position = Vector2(1058, 740)
+position = Vector2(1049, 763)
 scale = Vector2(17.95, 1.09)
 
 [node name="StaticBody2D7" parent="Walls" instance=ExtResource("3_er5tl")]

@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://cacmw64txb4d5"
+path="res://.godot/imported/SFX_UI_Countdown_SciFi_End.wav-a23a40ed563577333c83fa609c4af172.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx digitali/SFX_UI_Countdown_SciFi_End.wav"
+dest_files=["res://.godot/imported/SFX_UI_Countdown_SciFi_End.wav-a23a40ed563577333c83fa609c4af172.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

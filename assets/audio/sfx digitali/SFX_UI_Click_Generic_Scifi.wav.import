@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://bmygl4b07llcc"
+path="res://.godot/imported/SFX_UI_Click_Generic_Scifi.wav-cfc0764330b0bf8f2d9a1b28cfb6a2e3.sample"
+
+[deps]
+
+source_file="res://assets/audio/sfx digitali/SFX_UI_Click_Generic_Scifi.wav"
+dest_files=["res://.godot/imported/SFX_UI_Click_Generic_Scifi.wav-cfc0764330b0bf8f2d9a1b28cfb6a2e3.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2
