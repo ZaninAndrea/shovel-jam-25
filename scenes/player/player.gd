@@ -20,6 +20,8 @@ var last_facing_direction : float
 signal interacted_with(object)
 signal item_used(item)
 
+var previous_room_rotation: float = 0.0
+
 func _physics_process(_delta):
 	var direction = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
@@ -27,6 +29,11 @@ func _physics_process(_delta):
 	).normalized()
 	if direction.x > 0.1 || direction.x < -0.1:
 		last_facing_direction = direction.x
+	
+	if direction.length() < 0.1:
+		# Reset the input rotation when the player releases the key
+		previous_room_rotation = 0.0
+	direction = direction.rotated(previous_room_rotation)
 	
 	# Play animations
 	if direction.y < 0 || (direction.y == 0 && direction.x != 0):
@@ -82,8 +89,7 @@ func _physics_process(_delta):
 	var interpolation_coeff = distance_from_bottom / top_position
 	var scale_factor: float = interpolation_coeff * top_scale \
 		+ (1-interpolation_coeff) * bottom_scale
-	
-	print("DISTANCE_FROM_BOTTOM: ", distance_from_bottom, " SCALE: ", scale_factor)
+
 	scale = Vector2.ONE * scale_factor
 
 

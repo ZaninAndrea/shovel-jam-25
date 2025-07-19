@@ -20,6 +20,11 @@ func _on_body_entered(body: Node2D):
 		push_warning("No scene assigned to this door.")
 		return
 
+	var starting_room = find_parent_room(self)
+	if starting_room == null:
+		push_warning("This door is not inside a room")
+		return
+	
 	var parent_room = find_parent_room(other_door)
 	if parent_room == null:
 		push_warning("Other door is not inside a room")
@@ -30,11 +35,11 @@ func _on_body_entered(body: Node2D):
 	
 	# Move the player to the new room
 	is_changing_room = true
-	call_deferred("_move_player", body, parent_room)
+	call_deferred("_move_player", body, starting_room, parent_room)
 	
 	# Move the player over the door
 	
-func _move_player(player: Player, new_room: Room):
+func _move_player(player: Player, starting_room: Room, new_room: Room):
 	player.get_parent().remove_child(player)
 	new_room.add_child(player)
 	player.scale = Vector2.ONE
@@ -43,6 +48,7 @@ func _move_player(player: Player, new_room: Room):
 	player.bottom_scale = new_room.bottom_scale;
 	player.top_scale = new_room.top_scale;
 	player.top_position = new_room.top_position;
+	player.previous_room_rotation = new_room.movement_rotation - starting_room.movement_rotation
 	is_changing_room = false
 	
 func _find_player() -> Node:

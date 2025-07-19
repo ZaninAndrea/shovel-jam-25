@@ -5,6 +5,7 @@ class_name Room extends Node
 @export var bottom_scale: float = 3.0
 @export var top_scale: float= 2.0
 @export var top_position: float = 1.0
+@export_range(-360, 360, 1, "radians_as_degrees") var movement_rotation: float = 0.0
 
 func enable():
 	camera_2d.make_current()

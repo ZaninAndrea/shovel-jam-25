@@ -20,6 +20,7 @@ image = SubResource("Image_ilnad")
 
 [node name="StanzaA" type="Node2D"]
 script = ExtResource("1_2ovkv")
+movement_rotation = 1.5708
 
 [node name="TemporaryFloor" parent="." instance=ExtResource("2_tymte")]
 position = Vector2(966.25, 544)

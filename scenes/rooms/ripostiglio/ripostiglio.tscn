@@ -18,6 +18,7 @@ image = SubResource("Image_dyntt")
 
 [node name="Ripostiglio" type="Node2D"]
 script = ExtResource("1_an44m")
+movement_rotation = 1.5708
 
 [node name="TemporaryFloor" parent="." instance=ExtResource("2_78yxq")]
 position = Vector2(966.25, 544)
