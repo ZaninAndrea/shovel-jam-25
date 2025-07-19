@@ -22,9 +22,9 @@ void vertex() {
 
 void fragment() {
 	vec2 uv = SCREEN_UV;
-	
+
 	// Scroll vertically with time
 	//uv.y += TIME * 0.03;
-	
+
 	COLOR = texture(TEXTURE, uv);
 }
