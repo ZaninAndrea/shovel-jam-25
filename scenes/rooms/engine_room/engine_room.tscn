@@ -21,6 +21,7 @@ image = SubResource("Image_xnxt0")
 script = ExtResource("1_xnxt0")
 speed = Vector2(150, 150)
 bottom_scale = 4.0
+top_scale = 2.2
 top_position = 0.25
 
 [node name="TemporaryFloor" parent="." instance=ExtResource("1_7kxa8")]

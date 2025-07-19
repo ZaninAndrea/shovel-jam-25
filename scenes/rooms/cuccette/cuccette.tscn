@@ -9,7 +9,8 @@
 y_sort_enabled = true
 script = ExtResource("1_g8m8x")
 speed = Vector2(150, 300)
-bottom_scale = 3.5
+bottom_scale = 3.3
+top_scale = 1.8
 top_position = 0.3
 movement_rotation = 4.71239
 

@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://by6d6nmwyi8c8"]
+
+[ext_resource type="Texture2D" uid="uid://cf6tsx78xjoww" path="res://assets/sprites/rooms/tavolo.png" id="1_gu2ia"]
+
+[node name="Tavolo" type="StaticBody2D"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(75, -260)
+polygon = PackedVector2Array(-369, 275, -360, 428, -342, 451, -326, 458, -87, 501, 172, 443, 194, 427, 204, 414, 212, 271, 203, 251, 180, 234, 27, 221, -147, 219, -356, 246)
+
+[node name="Tavolo2" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(21, 72)
+texture = ExtResource("1_gu2ia")
