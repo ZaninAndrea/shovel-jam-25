@@ -62,8 +62,9 @@ exit_shift = Vector2(0, -150)
 position = Vector2(6, 3083)
 
 [node name="EngineDoor" parent="Rooms/EngineRoom" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-position = Vector2(937, 15.0001)
-scale = Vector2(10, 1)
+visible = false
+position = Vector2(973, 673)
+scale = Vector2(3, 1)
 other_door = NodePath("../../SalaComune/SalaComuneBasso")
 exit_shift = Vector2(0, 150)
 
