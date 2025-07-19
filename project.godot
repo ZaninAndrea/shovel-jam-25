@@ -33,6 +33,10 @@ doors=""
 pushable=""
 mirror=""
 
+[gui]
+
+theme/custom_font="uid://d1udguboqc78k"
+
 [input]
 
 push={

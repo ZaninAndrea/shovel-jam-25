@@ -2,7 +2,7 @@ extends Node
 
 var canvas_layer: CanvasLayer
 var sprite: Sprite2D 
-var feedback_label: Label
+var feedback_label: RichTextLabel
 var hide_timer: Timer
 
 func _ready():
@@ -19,7 +19,7 @@ func set_interaction_ui(canvas: CanvasLayer, sprite2d: Sprite2D):
 	hide_timer.timeout.connect(_on_hide_timer_timeout)
 	canvas_layer.add_child(hide_timer)
 
-func set_feedback_label(label: Label):
+func set_feedback_label(label: RichTextLabel):
 	feedback_label = label
 
 func show_feedback(text: String, duration = 1.5):

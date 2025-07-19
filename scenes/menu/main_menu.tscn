@@ -57,14 +57,17 @@ theme_override_constants/separation = 30
 alignment = 1
 
 [node name="Play" type="Button" parent="Menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "PLAY"
 
 [node name="Settings" type="Button" parent="Menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "SETTINGS"
 
 [node name="Quit" type="Button" parent="Menu/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "QUIT"
 
