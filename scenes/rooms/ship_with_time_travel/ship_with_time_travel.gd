@@ -5,6 +5,7 @@ extends Node2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var warped_view: Sprite2D = $WarpedView
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+@onready var noise_player: AudioStreamPlayer = $NoisePlayer
 
 @export var time_travelling: bool = false
 
@@ -14,6 +15,7 @@ func _ready():
 
 	var has_player_warp_animation = (warped_view.material as ShaderMaterial).get_shader_parameter("time") != 0
 	if has_player_warp_animation:
+		noise_player.play()
 		Clock.reset()
 		animation_player.play("after_reset")
 		
