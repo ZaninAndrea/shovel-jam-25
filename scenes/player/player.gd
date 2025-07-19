@@ -1,7 +1,7 @@
 extends CharacterBody2D
 class_name Player
 
-@export var speed := Vector2(400, 400)
+@export var speed := Vector2(150, 400)
 @export var push_force := speed / 3
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -52,35 +52,6 @@ func _physics_process(_delta):
 		relative = direction
 	push_area.position = relative * offset_distance
 	
-	if !is_pushing:
-		# Flip sprite only if we are not pushing
-		if direction.x > 0:
-			animated_sprite_2d.flip_h = false
-		elif direction.x < 0:
-			animated_sprite_2d.flip_h = true
-		else:
-			#print(last_facing_direction)
-			if last_facing_direction > 0:
-				animated_sprite_2d.flip_h = true
-			elif last_facing_direction < 0:
-				animated_sprite_2d.flip_h = false
-		velocity = direction * speed
-		move_and_slide()
-	
-	# Push logic
-	if is_pushing:
-		# Don't change facing direction but change movement direction
-		velocity = direction * push_force
-		move_and_slide()
-		if direction != Vector2.ZERO:
-			var push_dir = direction
-			# Force push direction to cardinal
-			if abs(direction.x) > abs(direction.y):
-				push_dir = Vector2(sign(direction.x), 0)
-			else:
-				push_dir = Vector2(0, sign(direction.y))
-			push_target.push(push_dir * push_force)
-	
 	# Scale the player depending on its distance from the camera
 	var distance_from_bottom = (540 - get_viewport().get_camera_2d().to_local(global_position).y) / 1080
 	if distance_from_bottom > 1:
@@ -94,6 +65,35 @@ func _physics_process(_delta):
 
 	scale = Vector2.ONE * scale_factor
 
+	
+	if !is_pushing:
+		# Flip sprite only if we are not pushing
+		if direction.x > 0:
+			animated_sprite_2d.flip_h = false
+		elif direction.x < 0:
+			animated_sprite_2d.flip_h = true
+		else:
+			#print(last_facing_direction)
+			if last_facing_direction > 0:
+				animated_sprite_2d.flip_h = true
+			elif last_facing_direction < 0:
+				animated_sprite_2d.flip_h = false
+		velocity = direction * speed * Vector2(scale_factor, 1.0)
+		move_and_slide()
+	
+	# Push logic
+	if is_pushing:
+		# Don't change facing direction but change movement direction
+		velocity = direction * push_force * Vector2(scale_factor, 1.0)
+		move_and_slide()
+		if direction != Vector2.ZERO:
+			var push_dir = direction
+			# Force push direction to cardinal
+			if abs(direction.x) > abs(direction.y):
+				push_dir = Vector2(sign(direction.x), 0)
+			else:
+				push_dir = Vector2(0, sign(direction.y))
+			push_target.push(push_dir * push_force)
 
 func _on_push_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pushable"):

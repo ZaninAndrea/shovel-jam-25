@@ -19,7 +19,7 @@ image = SubResource("Image_xnxt0")
 
 [node name="EngineRoom" type="Node2D"]
 script = ExtResource("1_xnxt0")
-speed = Vector2(400, 150)
+speed = Vector2(150, 150)
 bottom_scale = 4.0
 top_position = 0.25
 
@@ -34,29 +34,24 @@ position = Vector2(960, 540)
 texture = ExtResource("2_l7ug3")
 
 [node name="StaticBody2D" parent="." instance=ExtResource("2_fuylo")]
-visible = false
 position = Vector2(979, 1116)
 scale = Vector2(30, 1.297)
 
 [node name="StaticBody2D3" parent="." instance=ExtResource("2_fuylo")]
-visible = false
 position = Vector2(1559, 919)
-rotation = -2.35619
+rotation = -2.44346
 scale = Vector2(10, 1.09)
 
 [node name="StaticBody2D4" parent="." instance=ExtResource("2_fuylo")]
-visible = false
 position = Vector2(338, 915)
-rotation = 2.35619
+rotation = 2.44346
 scale = Vector2(10, 1.09)
 
 [node name="StaticBody2D5" parent="." instance=ExtResource("2_fuylo")]
-visible = false
 position = Vector2(602, 679)
 scale = Vector2(3, 1.09)
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("2_fuylo")]
-visible = false
 position = Vector2(1350, 690)
 scale = Vector2(3, 1.09)
 
