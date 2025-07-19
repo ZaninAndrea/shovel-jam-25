@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://4c6gwmwuyerm"]
+[gd_scene load_steps=4 format=3 uid="uid://4c6gwmwuyerm"]
 
 [ext_resource type="Script" uid="uid://cx55nff0di0mi" path="res://scenes/ui/text_feedback/interaction_ui.gd" id="1_4dfp4"]
 [ext_resource type="Texture2D" uid="uid://b0rv67641i12o" path="res://assets/sprites/paper_popup_cut.png" id="2_4dfp4"]
+[ext_resource type="FontFile" uid="uid://d1udguboqc78k" path="res://assets/fonts/Emocja.ttf" id="3_imdpv"]
 
 [node name="InteractionUI" type="CanvasLayer"]
 script = ExtResource("1_4dfp4")
@@ -31,6 +32,7 @@ grow_vertical = 2
 scale = Vector2(0.8, 0.8)
 size_flags_horizontal = 6
 size_flags_vertical = 6
+theme_override_fonts/normal_font = ExtResource("3_imdpv")
 theme_override_font_sizes/normal_font_size = 200
 horizontal_alignment = 1
 vertical_alignment = 1

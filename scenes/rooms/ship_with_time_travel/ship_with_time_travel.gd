@@ -4,10 +4,12 @@ extends Node2D
 @onready var sub_viewport: SubViewport = $SubViewport
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var warped_view: Sprite2D = $WarpedView
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 @export var time_travelling: bool = false
 
 func _ready():
+	audio_stream_player.play()
 	get_tree().create_timer(time_between_travels).timeout.connect(start_reset_sequence)
 
 	var has_player_warp_animation = (warped_view.material as ShaderMaterial).get_shader_parameter("time") != 0

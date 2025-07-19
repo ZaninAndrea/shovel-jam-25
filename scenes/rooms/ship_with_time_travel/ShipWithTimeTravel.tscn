@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://1e2fft1obrw8"]
+[gd_scene load_steps=12 format=3 uid="uid://1e2fft1obrw8"]
 
 [ext_resource type="Script" uid="uid://bf6yffuuoi18m" path="res://scenes/rooms/ship_with_time_travel/ship_with_time_travel.gd" id="1_xxee6"]
 [ext_resource type="PackedScene" uid="uid://b73umic6cn61s" path="res://scenes/rooms/ship/Ship.tscn" id="2_naywl"]
 [ext_resource type="Shader" uid="uid://q8xnb4e8l5y3" path="res://scenes/rooms/ship_with_time_travel/time_travel_warp.gdshader" id="2_p1y4u"]
 [ext_resource type="PackedScene" uid="uid://c7mespaw1x775" path="res://scenes/ui/clock/clock.tscn" id="4_52plv"]
+[ext_resource type="AudioStream" uid="uid://cckb80gi00ubh" path="res://assets/audio/calm-space-music-312291.mp3" id="5_8o1ar"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_52plv"]
 shader = ExtResource("2_p1y4u")
@@ -121,3 +122,7 @@ offset_left = 80.0
 offset_top = 40.0
 offset_right = 182.0
 offset_bottom = 95.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_8o1ar")
+volume_db = -10.0

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://qlyvx7wx83y0"]
+[gd_scene load_steps=12 format=3 uid="uid://qlyvx7wx83y0"]
 
 [ext_resource type="Shader" uid="uid://cpw2ubgglxv1l" path="res://scenes/menu/scroll.gdshader" id="1_3rkf3"]
 [ext_resource type="StyleBox" uid="uid://68xi5kj5llqa" path="res://resources/Theme & Style/normal_button.tres" id="1_247la"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://b1oc6mmvt5jfg" path="res://assets/sprites/CON STELLE GRANDI_in loop.jpg" id="2_247la"]
 [ext_resource type="Script" uid="uid://c1rbrpkv46vxn" path="res://scenes/menu/main_menu.gd" id="4_xn6kt"]
 [ext_resource type="PackedScene" uid="uid://c7mespaw1x775" path="res://scenes/ui/clock/clock.tscn" id="7_isoef"]
+[ext_resource type="AudioStream" uid="uid://cckb80gi00ubh" path="res://assets/audio/calm-space-music-312291.mp3" id="8_qgo02"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kiqgm"]
 
@@ -57,17 +58,17 @@ theme_override_constants/separation = 30
 alignment = 1
 
 [node name="Play" type="Button" parent="Menu/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 text = "PLAY"
 
 [node name="Settings" type="Button" parent="Menu/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 text = "SETTINGS"
 
 [node name="Quit" type="Button" parent="Menu/VBoxContainer"]
-custom_minimum_size = Vector2(0, 100)
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 text = "QUIT"
 
@@ -88,6 +89,10 @@ offset_left = 80.0
 offset_top = 40.0
 offset_right = 182.0
 offset_bottom = 95.0
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_qgo02")
+volume_db = -10.0
 
 [connection signal="pressed" from="Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
