@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://qlyvx7wx83y0"]
+[gd_scene load_steps=13 format=3 uid="uid://qlyvx7wx83y0"]
 
 [ext_resource type="Shader" uid="uid://cpw2ubgglxv1l" path="res://scenes/menu/scroll.gdshader" id="1_3rkf3"]
 [ext_resource type="StyleBox" uid="uid://68xi5kj5llqa" path="res://resources/Theme & Style/normal_button.tres" id="1_247la"]
@@ -6,6 +6,7 @@
 [ext_resource type="StyleBox" uid="uid://624fob5qo6ja" path="res://resources/Theme & Style/hover_button.tres" id="1_kiqgm"]
 [ext_resource type="Texture2D" uid="uid://b1oc6mmvt5jfg" path="res://assets/sprites/CON STELLE GRANDI_in loop.jpg" id="2_247la"]
 [ext_resource type="Script" uid="uid://c1rbrpkv46vxn" path="res://scenes/menu/main_menu.gd" id="4_xn6kt"]
+[ext_resource type="Texture2D" uid="uid://bs72jgr7r2ao1" path="res://assets/sprites/nave da applicare sopra a cielo per schermata iniziale.png" id="5_vovv2"]
 [ext_resource type="PackedScene" uid="uid://c7mespaw1x775" path="res://scenes/ui/clock/clock.tscn" id="7_isoef"]
 [ext_resource type="AudioStream" uid="uid://cckb80gi00ubh" path="res://assets/audio/calm-space-music-312291.mp3" id="8_qgo02"]
 
@@ -52,6 +53,8 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -348.0
+offset_right = -348.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 30
@@ -71,6 +74,26 @@ text = "SETTINGS"
 custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 text = "QUIT"
+
+[node name="Title" type="Label" parent="."]
+top_level = true
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -778.0
+offset_top = 95.0
+offset_right = 776.0
+offset_bottom = 251.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 156
+text = "Lost in Papertime"
+
+[node name="Spaceship" type="Sprite2D" parent="."]
+top_level = true
+position = Vector2(1381, 660)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_vovv2")
 
 [node name="Backgound" type="TextureRect" parent="."]
 texture_repeat = 2
