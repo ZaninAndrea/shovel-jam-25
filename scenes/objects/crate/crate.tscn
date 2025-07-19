@@ -1,17 +1,18 @@
 [gd_scene load_steps=4 format=3 uid="uid://ccccyck8raxp2"]
 
-[ext_resource type="Texture2D" uid="uid://dmapcace3cl42" path="res://assets/sprites/crate.png" id="1_cghuv"]
 [ext_resource type="Script" uid="uid://bjl7cwxgw0ifc" path="res://scenes/objects/crate/crate.gd" id="1_q2skh"]
+[ext_resource type="Texture2D" uid="uid://7eqd8is6kypw" path="res://assets/sprites/items/cassa.png" id="2_q2skh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_q2skh"]
-size = Vector2(124, 124)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4m5e"]
+size = Vector2(228, 240)
 
 [node name="Crate" type="CharacterBody2D" groups=["pushable"]]
 script = ExtResource("1_q2skh")
 
-[node name="Area2D" type="Sprite2D" parent="."]
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_cghuv")
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 32)
+shape = SubResource("RectangleShape2D_h4m5e")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_q2skh")
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_q2skh")

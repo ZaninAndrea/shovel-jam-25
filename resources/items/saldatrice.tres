@@ -9,4 +9,5 @@ id = "saldatrice"
 name = "saldatrice"
 icon = ExtResource("1_5bhu4")
 double_slot = true
+scale = 1.0
 metadata/_custom_type_script = "uid://c4rw8efovyv70"

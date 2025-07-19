@@ -14,9 +14,10 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 69.0
 offset_top = 985.0
-offset_right = 109.0
-offset_bottom = 1025.0
+offset_right = 129.0
+offset_bottom = 1045.0
 grow_vertical = 0
+expand_mode = 3
 
 [node name="Slot2" type="TextureRect" parent="."]
 layout_mode = 1
@@ -25,6 +26,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 151.0
 offset_top = 984.0
-offset_right = 191.0
-offset_bottom = 1024.0
+offset_right = 211.0
+offset_bottom = 1044.0
 grow_vertical = 0
+expand_mode = 3

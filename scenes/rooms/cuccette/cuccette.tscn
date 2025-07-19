@@ -46,4 +46,3 @@ position = Vector2(960, 540)
 
 [node name="Crate" parent="." instance=ExtResource("4_3e5rd")]
 position = Vector2(1741, 551)
-scale = Vector2(1.76, 3.9)

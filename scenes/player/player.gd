@@ -93,7 +93,7 @@ func _physics_process(_delta):
 				push_dir = Vector2(sign(direction.x), 0)
 			else:
 				push_dir = Vector2(0, sign(direction.y))
-			push_target.push(push_dir * push_force)
+			push_target.push(push_dir * push_force * Vector2(scale_factor, 1.0))
 
 func _on_push_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("pushable"):

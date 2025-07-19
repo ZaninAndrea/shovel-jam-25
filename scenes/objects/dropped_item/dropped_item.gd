@@ -13,6 +13,7 @@ func _ready():
 func _update_icon():
 	if sprite_2d and item and item.icon:
 		sprite_2d.texture = item.icon
+		sprite_2d.scale = Vector2.ONE * item.scale
 	elif sprite_2d:
 		sprite_2d.texture = null
 

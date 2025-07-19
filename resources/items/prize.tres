@@ -9,4 +9,5 @@ id = "prize"
 name = "Prize"
 icon = ExtResource("1_jy6oo")
 double_slot = false
+scale = 1.0
 metadata/_custom_type_script = "uid://c4rw8efovyv70"
