@@ -58,7 +58,6 @@ other_door = NodePath("../../StanzaA/StanzaABasso")
 exit_shift = Vector2(-80, 80)
 
 [node name="Player" parent="Rooms/SalaComune" instance=ExtResource("5_72jju")]
-y_sort_enabled = true
 position = Vector2(479, 948)
 scale = Vector2(2.3, 2.3)
 

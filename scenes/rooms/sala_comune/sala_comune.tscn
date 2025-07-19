@@ -6,9 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="4_6ci5n"]
 
 [node name="SalaComune" type="Node2D"]
+y_sort_enabled = true
 script = ExtResource("1_4laur")
 
 [node name="StanzaCentraleSenzaTavolo" type="Sprite2D" parent="."]
+z_index = -1
 position = Vector2(960, 540)
 texture = ExtResource("2_u7nhs")
 
@@ -17,7 +19,7 @@ position = Vector2(960, 540)
 
 [node name="Tavolo" parent="." instance=ExtResource("3_ivb2t")]
 y_sort_enabled = true
-position = Vector2(913, 752)
+position = Vector2(950, 770)
 scale = Vector2(0.7, 0.7)
 
 [node name="Walls" type="Node2D" parent="."]

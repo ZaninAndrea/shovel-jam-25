@@ -4,11 +4,11 @@
 
 [node name="Tavolo" type="StaticBody2D"]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(75, -260)
-polygon = PackedVector2Array(-369, 275, -360, 428, -342, 451, -326, 458, -87, 501, 172, 443, 194, 427, 204, 414, 212, 271, 203, 251, 180, 234, 27, 221, -147, 219, -356, 246)
-
 [node name="Tavolo2" type="Sprite2D" parent="."]
-y_sort_enabled = true
-position = Vector2(21, 72)
+position = Vector2(28.01, -76)
 texture = ExtResource("1_gu2ia")
+offset = Vector2(0, 100)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(85.31, -309)
+polygon = PackedVector2Array(-361.31, 290, -360, 428, -342, 451, -326, 458, -87, 501, 95.69, 462, 158.69, 444, 183.69, 408, 187.69, 288, 163.69, 275, 114.69, 264, -61.31, 263, -147.31, 265, -327.31, 270)
