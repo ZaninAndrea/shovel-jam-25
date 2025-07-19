@@ -1,12 +1,16 @@
 extends CharacterBody2D
 class_name Player
 
-@export var speed := 400
+@export var speed := Vector2(400, 400)
 @export var push_force := speed / 3
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var interaction_area: Area2D = $InteractionArea
 @onready var push_area: Area2D = $PushArea
+
+var bottom_scale: float = 3.0
+var top_scale: float = 2.0
+var top_position: float = 1.0
 
 var can_push: bool
 var push_target: CharacterBody2D = null
@@ -51,7 +55,7 @@ func _physics_process(_delta):
 				animated_sprite_2d.flip_h = true
 			elif last_facing_direction < 0:
 				animated_sprite_2d.flip_h = false
-		velocity = direction  * speed
+		velocity = direction * speed
 		move_and_slide()
 	
 	# Push logic
@@ -67,6 +71,20 @@ func _physics_process(_delta):
 			else:
 				push_dir = Vector2(0, sign(direction.y))
 			push_target.push(push_dir * push_force)
+	
+	# Scale the player depending on its distance from the camera
+	var distance_from_bottom = (540 - get_viewport().get_camera_2d().to_local(global_position).y) / 1080
+	if distance_from_bottom > 1:
+		distance_from_bottom = 1
+	elif distance_from_bottom < -0.3:
+		distance_from_bottom = -0.3
+	
+	var interpolation_coeff = distance_from_bottom / top_position
+	var scale_factor: float = interpolation_coeff * top_scale \
+		+ (1-interpolation_coeff) * bottom_scale
+	
+	print("DISTANCE_FROM_BOTTOM: ", distance_from_bottom, " SCALE: ", scale_factor)
+	scale = Vector2.ONE * scale_factor
 
 
 func _on_push_area_body_entered(body: Node2D) -> void:

@@ -34,10 +34,15 @@ func _on_body_entered(body: Node2D):
 	
 	# Move the player over the door
 	
-func _move_player(player: Node, new_room: Room):
+func _move_player(player: Player, new_room: Room):
 	player.get_parent().remove_child(player)
 	new_room.add_child(player)
+	player.scale = Vector2.ONE
 	player.global_position = other_door.global_position + other_door.exit_shift
+	player.speed = new_room.speed;
+	player.bottom_scale = new_room.bottom_scale;
+	player.top_scale = new_room.top_scale;
+	player.top_position = new_room.top_position;
 	is_changing_room = false
 	
 func _find_player() -> Node:
