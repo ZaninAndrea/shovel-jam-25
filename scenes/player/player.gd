@@ -27,6 +27,8 @@ func _physics_process(_delta):
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
 	).normalized()
+	if InputFreeze.lock_input:
+		direction = Vector2.ZERO
 	if direction.x > 0.1 || direction.x < -0.1:
 		last_facing_direction = direction.x
 	
