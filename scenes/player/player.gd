@@ -75,9 +75,9 @@ func _physics_process(_delta):
 		else:
 			#print(last_facing_direction)
 			if last_facing_direction > 0:
-				animated_sprite_2d.flip_h = true
-			elif last_facing_direction < 0:
 				animated_sprite_2d.flip_h = false
+			elif last_facing_direction < 0:
+				animated_sprite_2d.flip_h = true
 		velocity = direction * speed * Vector2(scale_factor, 1.0)
 		move_and_slide()
 	
