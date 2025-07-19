@@ -89,10 +89,10 @@ func _physics_process(_delta):
 		if direction != Vector2.ZERO:
 			var push_dir = direction
 			# Force push direction to cardinal
-			if abs(direction.x) > abs(direction.y):
-				push_dir = Vector2(sign(direction.x), 0)
-			else:
-				push_dir = Vector2(0, sign(direction.y))
+			#if abs(direction.x) > abs(direction.y):
+				#push_dir = Vector2(sign(direction.x), 0)
+			#else:
+				#push_dir = Vector2(0, sign(direction.y))
 			push_target.push(push_dir * push_force * Vector2(scale_factor, 1.0))
 
 func _on_push_area_body_entered(body: Node2D) -> void:

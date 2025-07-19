@@ -1,18 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://ccccyck8raxp2"]
+[gd_scene load_steps=3 format=3 uid="uid://ccccyck8raxp2"]
 
 [ext_resource type="Script" uid="uid://bjl7cwxgw0ifc" path="res://scenes/objects/crate/crate.gd" id="1_q2skh"]
-[ext_resource type="Texture2D" uid="uid://7eqd8is6kypw" path="res://assets/sprites/items/cassa.png" id="2_q2skh"]
+[ext_resource type="Texture2D" uid="uid://b067wnvqofy61" path="res://assets/sprites/rooms/Armadio stanza B.png" id="2_q2skh"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4m5e"]
-size = Vector2(228, 240)
-
-[node name="Crate" type="CharacterBody2D" groups=["pushable"]]
+[node name="Armadio" type="CharacterBody2D" groups=["pushable"]]
+y_sort_enabled = true
 script = ExtResource("1_q2skh")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
-position = Vector2(-2, 32)
-shape = SubResource("RectangleShape2D_h4m5e")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
 texture = ExtResource("2_q2skh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-24, 203, -126, 199, 156, 413, 237, 414, 240, 382)

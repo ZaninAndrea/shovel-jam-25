@@ -45,7 +45,7 @@ other_door = NodePath("../../Cuccette/CuccetteBasso")
 exit_shift = Vector2(-150, 0)
 
 [node name="Player" parent="Rooms/SalaComune" instance=ExtResource("5_72jju")]
-z_index = 1
+y_sort_enabled = true
 position = Vector2(913, 629)
 scale = Vector2(2.3, 2.3)
 
@@ -69,17 +69,20 @@ other_door = NodePath("../../SalaComune/SalaComuneBasso")
 exit_shift = Vector2(0, 100)
 
 [node name="Cuccette" parent="Rooms" instance=ExtResource("5_mccq1")]
-position = Vector2(2485, 1594)
+position = Vector2(2896, 1635)
 
 [node name="CuccetteBasso" parent="Rooms/Cuccette" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-position = Vector2(898, 1092)
+position = Vector2(984, 1245)
 rotation = 3.14159
+scale = Vector2(5, 1)
 other_door = NodePath("../../SalaComune/SalaComuneDestra")
-exit_shift = Vector2(0, -150)
+exit_shift = Vector2(0, -200)
 
 [node name="CuccetteLato" parent="Rooms/Cuccette" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-position = Vector2(1906, 580)
-rotation = 1.5708
+visible = false
+position = Vector2(1767, 804)
+rotation = 0.436332
+scale = Vector2(1.5, 1)
 other_door = NodePath("../../StanzaB/StanzaBDoor")
 exit_shift = Vector2(-150, 0)
 
@@ -87,14 +90,18 @@ exit_shift = Vector2(-150, 0)
 position = Vector2(-2564, 1756)
 
 [node name="StanzaABasso" parent="Rooms/StanzaA" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-position = Vector2(962, 1092)
+visible = false
+position = Vector2(907, 1165)
 rotation = 3.14159
+scale = Vector2(6.55, 1)
 other_door = NodePath("../../SalaComune/SalaComuneSinistra")
 exit_shift = Vector2(0, -150)
 
 [node name="StanzaALato" parent="Rooms/StanzaA" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-position = Vector2(30, 563)
-rotation = 4.71239
+visible = false
+position = Vector2(164, 824)
+rotation = -0.523599
+scale = Vector2(1.92, 1)
 other_door = NodePath("../../Ripostiglio/RipostiglioDoor")
 exit_shift = Vector2(150, 0)
 
