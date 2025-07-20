@@ -1,5 +1,7 @@
 extends Enigma
 
+@onready var target: CharacterBody2D = $Target/Target
+
 @onready var laser_emitters: Array[Node2D] = [
 	$Emitter1/LaserEmitter1,
 	$Emitter2/LaserEmitter2,
@@ -26,6 +28,10 @@ var button_pressed: Array[bool] = [
 	false, false, false, false,
 	false, false, false, false
 ]
+
+
+func _ready() -> void:
+	target.solved.connect(solved_enigma)
 
 
 func _process(_delta: float) -> void:
@@ -103,4 +109,8 @@ func _on_button_8_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
-	print("Go back")
+	closed.emit()
+
+
+func solved_enigma():
+	solved.emit()

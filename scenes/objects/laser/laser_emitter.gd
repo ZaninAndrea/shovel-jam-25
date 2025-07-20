@@ -61,5 +61,5 @@ func cast_laser(start_pos: Vector2, angle: float):
 				last_target = null
 			points.append(current_origin + current_dir * max_distance)
 			break
-	
+
 	beam.points = points

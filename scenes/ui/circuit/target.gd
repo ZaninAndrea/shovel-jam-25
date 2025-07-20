@@ -1,8 +1,8 @@
 extends CharacterBody2D
 
-@onready var target_sprite: Sprite2D = $TargetSprite
-
 var laser_count := 0
+
+signal solved
 
 
 func register_laser_hit():
@@ -18,4 +18,7 @@ func unregister_laser_hit():
 func check_laser_state():
 	if laser_count == 1:
 		print("You Win")
-		target_sprite.visible == true
+		%TargetSprite.show()
+		# Delay a couple of seconds
+		await get_tree().create_timer(2.0).timeout
+		solved.emit()

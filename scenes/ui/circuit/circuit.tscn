@@ -49,6 +49,7 @@ height = 28.0
 radius = 111.45
 
 [node name="Circuit" type="Control"]
+top_level = true
 z_index = 5
 layout_mode = 3
 anchors_preset = 15
@@ -60,6 +61,7 @@ script = ExtResource("1_e7cct")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 show_behind_parent = true
+z_index = -9
 position = Vector2(963, 543.5)
 scale = Vector2(0.805858, 0.991863)
 texture = ExtResource("2_fdw8y")
@@ -240,7 +242,9 @@ grow_vertical = 2
 scale = Vector2(6.28707, 6.69538)
 
 [node name="LaserEmitter5" parent="Emitter5" instance=ExtResource("3_151nx")]
-position = Vector2(46.6668, 27.3332)
+top_level = true
+position = Vector2(1000, 202)
+rotation = 1.5708
 
 [node name="Label5" type="Label" parent="Emitter5"]
 layout_mode = 0
@@ -402,7 +406,7 @@ position = Vector2(755, 249)
 
 [node name="Mirror9" parent="Mirrors" instance=ExtResource("4_7eeye")]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(650, 556)
+position = Vector2(650, 559)
 
 [node name="Mirror10" parent="Mirrors" instance=ExtResource("4_7eeye")]
 modulate = Color(1, 1, 1, 0)
@@ -436,6 +440,9 @@ scale = Vector2(4, 4)
 position = Vector2(0.75, -0.75)
 shape = SubResource("CapsuleShape2D_ytff4")
 
+[node name="LaserEmitter" parent="AND Gates/AndGate" index="1"]
+position = Vector2(10.5, 0.5)
+
 [node name="AndGate2" parent="AND Gates" instance=ExtResource("5_151nx")]
 position = Vector2(661, 779)
 scale = Vector2(3.5, 3.5)
@@ -443,6 +450,9 @@ scale = Vector2(3.5, 3.5)
 [node name="CollisionShape2D" parent="AND Gates/AndGate2" index="0"]
 position = Vector2(0, -3.42857)
 shape = SubResource("CapsuleShape2D_r8pvu")
+
+[node name="LaserEmitter" parent="AND Gates/AndGate2" index="1"]
+position = Vector2(10.2857, 0.285714)
 
 [node name="AndGate3" parent="AND Gates" instance=ExtResource("5_151nx")]
 position = Vector2(1152, 525)
@@ -452,6 +462,10 @@ scale = Vector2(4, 4)
 position = Vector2(0, -0.75)
 shape = SubResource("CapsuleShape2D_bm1d6")
 
+[node name="LaserEmitter" parent="AND Gates/AndGate3" index="1"]
+top_level = true
+position = Vector2(1191, 523)
+
 [node name="AndGate4" parent="AND Gates" instance=ExtResource("5_151nx")]
 position = Vector2(417, 605)
 scale = Vector2(4, 4)
@@ -459,6 +473,9 @@ scale = Vector2(4, 4)
 [node name="CollisionShape2D" parent="AND Gates/AndGate4" index="0"]
 position = Vector2(0.75, 0)
 shape = SubResource("CapsuleShape2D_y2sms")
+
+[node name="LaserEmitter" parent="AND Gates/AndGate4" index="1"]
+position = Vector2(11.25, 0)
 
 [node name="Splitters" type="Control" parent="."]
 anchors_preset = 0
@@ -495,6 +512,9 @@ scale = Vector2(4, 4)
 position = Vector2(1.25, 0.125)
 shape = SubResource("RectangleShape2D_jf5r4")
 
+[node name="LaserEmitter" parent="XOR Gates/XorGate" index="1"]
+position = Vector2(10.25, -0.75)
+
 [node name="XorGate2" parent="XOR Gates" instance=ExtResource("7_o15gh")]
 position = Vector2(742, 676)
 scale = Vector2(5, 5)
@@ -514,8 +534,10 @@ scale = Vector2(5, 5)
 
 [node name="CollisionShape2D" parent="XOR Gates/XorGate4" index="0"]
 position = Vector2(-3.05176e-05, 0.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_v0igi")
+
+[node name="LaserEmitter" parent="XOR Gates/XorGate4" index="1"]
+position = Vector2(10.4, 0.399962)
 
 [node name="3AND Gates" type="Control" parent="."]
 anchors_preset = 0
@@ -575,6 +597,7 @@ script = ExtResource("12_4byp8")
 shape = SubResource("CircleShape2D_r8pvu")
 
 [node name="TargetSprite" type="Sprite2D" parent="Target/Target"]
+unique_name_in_owner = true
 visible = false
 modulate = Color(0.674337, 0.454587, 0.799328, 1)
 position = Vector2(5.49998, -4.99999)

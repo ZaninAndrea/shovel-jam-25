@@ -3,6 +3,8 @@ class_name EnigmaCircuit extends Area2D
 @onready var sphere: DroppedItem = $"../Sphere"
 @export var enigma: PackedScene = null
 
+const SPHERE_ACTIVE = preload("res://resources/items/sphere_active.tres")
+
 var enigma_instance: Enigma = null
 
 func interact():
@@ -31,3 +33,5 @@ func closed_enigma():
 func solved_enigma():
 	enigma_instance.queue_free()
 	enigma_instance = null
+	# Change the sphere typ to charged
+	sphere.item = SPHERE_ACTIVE
