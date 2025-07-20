@@ -36,7 +36,6 @@ func closed_enigma():
 	enigma_instance = null
 
 func solved_enigma():
-	print("solved")
 	enigma_instance.queue_free()
 	enigma_instance = null
 	# Change the sphere typ to charged

@@ -13,7 +13,6 @@ func enable():
 	camera_2d.make_current()
 
 func check_victory():
-	print(sphere_holder_1.item, " ", sphere_holder_2.item)
 	if sphere_holder_1.item == SPHERE_ACTIVE and sphere_holder_2.item==SPHERE_ACTIVE:
 		await get_tree().create_timer(0.8).timeout
 		get_tree().change_scene_to_packed(END_SCREEN)

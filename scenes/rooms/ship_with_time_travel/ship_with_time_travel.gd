@@ -28,7 +28,6 @@ func start_reset_sequence():
 	animation_player.play("before_reset")
 
 func end_reset_sequence():
-	print("END")
 	InputFreeze.lock_input = false
 	if !Lore.shown_space_message:
 		Lore.shown_space_message = true

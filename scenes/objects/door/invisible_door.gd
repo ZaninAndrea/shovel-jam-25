@@ -10,7 +10,6 @@ func _on_body_entered(body: Node2D):
 		return
 
 	if key != null and Inventory.find_item(key) == -1:
-		print("This door is locked")
 		return
 
 	if other_door == null:

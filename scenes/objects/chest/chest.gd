@@ -44,16 +44,13 @@ func interact():
 		dropped.item = drop
 		get_parent().add_child(dropped)
 		dropped.global_position = self.global_position + drop_offset
-		print("Dropped item spawned at ", dropped.global_position)
 
 	#	Remove the checst if needed
 	if consume_chest:
 		self.queue_free()
 	
-	print("here")
 	if !Lore.broke_chest:
 		Lore.broke_chest = true
-		print("resetting")
 		_find_ship_time_travel().start_delayed_reset()
 		
 func _find_ship_time_travel() -> ShipWithTimeTravel:

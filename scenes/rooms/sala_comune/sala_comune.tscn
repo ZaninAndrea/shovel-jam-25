@@ -97,5 +97,6 @@ texture = ExtResource("10_cx51i")
 [node name="InteractionArea" type="CollisionShape2D" parent="Poster" groups=["interactable"]]
 light_mask = 8
 visibility_layer = 2
+z_index = 10
 position = Vector2(1334, 700.25)
 shape = SubResource("RectangleShape2D_6dsgg")
