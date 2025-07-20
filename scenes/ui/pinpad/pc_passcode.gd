@@ -1,20 +1,20 @@
 extends Enigma
 
 var textures = {
-	"char1": preload("res://assets/sprites/Pinpad/Simbolo1.png"),
-	"char2": preload("res://assets/sprites/Pinpad/Simbolo2.png"),
-	"char3": preload("res://assets/sprites/Pinpad/Simbolo3.png"),
-	"char4": preload("res://assets/sprites/Pinpad/Simbolo4.png"),
-	"char5": preload("res://assets/sprites/Pinpad/Simbolo5.png"),
-	"char6": preload("res://assets/sprites/Pinpad/Simbolo6.png"),
-	"char7": preload("res://assets/sprites/Pinpad/Simbolo7.png")
+	"char1": preload("res://assets/sprites/Pinpad/Simbolo1_2.png"),
+	"char2": preload("res://assets/sprites/Pinpad/Simbolo2_2.png"),
+	"char3": preload("res://assets/sprites/Pinpad/Simbolo3_2.png"),
+	"char4": preload("res://assets/sprites/Pinpad/Simbolo4_2.png"),
+	"char5": preload("res://assets/sprites/Pinpad/Simbolo5_2.png"),
+	"char6": preload("res://assets/sprites/Pinpad/Simbolo6_2.png"),
+	"char7": preload("res://assets/sprites/Pinpad/Simbolo7_2.png")
 }
 
 var solution: Array[String] = [
-	"char1",
-	"char2",
-	"char3",
-	"char1"
+	"char5",
+	"char4",
+	"char7",
+	"char2"
 ]
 
 var current_input: Array[String] = []

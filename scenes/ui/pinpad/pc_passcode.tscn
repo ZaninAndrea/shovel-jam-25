@@ -1,15 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://dgtnj3mfvmi5w"]
+[gd_scene load_steps=11 format=3 uid="uid://cnweuxe5f7yw4"]
 
-[ext_resource type="Script" uid="uid://dcsqu8pg67oax" path="res://scenes/ui/pinpad/pinpad.gd" id="1_og77o"]
-[ext_resource type="Texture2D" uid="uid://baxgykyjalxpe" path="res://assets/sprites/Pinpad/plancia enigma simboli.png" id="2_q6mly"]
-[ext_resource type="Texture2D" uid="uid://nbf70nubm3i0" path="res://assets/sprites/Pinpad/Simbolo1.png" id="3_8kdwr"]
-[ext_resource type="Texture2D" uid="uid://cte0ega8etlny" path="res://assets/sprites/Pinpad/Simbolo2.png" id="4_iv4uf"]
-[ext_resource type="Texture2D" uid="uid://dgw64nisbqped" path="res://assets/sprites/Pinpad/Simbolo3.png" id="5_m0w4x"]
-[ext_resource type="Texture2D" uid="uid://do0m1mq6e3igq" path="res://assets/sprites/Pinpad/Simbolo4.png" id="6_2rbkh"]
-[ext_resource type="Texture2D" uid="uid://dwgsh53wcqpwp" path="res://assets/sprites/Pinpad/Simbolo5.png" id="7_qltg1"]
-[ext_resource type="Texture2D" uid="uid://dlc16hr8vb53h" path="res://assets/sprites/Pinpad/Simbolo6.png" id="8_3rjxy"]
-[ext_resource type="Texture2D" uid="uid://dqhgmf1mei6gy" path="res://assets/sprites/Pinpad/Simbolo7.png" id="9_bxsk2"]
-[ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="10_8kdwr"]
+[ext_resource type="Script" uid="uid://xsm88hofruub" path="res://scenes/ui/pinpad/pc_passcode.gd" id="1_isg46"]
+[ext_resource type="Texture2D" uid="uid://baxgykyjalxpe" path="res://assets/sprites/Pinpad/plancia enigma simboli.png" id="2_386ce"]
+[ext_resource type="Texture2D" uid="uid://f6bmww1staiu" path="res://assets/sprites/Pinpad/Simbolo1_2.png" id="3_isg46"]
+[ext_resource type="Texture2D" uid="uid://djf7wox5k8p28" path="res://assets/sprites/Pinpad/Simbolo2_2.png" id="4_386ce"]
+[ext_resource type="Texture2D" uid="uid://yotkr1arjmul" path="res://assets/sprites/Pinpad/Simbolo3_2.png" id="5_yc0lb"]
+[ext_resource type="Texture2D" uid="uid://80vikg6io1m0" path="res://assets/sprites/Pinpad/Simbolo4_2.png" id="6_x7nn8"]
+[ext_resource type="Texture2D" uid="uid://cjour3csd55qd" path="res://assets/sprites/Pinpad/Simbolo5_2.png" id="7_lrmkj"]
+[ext_resource type="Texture2D" uid="uid://dabtt7a3jvq77" path="res://assets/sprites/Pinpad/Simbolo6_2.png" id="8_w1jhx"]
+[ext_resource type="Texture2D" uid="uid://cuulyffyew1ia" path="res://assets/sprites/Pinpad/Simbolo7_2.png" id="9_8ku2u"]
+[ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="10_a61n5"]
 
 [node name="Pinpad" type="Control"]
 z_index = 5
@@ -19,12 +19,12 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_og77o")
+script = ExtResource("1_isg46")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(754, 545)
 scale = Vector2(0.8191, 0.78392)
-texture = ExtResource("2_q6mly")
+texture = ExtResource("2_386ce")
 
 [node name="Slot1" type="TextureRect" parent="."]
 layout_mode = 0
@@ -81,7 +81,7 @@ offset_bottom = -29.0
 [node name="Sprite2D" type="Sprite2D" parent="Buttons"]
 position = Vector2(436, -121)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_8kdwr")
+texture = ExtResource("3_isg46")
 
 [node name="TextureButton2" type="Button" parent="Buttons"]
 modulate = Color(1, 1, 1, 0)
@@ -94,7 +94,7 @@ offset_bottom = 31.0
 [node name="Sprite2D2" type="Sprite2D" parent="Buttons"]
 position = Vector2(721, -67)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_iv4uf")
+texture = ExtResource("4_386ce")
 
 [node name="TextureButton3" type="Button" parent="Buttons"]
 modulate = Color(1, 1, 1, 0)
@@ -107,7 +107,7 @@ offset_bottom = 116.0
 [node name="Sprite2D3" type="Sprite2D" parent="Buttons"]
 position = Vector2(210, 32)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_m0w4x")
+texture = ExtResource("5_yc0lb")
 
 [node name="TextureButton4" type="Button" parent="Buttons"]
 modulate = Color(1, 1, 1, 0)
@@ -120,7 +120,7 @@ offset_bottom = 214.0
 [node name="Sprite2D4" type="Sprite2D" parent="Buttons"]
 position = Vector2(477, 123)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_2rbkh")
+texture = ExtResource("6_x7nn8")
 
 [node name="TextureButton5" type="Button" parent="Buttons"]
 modulate = Color(1, 1, 1, 0)
@@ -133,7 +133,7 @@ offset_bottom = 279.0
 [node name="Sprite2D5" type="Sprite2D" parent="Buttons"]
 position = Vector2(745, 180)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_qltg1")
+texture = ExtResource("7_lrmkj")
 
 [node name="TextureButton6" type="Button" parent="Buttons"]
 modulate = Color(1, 1, 1, 0)
@@ -146,7 +146,7 @@ offset_bottom = 374.0
 [node name="Sprite2D6" type="Sprite2D" parent="Buttons"]
 position = Vector2(236, 278)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_3rjxy")
+texture = ExtResource("8_w1jhx")
 
 [node name="TextureButton7" type="Button" parent="Buttons"]
 modulate = Color(1, 1, 1, 0)
@@ -159,7 +159,7 @@ offset_bottom = 457.0
 [node name="Sprite2D7" type="Sprite2D" parent="Buttons"]
 position = Vector2(527, 367)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("9_bxsk2")
+texture = ExtResource("9_8ku2u")
 
 [node name="Back Button" type="Button" parent="."]
 layout_mode = 0
@@ -167,7 +167,7 @@ offset_left = 1390.0
 offset_top = 158.0
 offset_right = 1755.0
 offset_bottom = 289.0
-theme = ExtResource("10_8kdwr")
+theme = ExtResource("10_a61n5")
 text = "GO BACK"
 
 [node name="Cancel" type="Button" parent="."]
@@ -176,7 +176,7 @@ offset_left = 1390.0
 offset_top = 771.0
 offset_right = 1755.0
 offset_bottom = 902.0
-theme = ExtResource("10_8kdwr")
+theme = ExtResource("10_a61n5")
 text = "CANCEL"
 
 [connection signal="pressed" from="Buttons/TextureButton" to="." method="_on_texture_button_pressed"]

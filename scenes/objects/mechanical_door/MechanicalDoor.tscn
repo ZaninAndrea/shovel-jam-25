@@ -22,7 +22,7 @@ sprites = ExtResource("2_u85oo")
 position = Vector2(5, -308)
 sprite_frames = ExtResource("2_u85oo")
 animation = &"unlocked"
-frame_progress = 0.958419
+frame_progress = 0.141344
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("4_ct7rl")]
 visible = false

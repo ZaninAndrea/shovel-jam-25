@@ -1,5 +1,15 @@
-extends Enigma
+extends Area2D
+
+@export var poster: PackedScene = null
+var poster_instance: Enigma = null
+
+func interact():
+	var poster_scene = poster.instantiate()
+	poster_instance = poster_scene
+	get_tree().current_scene.add_child(poster_instance)
+	poster_instance.closed.connect(closed_poster)
 
 
-func _on_back_button_pressed() -> void:
-	closed.emit()
+func closed_poster():
+	poster_instance.queue_free()
+	poster_instance = null

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b0rv67641i12o" path="res://assets/sprites/paper_popup_cut.png" id="4_71hwk"]
 [ext_resource type="FontFile" uid="uid://d1udguboqc78k" path="res://assets/fonts/Emocja.ttf" id="5_cdtds"]
 [ext_resource type="Texture2D" uid="uid://cjour3csd55qd" path="res://assets/sprites/Pinpad/Simbolo5_2.png" id="6_fw2qj"]
-[ext_resource type="Texture2D" uid="uid://80vikg6io1m0" path="res://assets/sprites/Pinpad/Simbolo4_4.png" id="7_1micn"]
+[ext_resource type="Texture2D" uid="uid://80vikg6io1m0" path="res://assets/sprites/Pinpad/Simbolo4_2.png" id="7_1micn"]
 [ext_resource type="Texture2D" uid="uid://cuulyffyew1ia" path="res://assets/sprites/Pinpad/Simbolo7_2.png" id="8_71hwk"]
 [ext_resource type="Texture2D" uid="uid://djf7wox5k8p28" path="res://assets/sprites/Pinpad/Simbolo2_2.png" id="9_cdtds"]
 

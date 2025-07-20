@@ -1,0 +1,38 @@
+class_name Computer extends Area2D
+
+@export var enigma: PackedScene = null
+@export_enum("locked", "unlocked") var state: String = "locked"
+var enigma_instance: Enigma = null
+
+func interact():
+	if state == "locked":
+		if enigma == null:
+			push_error("Null enigma with locked computer")
+			return
+		
+		if enigma_instance != null:
+			return
+		
+		var enigma_scene = enigma.instantiate()
+		if not enigma_scene is Enigma:
+			push_error("Enigma scene does not extend enigma")
+		
+		enigma_instance = enigma_scene
+		get_tree().current_scene.add_child(enigma_instance)
+		
+		enigma_instance.closed.connect(closed_enigma)
+		enigma_instance.solved.connect(solved_enigma)
+	
+	else: 
+		# If it is unlocked, activate the badge
+		print("I'm active!")
+		return
+
+func closed_enigma():
+	enigma_instance.queue_free()
+	enigma_instance = null
+
+func solved_enigma():
+	state = "unlocked"
+	enigma_instance.queue_free()
+	enigma_instance = null
