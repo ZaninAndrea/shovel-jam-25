@@ -140,12 +140,17 @@ exit_shift = Vector2(-150, 0)
 
 [node name="StanzaB" parent="Rooms" instance=ExtResource("11_resca")]
 position = Vector2(1532, 4703)
+bottom_scale = 3.5
+top_scale = 1.7
+top_position = 0.3
 
 [node name="StanzaBDoor" parent="Rooms/StanzaB" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-position = Vector2(22, 623)
-rotation = 4.71239
+visible = false
+position = Vector2(368, 835)
+rotation = -0.607375
+scale = Vector2(1.87, 1)
 other_door = NodePath("../../Cuccette/CuccetteLato")
-exit_shift = Vector2(200, 0)
+exit_shift = Vector2(200, 70)
 
 [node name="HUD" type="CanvasLayer" parent="."]
 
