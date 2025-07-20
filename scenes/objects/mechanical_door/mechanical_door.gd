@@ -19,6 +19,8 @@ func _ready() -> void:
 	animated_sprite_2d.sprite_frames = sprites
 	animated_sprite_2d.play(state)
 	apply_state(state)
+	
+	Inventory.item_set.connect(check_lock_again)
 
 func apply_state(new_state: String):
 	# This function may be called before @onready
@@ -30,6 +32,15 @@ func apply_state(new_state: String):
 			door_lock.position.y -= 30
 		elif new_state != "open" and state == "open":
 			door_lock.position.y += 30
+			
+func check_lock_again(a,b):
+	if key == null:
+		return
+		
+	if Inventory.find_item(key) == -1:
+		state = "locked"
+		return
+
 
 func _on_enter_door_area_body_entered(body: Node2D) -> void:
 	if is_changing_room:
