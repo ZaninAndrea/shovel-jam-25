@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://c8vv4uusj05es"
-path="res://.godot/imported/Build:Place_6.wav-2189bf2ba138616d2b64935e103d80c8.sample"
+path="res://.godot/imported/BuildPlace_6.wav-53687ace41b7d613c578e39a6e4a41c0.sample"
 
 [deps]
 
-source_file="res://assets/audio/rottura oggetti/Build:Place_6.wav"
-dest_files=["res://.godot/imported/Build:Place_6.wav-2189bf2ba138616d2b64935e103d80c8.sample"]
+source_file="res://assets/audio/rottura oggetti/BuildPlace_6.wav"
+dest_files=["res://.godot/imported/BuildPlace_6.wav-53687ace41b7d613c578e39a6e4a41c0.sample"]
 
 [params]
 
