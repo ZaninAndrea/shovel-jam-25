@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://tg82e203x15d"]
 
-[ext_resource type="Script" uid="uid://dia8fyfgaammb" path="res://scenes/objects/Posters/poster.gd" id="1_hjj5a"]
+[ext_resource type="Script" uid="uid://cde8a1kikrady" path="res://scenes/objects/Posters/poster_ui_handle.gd" id="1_hjj5a"]
 [ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="2_odhvj"]
 [ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="3_lktxg"]
 [ext_resource type="Texture2D" uid="uid://b0rv67641i12o" path="res://assets/sprites/paper_popup_cut.png" id="4_beanq"]
@@ -15,7 +15,7 @@ anchors_preset = 0
 script = ExtResource("1_hjj5a")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(584, 468)
+position = Vector2(595, 542)
 scale = Vector2(0.5, 0.532385)
 texture = ExtResource("2_odhvj")
 
@@ -61,22 +61,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Simbolo1" type="Sprite2D" parent="."]
-position = Vector2(282, 480)
+position = Vector2(293, 554)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("6_sk6xf")
 
 [node name="Simbolo2" type="Sprite2D" parent="."]
-position = Vector2(477, 448)
+position = Vector2(488, 522)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("7_43d5y")
 
 [node name="Simbolo3" type="Sprite2D" parent="."]
-position = Vector2(672, 480)
+position = Vector2(683, 554)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("8_o4i0j")
 
 [node name="Simbolo4" type="Sprite2D" parent="."]
-position = Vector2(850, 455)
+position = Vector2(861, 529)
 rotation = -0.261799
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("6_sk6xf")

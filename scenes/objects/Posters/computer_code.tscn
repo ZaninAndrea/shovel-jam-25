@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://d0lyn3s4v107i"]
 
-[ext_resource type="Script" uid="uid://dia8fyfgaammb" path="res://scenes/objects/Posters/poster.gd" id="1_fh34t"]
+[ext_resource type="Script" uid="uid://cde8a1kikrady" path="res://scenes/objects/Posters/poster_ui_handle.gd" id="1_fw2qj"]
 [ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="2_fw2qj"]
 [ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="3_1micn"]
 [ext_resource type="Texture2D" uid="uid://b0rv67641i12o" path="res://assets/sprites/paper_popup_cut.png" id="4_71hwk"]
@@ -10,13 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://cuulyffyew1ia" path="res://assets/sprites/Pinpad/Simbolo7_2.png" id="8_71hwk"]
 [ext_resource type="Texture2D" uid="uid://djf7wox5k8p28" path="res://assets/sprites/Pinpad/Simbolo2_2.png" id="9_cdtds"]
 
-[node name="CodeDoor" type="Control"]
+[node name="CodeComputer" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_fh34t")
+script = ExtResource("1_fw2qj")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(584, 468)
+position = Vector2(604, 585)
 scale = Vector2(0.5, 0.532385)
 texture = ExtResource("2_fw2qj")
 
@@ -62,22 +62,22 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Simbolo1" type="Sprite2D" parent="."]
-position = Vector2(282, 480)
+position = Vector2(302, 597)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("6_fw2qj")
 
 [node name="Simbolo2" type="Sprite2D" parent="."]
-position = Vector2(477, 448)
+position = Vector2(497, 565)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("7_1micn")
 
 [node name="Simbolo3" type="Sprite2D" parent="."]
-position = Vector2(672, 480)
+position = Vector2(692, 597)
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("8_71hwk")
 
 [node name="Simbolo4" type="Sprite2D" parent="."]
-position = Vector2(850, 455)
+position = Vector2(870, 572)
 rotation = -0.261799
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("9_cdtds")

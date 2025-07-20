@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ryss6rhhwk0i"]
+[gd_scene load_steps=13 format=3 uid="uid://ryss6rhhwk0i"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_2ovkv"]
 [ext_resource type="Texture2D" uid="uid://drvhsa00esihh" path="res://assets/sprites/rooms/Stanza B_1920x1080.jpg" id="2_ilnad"]
@@ -8,6 +8,12 @@
 [ext_resource type="Resource" uid="uid://dtysatcy7i5im" path="res://resources/items/saldatrice.tres" id="5_vae3v"]
 [ext_resource type="PackedScene" uid="uid://1sg0hvmx3j1h" path="res://scenes/objects/divider/divider.tscn" id="6_ceyv1"]
 [ext_resource type="Texture2D" uid="uid://c3upea6l5fsqi" path="res://assets/sprites/items/piede di porco.png" id="8_fwec3"]
+[ext_resource type="Script" uid="uid://dia8fyfgaammb" path="res://scenes/objects/Posters/poster.gd" id="9_irfok"]
+[ext_resource type="PackedScene" uid="uid://tg82e203x15d" path="res://scenes/objects/Posters/door_code.tscn" id="10_2fao8"]
+[ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="11_1ocon"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45lbt"]
+size = Vector2(251, 89)
 
 [node name="StanzaA" type="Node2D"]
 script = ExtResource("1_2ovkv")
@@ -106,5 +112,25 @@ position = Vector2(-1.49999, -2.00002)
 position = Vector2(29.4998, 61.5001)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("8_fwec3")
+
+[node name="Poster" type="Area2D" parent="." groups=["interactable"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("9_irfok")
+poster = ExtResource("10_2fao8")
+
+[node name="Sprite2D" type="Sprite2D" parent="Poster"]
+position = Vector2(1827, 597)
+rotation = 1.5708
+scale = Vector2(0.08, 0.08)
+skew = 0.534071
+texture = ExtResource("11_1ocon")
+
+[node name="InteractionArea" type="CollisionShape2D" parent="Poster" groups=["interactable"]]
+light_mask = 8
+visibility_layer = 2
+position = Vector2(1792, 908)
+rotation = 0.645772
+shape = SubResource("RectangleShape2D_45lbt")
 
 [editable path="DroppedItem"]

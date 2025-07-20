@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cs3ubhatuxpt8"]
 
-[ext_resource type="Script" uid="uid://dia8fyfgaammb" path="res://scenes/objects/Posters/poster.gd" id="1_027yd"]
+[ext_resource type="Script" uid="uid://cde8a1kikrady" path="res://scenes/objects/Posters/poster_ui_handle.gd" id="1_kvnnw"]
 [ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="2_cldkc"]
 [ext_resource type="Texture2D" uid="uid://bo3swbe11c3da" path="res://assets/sprites/nave_mappa_senza parte superiore.png" id="3_sg4ac"]
 [ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="4_mca5g"]
@@ -10,7 +10,7 @@
 [node name="ShipMap" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-script = ExtResource("1_027yd")
+script = ExtResource("1_kvnnw")
 
 [node name="Sprite2D2" type="Sprite2D" parent="."]
 position = Vector2(583.986, 515)

@@ -1,4 +1,4 @@
-extends Area2D
+extends Node
 
 @export var poster: PackedScene = null
 var poster_instance: Enigma = null

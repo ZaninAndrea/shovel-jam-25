@@ -9,7 +9,7 @@ size = Vector2(107, 1576)
 [node name="Divider" type="StaticBody2D" groups=["interactable"]]
 z_index = -1
 y_sort_enabled = true
-collision_layer = 4
+collision_layer = 16384
 collision_mask = 7
 script = ExtResource("1_70ww4")
 
