@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://csslbadrp5juh"]
+
+[ext_resource type="Texture2D" uid="uid://dxdapb82xtxlc" path="res://assets/sprites/items/sfera_scarica.png" id="1_lcf14"]
+[ext_resource type="Script" uid="uid://c4rw8efovyv70" path="res://autoload/inventory/item.gd" id="2_5b2x4"]
+
+[resource]
+script = ExtResource("2_5b2x4")
+id = "sphere_inactive"
+name = "Sphere. It is not active."
+icon = ExtResource("1_lcf14")
+double_slot = false
+scale = 0.1
+metadata/_custom_type_script = "uid://c4rw8efovyv70"

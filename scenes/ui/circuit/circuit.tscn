@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bx88p364mjevi"]
+[gd_scene load_steps=24 format=3 uid="uid://bx88p364mjevi"]
 
 [ext_resource type="Script" uid="uid://dbyhuh3iate7d" path="res://scenes/ui/circuit/circuit.gd" id="1_e7cct"]
 [ext_resource type="Texture2D" uid="uid://71ftjo6t2ib" path="res://assets/sprites/circuito/circuito light fondo giallo.png" id="2_fdw8y"]
@@ -13,6 +13,37 @@
 [ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="11_5i57m"]
 [ext_resource type="Script" uid="uid://b86nl8wfflgty" path="res://scenes/ui/circuit/target.gd" id="12_4byp8"]
 [ext_resource type="Texture2D" uid="uid://d3jni4trs2wk4" path="res://assets/sprites/circuito/stella circuito.png" id="13_ytff4"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ytff4"]
+radius = 9.25
+height = 24.5
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_r8pvu"]
+height = 27.4286
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bm1d6"]
+radius = 9.25
+height = 24.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y2sms"]
+radius = 9.75
+height = 24.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jf5r4"]
+size = Vector2(17.5, 23.75)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gfd2t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v0igi"]
+size = Vector2(20, 14.6)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_v7qjq"]
+radius = 9.20001
+height = 23.6
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lrpx0"]
+radius = 9.75
+height = 28.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r8pvu"]
 radius = 111.45
@@ -401,17 +432,33 @@ offset_bottom = 40.0
 position = Vector2(483, 358)
 scale = Vector2(4, 4)
 
+[node name="CollisionShape2D" parent="AND Gates/AndGate" index="0"]
+position = Vector2(0.75, -0.75)
+shape = SubResource("CapsuleShape2D_ytff4")
+
 [node name="AndGate2" parent="AND Gates" instance=ExtResource("5_151nx")]
 position = Vector2(661, 779)
 scale = Vector2(3.5, 3.5)
+
+[node name="CollisionShape2D" parent="AND Gates/AndGate2" index="0"]
+position = Vector2(0, -3.42857)
+shape = SubResource("CapsuleShape2D_r8pvu")
 
 [node name="AndGate3" parent="AND Gates" instance=ExtResource("5_151nx")]
 position = Vector2(1152, 525)
 scale = Vector2(4, 4)
 
+[node name="CollisionShape2D" parent="AND Gates/AndGate3" index="0"]
+position = Vector2(0, -0.75)
+shape = SubResource("CapsuleShape2D_bm1d6")
+
 [node name="AndGate4" parent="AND Gates" instance=ExtResource("5_151nx")]
 position = Vector2(417, 605)
 scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" parent="AND Gates/AndGate4" index="0"]
+position = Vector2(0.75, 0)
+shape = SubResource("CapsuleShape2D_y2sms")
 
 [node name="Splitters" type="Control" parent="."]
 anchors_preset = 0
@@ -444,6 +491,10 @@ offset_bottom = 40.0
 position = Vector2(416, 770)
 scale = Vector2(4, 4)
 
+[node name="CollisionShape2D" parent="XOR Gates/XorGate" index="0"]
+position = Vector2(1.25, 0.125)
+shape = SubResource("RectangleShape2D_jf5r4")
+
 [node name="XorGate2" parent="XOR Gates" instance=ExtResource("7_o15gh")]
 position = Vector2(742, 676)
 scale = Vector2(5, 5)
@@ -452,10 +503,19 @@ scale = Vector2(5, 5)
 position = Vector2(987, 860)
 scale = Vector2(4.8, 4.8)
 
+[node name="CollisionShape2D" parent="XOR Gates/XorGate3" index="0"]
+position = Vector2(0.208333, -2.29167)
+shape = SubResource("RectangleShape2D_gfd2t")
+
 [node name="XorGate4" parent="XOR Gates" instance=ExtResource("7_o15gh")]
 position = Vector2(658, 358)
 rotation = 1.5708
 scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" parent="XOR Gates/XorGate4" index="0"]
+position = Vector2(-3.05176e-05, 0.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_v0igi")
 
 [node name="3AND Gates" type="Control" parent="."]
 anchors_preset = 0
@@ -465,6 +525,9 @@ offset_bottom = 40.0
 [node name="3AndGate" parent="3AND Gates" instance=ExtResource("8_f0nxm")]
 position = Vector2(1281, 618)
 scale = Vector2(5, 5)
+
+[node name="CollisionShape2D" parent="3AND Gates/3AndGate" index="0"]
+shape = SubResource("CapsuleShape2D_v7qjq")
 
 [node name="NOT Gates" type="Control" parent="."]
 anchors_preset = 0
@@ -479,6 +542,10 @@ scale = Vector2(3.5, 3.5)
 position = Vector2(845, 454)
 rotation = 1.5708
 scale = Vector2(4, 4)
+
+[node name="CollisionShape2D" parent="NOT Gates/NotGate2" index="0"]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_lrpx0")
 
 [node name="NotGate3" parent="NOT Gates" instance=ExtResource("9_fdw8y")]
 position = Vector2(999, 340)
@@ -523,3 +590,13 @@ texture = ExtResource("13_ytff4")
 [connection signal="pressed" from="Emitter7/Button7" to="." method="_on_button_7_pressed"]
 [connection signal="pressed" from="Emitter8/Button8" to="." method="_on_button_8_pressed"]
 [connection signal="pressed" from="Back Button" to="." method="_on_back_pressed"]
+
+[editable path="AND Gates/AndGate"]
+[editable path="AND Gates/AndGate2"]
+[editable path="AND Gates/AndGate3"]
+[editable path="AND Gates/AndGate4"]
+[editable path="XOR Gates/XorGate"]
+[editable path="XOR Gates/XorGate3"]
+[editable path="XOR Gates/XorGate4"]
+[editable path="3AND Gates/3AndGate"]
+[editable path="NOT Gates/NotGate2"]
