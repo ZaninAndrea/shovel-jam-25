@@ -1,4 +1,4 @@
-extends Node2D
+class_name ShipWithTimeTravel extends Node2D
 
 @export_range(1,180,1,"suffix:s") var time_between_travels: int = 30
 @onready var sub_viewport: SubViewport = $SubViewport
@@ -18,7 +18,10 @@ func _ready():
 		noise_player.play()
 		Clock.reset()
 		animation_player.play("after_reset")
-		
+
+func start_delayed_reset():
+	await get_tree().create_timer(10.0).timeout
+	start_reset_sequence()
 	
 func start_reset_sequence():
 	InputFreeze.lock_input = true

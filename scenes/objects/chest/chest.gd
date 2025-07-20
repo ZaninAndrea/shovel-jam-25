@@ -49,3 +49,15 @@ func interact():
 	#	Remove the checst if needed
 	if consume_chest:
 		self.queue_free()
+	
+	print("here")
+	if !Lore.broke_chest:
+		Lore.broke_chest = true
+		print("resetting")
+		_find_ship_time_travel().start_delayed_reset()
+		
+func _find_ship_time_travel() -> ShipWithTimeTravel:
+	for node in get_tree().get_nodes_in_group("timetravelship"):
+		return node
+		
+	return null

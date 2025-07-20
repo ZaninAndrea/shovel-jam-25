@@ -37,6 +37,7 @@ pushable=""
 mirror=""
 interactable=""
 laser_target=""
+timetravelship=""
 
 [gui]
 

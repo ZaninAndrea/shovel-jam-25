@@ -208,7 +208,7 @@ _data = {
 &"before_reset": SubResource("Animation_8o1ar")
 }
 
-[node name="ShipWithTimeTravel" type="Node2D"]
+[node name="ShipWithTimeTravel" type="Node2D" groups=["timetravelship"]]
 script = ExtResource("1_xxee6")
 time_between_travels = 180
 time_travelling = true
