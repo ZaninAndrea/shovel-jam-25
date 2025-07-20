@@ -83,7 +83,150 @@ position = Vector2(1381, 660)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_vovv2")
 
+[node name="SettingsMenu" type="Control" parent="."]
+visible = false
+top_level = true
+z_index = 10
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AudioSettings" type="VBoxContainer" parent="SettingsMenu"]
+layout_mode = 2
+offset_left = 245.0
+offset_top = 184.0
+offset_right = 755.0
+offset_bottom = 556.0
+size_flags_horizontal = 0
+
+[node name="Label" type="Label" parent="SettingsMenu/AudioSettings"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+text = "AUDIO SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="SettingsMenu/AudioSettings"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="SettingsMenu/AudioSettings/HBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "MASTER
+"
+horizontal_alignment = 1
+
+[node name="MasterSlider" type="HSlider" parent="SettingsMenu/AudioSettings/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="SettingsMenu/AudioSettings"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="SettingsMenu/AudioSettings/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "MUSIC
+"
+horizontal_alignment = 1
+
+[node name="MusicSlider" type="HSlider" parent="SettingsMenu/AudioSettings/HBoxContainer2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="SettingsMenu/AudioSettings"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Label" type="Label" parent="SettingsMenu/AudioSettings/HBoxContainer3"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "SFX
+"
+horizontal_alignment = 1
+
+[node name="SFXSlider" type="HSlider" parent="SettingsMenu/AudioSettings/HBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+
+[node name="HowToPlay" type="VBoxContainer" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 981.0
+offset_top = 202.0
+offset_right = 1664.0
+offset_bottom = 748.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="SettingsMenu/HowToPlay"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 48
+text = "How to Play"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="SettingsMenu/HowToPlay"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "- Move With arrow Keys"
+vertical_alignment = 1
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="SettingsMenu/HowToPlay"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "- Push I to interact with objects"
+vertical_alignment = 1
+
+[node name="RichTextLabel4" type="RichTextLabel" parent="SettingsMenu/HowToPlay"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "- Hold E to push/drag some objects"
+vertical_alignment = 1
+
+[node name="RichTextLabel5" type="RichTextLabel" parent="SettingsMenu/HowToPlay"]
+custom_minimum_size = Vector2(0, 130)
+layout_mode = 2
+theme_override_font_sizes/normal_font_size = 32
+text = "- You can have up to 2 Items: push their corresponding button to use them"
+vertical_alignment = 1
+
+[node name="CloseSettings" type="Button" parent="SettingsMenu"]
+layout_mode = 0
+offset_left = 351.0
+offset_top = 635.0
+offset_right = 669.0
+offset_bottom = 747.0
+text = "BACK
+"
+
 [node name="Backgound" type="TextureRect" parent="."]
+z_index = -10
 texture_repeat = 2
 material = SubResource("ShaderMaterial_kiqgm")
 layout_mode = 1
@@ -96,9 +239,12 @@ texture = ExtResource("2_247la")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_qgo02")
-volume_db = -10.0
 bus = &"Soundtrack"
 
 [connection signal="pressed" from="Menu/VBoxContainer/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Settings" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="Menu/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="SettingsMenu/AudioSettings/HBoxContainer/MasterSlider" to="." method="_on_master_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/AudioSettings/HBoxContainer2/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="SettingsMenu/AudioSettings/HBoxContainer3/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
+[connection signal="pressed" from="SettingsMenu/CloseSettings" to="." method="_on_close_settings_pressed"]
