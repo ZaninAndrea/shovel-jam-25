@@ -1,10 +1,10 @@
 class_name EnigmaCircuit extends Area2D
 
-@onready var sphere: DroppedItem = $"../Sphere"
+@onready var sphere: SphereHolder = $"../SphereHolder"
 @export var enigma: PackedScene = null
 
 const SPHERE_ACTIVE = preload("res://resources/items/sphere_active.tres")
-
+const SPHERE_INACTIVE = preload("res://resources/items/sphere_inactive.tres")
 var enigma_instance: Enigma = null
 
 func interact():
@@ -13,6 +13,11 @@ func interact():
 		return
 	
 	if enigma_instance != null:
+		return
+		
+	if sphere.item != SPHERE_INACTIVE:
+		SFX.play("boop")
+		UIManager.show_feedback("There is no sphere to charge")
 		return
 	
 	var enigma_scene = enigma.instantiate()
@@ -31,6 +36,7 @@ func closed_enigma():
 	enigma_instance = null
 
 func solved_enigma():
+	print("solved")
 	enigma_instance.queue_free()
 	enigma_instance = null
 	# Change the sphere typ to charged

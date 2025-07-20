@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bccl4sqjl4dgq"]
+[gd_scene load_steps=13 format=3 uid="uid://bccl4sqjl4dgq"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_7tny3"]
 [ext_resource type="PackedScene" uid="uid://b2evmjpyxf41w" path="res://scenes/objects/temporary_floor/temporary_floor.tscn" id="2_4ql07"]
@@ -6,8 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="3_wlqq5"]
 [ext_resource type="Script" uid="uid://b8q4xy0rsbohv" path="res://scenes/rooms/stanzaB/enigma_circuito.gd" id="5_wo2ym"]
 [ext_resource type="PackedScene" uid="uid://bx88p364mjevi" path="res://scenes/ui/circuit/circuit.tscn" id="6_snx6f"]
-[ext_resource type="PackedScene" uid="uid://bi1b1x3qm07g3" path="res://scenes/objects/dropped_item/dropped_item.tscn" id="6_xg4cf"]
 [ext_resource type="Resource" uid="uid://csslbadrp5juh" path="res://resources/items/sphere_inactive.tres" id="7_xg4cf"]
+[ext_resource type="PackedScene" uid="uid://up8xucsjmqbw" path="res://scenes/objects/sphere_holder/sphere_holder.tscn" id="8_00vte"]
 [ext_resource type="Texture2D" uid="uid://dxdapb82xtxlc" path="res://assets/sprites/items/sfera_scarica.png" id="8_xg4cf"]
 
 [sub_resource type="Image" id="Image_snx6f"]
@@ -23,10 +23,7 @@ data = {
 image = SubResource("Image_snx6f")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fasdr"]
-size = Vector2(409, 178)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_r5cap"]
-size = Vector2(30, 9.075)
+size = Vector2(567.5, 168)
 
 [node name="StanzaB" type="Node2D"]
 script = ExtResource("1_7tny3")
@@ -91,28 +88,27 @@ position = Vector2(1044, 1145)
 scale = Vector2(29.65, 1.09)
 
 [node name="Circuito" type="Area2D" parent="." groups=["interactable"]]
+position = Vector2(836, 857)
 collision_layer = 8
 script = ExtResource("5_wo2ym")
 enigma = ExtResource("6_snx6f")
 
 [node name="InteractionArea" type="CollisionShape2D" parent="Circuito" groups=["interactable"]]
-position = Vector2(951, 842)
+position = Vector2(-3, 1)
 shape = SubResource("RectangleShape2D_fasdr")
 
-[node name="Sphere" parent="." instance=ExtResource("6_xg4cf")]
-y_sort_enabled = true
-position = Vector2(1307, 668)
-scale = Vector2(8, 8)
+[node name="SphereHolder" parent="." instance=ExtResource("8_00vte")]
+z_index = -1
+position = Vector2(1304, 851)
+target_item = ExtResource("7_xg4cf")
 item = ExtResource("7_xg4cf")
 
-[node name="CollisionShape2D" parent="Sphere" index="0"]
-position = Vector2(0.375, 21.2875)
-shape = SubResource("RectangleShape2D_r5cap")
+[node name="CollisionShape2D" parent="SphereHolder" index="0"]
+position = Vector2(-5, -21)
 
-[node name="Sprite2D" parent="Sphere" index="1"]
-y_sort_enabled = true
-position = Vector2(2.13832e-06, -0.875001)
-scale = Vector2(0.1, 0.1)
+[node name="Sprite2D" parent="SphereHolder" index="1"]
+position = Vector2(1.00001, -190)
+scale = Vector2(0.903846, 0.903846)
 texture = ExtResource("8_xg4cf")
 
-[editable path="Sphere"]
+[editable path="SphereHolder"]
