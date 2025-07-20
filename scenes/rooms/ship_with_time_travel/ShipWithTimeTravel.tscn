@@ -232,6 +232,7 @@ libraries = {
 stream = ExtResource("5_8o1ar")
 volume_db = -10.0
 bus = &"Soundtrack"
+parameters/looping = true
 
 [node name="NoisePlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("5_5to18")
