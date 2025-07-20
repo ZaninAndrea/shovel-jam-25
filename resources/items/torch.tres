@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://311nohfxqdke"]
+
+[ext_resource type="Texture2D" uid="uid://dpdvwdrun1wrh" path="res://assets/sprites/items/sole portatile - torcia.png" id="1_d17os"]
+[ext_resource type="Script" uid="uid://c4rw8efovyv70" path="res://autoload/inventory/item.gd" id="2_kdbb6"]
+
+[resource]
+script = ExtResource("2_kdbb6")
+id = "torch"
+name = "Torch"
+icon = ExtResource("1_d17os")
+double_slot = false
+scale = 0.1
+metadata/_custom_type_script = "uid://c4rw8efovyv70"

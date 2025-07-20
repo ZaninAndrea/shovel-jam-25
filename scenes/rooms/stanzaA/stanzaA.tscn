@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://drvhsa00esihh" path="res://assets/sprites/rooms/Stanza B_1920x1080.jpg" id="2_ilnad"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="3_er5tl"]
 [ext_resource type="PackedScene" uid="uid://bi1b1x3qm07g3" path="res://scenes/objects/dropped_item/dropped_item.tscn" id="4_ilnad"]
-[ext_resource type="Resource" uid="uid://x24ae5hu0ojh" path="res://resources/items/badge.tres" id="5_ceyv1"]
+[ext_resource type="Resource" uid="uid://bc5yjxgdixiqn" path="res://resources/items/crowbar.tres" id="5_ilnad"]
 
 [node name="StanzaA" type="Node2D"]
 script = ExtResource("1_2ovkv")
@@ -84,5 +84,7 @@ scale = Vector2(4, 1.09)
 position = Vector2(960, 540)
 
 [node name="DroppedItem" parent="." instance=ExtResource("4_ilnad")]
-position = Vector2(453, 914)
-item = ExtResource("5_ceyv1")
+position = Vector2(547, 765)
+rotation = 3.14159
+scale = Vector2(2, 2)
+item = ExtResource("5_ilnad")

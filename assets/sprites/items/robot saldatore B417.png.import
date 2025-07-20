@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c3upea6l5fsqi"
-path="res://.godot/imported/piede di porco.png-6830200ce62d6c47a4256623469186ad.ctex"
+uid="uid://b08o8072f2i25"
+path="res://.godot/imported/robot saldatore B417.png-b9d658e73c9b76f096763895b26057d3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/items/piede di porco.png"
-dest_files=["res://.godot/imported/piede di porco.png-6830200ce62d6c47a4256623469186ad.ctex"]
+source_file="res://assets/sprites/items/robot saldatore B417.png"
+dest_files=["res://.godot/imported/robot saldatore B417.png-b9d658e73c9b76f096763895b26057d3.ctex"]
 
 [params]
 

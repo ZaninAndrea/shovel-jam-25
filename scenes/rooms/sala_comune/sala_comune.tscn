@@ -1,9 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://hvf1gaf47bwu"]
+[gd_scene load_steps=8 format=3 uid="uid://hvf1gaf47bwu"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_4laur"]
 [ext_resource type="Texture2D" uid="uid://8y0ebluy1341" path="res://assets/sprites/rooms/stanza centrale senza tavolo.jpg" id="2_u7nhs"]
 [ext_resource type="PackedScene" uid="uid://by6d6nmwyi8c8" path="res://scenes/rooms/sala_comune/tavolo.tscn" id="3_ivb2t"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="4_6ci5n"]
+[ext_resource type="PackedScene" uid="uid://k4jkbv3qye3q" path="res://scenes/objects/chest/chest.tscn" id="5_yw445"]
+[ext_resource type="Resource" uid="uid://bc5yjxgdixiqn" path="res://resources/items/crowbar.tres" id="6_7y7hj"]
+[ext_resource type="Resource" uid="uid://311nohfxqdke" path="res://resources/items/torch.tres" id="7_mimod"]
 
 [node name="SalaComune" type="Node2D"]
 y_sort_enabled = true
@@ -60,3 +63,14 @@ scale = Vector2(5, 0.432)
 position = Vector2(1877, 1058)
 rotation = -2.47837
 scale = Vector2(5, 0.432)
+
+[node name="Chest" parent="." instance=ExtResource("5_yw445")]
+position = Vector2(613, 588)
+scale = Vector2(0.8, 0.8)
+key = ExtResource("6_7y7hj")
+drop = ExtResource("7_mimod")
+
+[node name="Chest2" parent="." instance=ExtResource("5_yw445")]
+position = Vector2(1284, 594)
+scale = Vector2(0.8, 0.8)
+key = ExtResource("6_7y7hj")

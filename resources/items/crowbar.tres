@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Item" load_steps=3 format=3 uid="uid://bc5yjxgdixiqn"]
+
+[ext_resource type="Texture2D" uid="uid://c3upea6l5fsqi" path="res://assets/sprites/items/piede di porco.png" id="1_bhysa"]
+[ext_resource type="Script" uid="uid://c4rw8efovyv70" path="res://autoload/inventory/item.gd" id="2_bdwhq"]
+
+[resource]
+script = ExtResource("2_bdwhq")
+id = "crowbar"
+name = "Crowbar"
+icon = ExtResource("1_bhysa")
+double_slot = false
+scale = 0.08
+metadata/_custom_type_script = "uid://c4rw8efovyv70"

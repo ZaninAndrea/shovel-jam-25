@@ -1,19 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://k4jkbv3qye3q"]
 
 [ext_resource type="Script" uid="uid://brklajdl3dv65" path="res://scenes/objects/chest/chest.gd" id="1_vmxm4"]
-[ext_resource type="Texture2D" uid="uid://dl07kds6atdxp" path="res://assets/sprites/chest.png" id="1_yv7tv"]
+[ext_resource type="Texture2D" uid="uid://dmapcace3cl42" path="res://assets/sprites/crate.png" id="2_vmxm4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxm4"]
-size = Vector2(48, 43)
+size = Vector2(245, 89)
 
-[node name="Chest" type="StaticBody2D" groups=["interactable"]]
-collision_layer = 4
+[node name="Chest" type="StaticBody2D" groups=["interactable", "pushable"]]
+y_sort_enabled = true
+collision_layer = 6
 collision_mask = 0
 script = ExtResource("1_vmxm4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 1.5)
-shape = SubResource("RectangleShape2D_vmxm4")
-
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_yv7tv")
+y_sort_enabled = true
+texture = ExtResource("2_vmxm4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 77.5)
+shape = SubResource("RectangleShape2D_vmxm4")
