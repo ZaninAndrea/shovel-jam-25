@@ -110,18 +110,16 @@ func _on_push_area_body_exited(body: Node2D) -> void:
 
 func _input(event):
 	if event.is_action_pressed("select_slot_1"): # custom action mapped to key "1"
-		var did_interact:bool = false
 		var overlapping_areas = interaction_area.get_overlapping_areas()
 		for area in overlapping_areas:
 			if area.is_in_group("interactable"):
 				area.interact()
-				did_interact = true
+				return
 				
 		var overlapping_bodies = interaction_area.get_overlapping_bodies()
 		for body in overlapping_bodies:
 			if body.is_in_group("interactable"):
 				body.interact()
-				did_interact = true
+				return
 		
-		if !did_interact:
-			UIManager.show_feedback("There is nothing here.", 3)
+		UIManager.show_feedback("There is nothing here.", 3)
