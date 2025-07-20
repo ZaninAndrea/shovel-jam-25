@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://1sg0hvmx3j1h"]
+
+[ext_resource type="Script" uid="uid://djhq65lsb3bmr" path="res://scenes/objects/divider/divider.gd" id="1_70ww4"]
+[ext_resource type="Texture2D" uid="uid://cykfn86ixnq3l" path="res://assets/sprites/SEPARATORE.png" id="2_70ww4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxm4"]
+size = Vector2(107, 1576)
+
+[node name="Divider" type="StaticBody2D" groups=["interactable"]]
+z_index = -1
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 7
+script = ExtResource("1_70ww4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+y_sort_enabled = true
+position = Vector2(-2, -19)
+scale = Vector2(-1, 1)
+texture = ExtResource("2_70ww4")
+offset = Vector2(0, 100)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-32, -57)
+shape = SubResource("RectangleShape2D_vmxm4")

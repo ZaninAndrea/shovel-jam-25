@@ -64,7 +64,7 @@ exit_shift = Vector2(-80, -110)
 
 [node name="AnimatedSprite2D" parent="Rooms/SalaComune/SalaComuneDestra" index="0"]
 sprite_frames = ExtResource("8_38whp")
-frame_progress = 0.259634
+frame_progress = 0.225375
 
 [node name="StaticBody2D6" parent="Rooms/SalaComune/SalaComuneDestra" index="1"]
 position = Vector2(192, -32)
@@ -101,7 +101,7 @@ exit_shift = Vector2(80, -110)
 
 [node name="AnimatedSprite2D" parent="Rooms/SalaComune/SalaComuneSinistra" index="0"]
 sprite_frames = ExtResource("9_igsog")
-frame_progress = 0.381413
+frame_progress = 0.347154
 
 [node name="StaticBody2D6" parent="Rooms/SalaComune/SalaComuneSinistra" index="1"]
 position = Vector2(182, -304)
@@ -165,7 +165,7 @@ exit_shift = Vector2(-110, -60)
 
 [node name="AnimatedSprite2D" parent="Rooms/Cuccette/CuccetteLato" index="0"]
 sprite_frames = ExtResource("14_xjl5q")
-frame_progress = 0.289321
+frame_progress = 0.255062
 
 [node name="StaticBody2D6" parent="Rooms/Cuccette/CuccetteLato" index="1"]
 position = Vector2(207, 4.00001)
@@ -216,7 +216,7 @@ exit_shift = Vector2(110, -70)
 [node name="AnimatedSprite2D" parent="Rooms/StanzaA/StanzaALato" index="0"]
 sprite_frames = ExtResource("14_xjl5q")
 animation = &"locked"
-frame_progress = 0.587777
+frame_progress = 0.553518
 
 [node name="StaticBody2D6" parent="Rooms/StanzaA/StanzaALato" index="1"]
 position = Vector2(213, -4)
@@ -253,7 +253,7 @@ exit_shift = Vector2(-170, -60)
 [node name="AnimatedSprite2D" parent="Rooms/Ripostiglio/RipostiglioDoor" index="0"]
 sprite_frames = ExtResource("17_f71ke")
 animation = &"locked"
-frame_progress = 0.338515
+frame_progress = 0.304256
 
 [node name="StaticBody2D6" parent="Rooms/Ripostiglio/RipostiglioDoor" index="1"]
 position = Vector2(262.335, 102.286)
@@ -290,7 +290,7 @@ exit_shift = Vector2(140, -40)
 
 [node name="AnimatedSprite2D" parent="Rooms/StanzaB/StanzaBDoor" index="0"]
 sprite_frames = ExtResource("17_n3wt0")
-frame_progress = 0.289321
+frame_progress = 0.255062
 
 [node name="StaticBody2D6" parent="Rooms/StanzaB/StanzaBDoor" index="1"]
 position = Vector2(185.319, -215.403)

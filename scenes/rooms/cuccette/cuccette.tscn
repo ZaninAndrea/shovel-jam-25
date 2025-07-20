@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bi1b1x3qm07g3" path="res://scenes/objects/dropped_item/dropped_item.tscn" id="7_3cdu1"]
 [ext_resource type="Resource" uid="uid://x24ae5hu0ojh" path="res://resources/items/badge.tres" id="8_evldj"]
 [ext_resource type="Texture2D" uid="uid://42d6cxxk52ug" path="res://assets/sprites/items/badge.png" id="9_7mskf"]
-[ext_resource type="Script" uid="uid://dti5ppk7k5kyp" path="res://scenes/rooms/cuccette/poster.gd" id="10_7mskf"]
+[ext_resource type="Script" path="res://scenes/rooms/cuccette/poster.gd" id="10_7mskf"]
 [ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="11_dq8y7"]
 [ext_resource type="PackedScene" uid="uid://cs3ubhatuxpt8" path="res://scenes/objects/Posters/ship_map.tscn" id="11_whvpp"]
 

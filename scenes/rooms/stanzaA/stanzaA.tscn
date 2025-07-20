@@ -1,16 +1,19 @@
-[gd_scene load_steps=6 format=3 uid="uid://ryss6rhhwk0i"]
+[gd_scene load_steps=8 format=3 uid="uid://ryss6rhhwk0i"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_2ovkv"]
 [ext_resource type="Texture2D" uid="uid://drvhsa00esihh" path="res://assets/sprites/rooms/Stanza B_1920x1080.jpg" id="2_ilnad"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="3_er5tl"]
 [ext_resource type="PackedScene" uid="uid://bi1b1x3qm07g3" path="res://scenes/objects/dropped_item/dropped_item.tscn" id="4_ilnad"]
 [ext_resource type="Resource" uid="uid://bc5yjxgdixiqn" path="res://resources/items/crowbar.tres" id="5_ilnad"]
+[ext_resource type="Resource" uid="uid://dtysatcy7i5im" path="res://resources/items/saldatrice.tres" id="5_vae3v"]
+[ext_resource type="PackedScene" uid="uid://1sg0hvmx3j1h" path="res://scenes/objects/divider/divider.tscn" id="6_ceyv1"]
 
 [node name="StanzaA" type="Node2D"]
 script = ExtResource("1_2ovkv")
 movement_rotation = 1.5708
 
 [node name="StanzaB1920x1080" type="Sprite2D" parent="."]
+z_index = -5
 position = Vector2(960, 540)
 scale = Vector2(-1, 1)
 texture = ExtResource("2_ilnad")
@@ -82,6 +85,12 @@ scale = Vector2(4, 1.09)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(960, 540)
+
+[node name="Divider" parent="." instance=ExtResource("6_ceyv1")]
+position = Vector2(1211, 367)
+scale = Vector2(1.15, 1.15)
+key = ExtResource("5_vae3v")
+consume_key = true
 
 [node name="DroppedItem" parent="." instance=ExtResource("4_ilnad")]
 position = Vector2(547, 765)
