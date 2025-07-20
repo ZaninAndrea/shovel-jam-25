@@ -7,4 +7,5 @@ script = ExtResource("1_eleo1")
 
 [node name="LaserBeam" type="Line2D" parent="."]
 top_level = true
+z_index = 20
 default_color = Color(0.965, 0.087, 0.06, 0.476)

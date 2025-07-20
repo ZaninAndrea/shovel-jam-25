@@ -50,7 +50,7 @@ radius = 111.45
 
 [node name="Circuit" type="Control"]
 top_level = true
-z_index = 5
+z_index = 15
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0

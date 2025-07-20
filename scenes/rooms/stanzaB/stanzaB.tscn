@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://b2evmjpyxf41w" path="res://scenes/objects/temporary_floor/temporary_floor.tscn" id="2_4ql07"]
 [ext_resource type="Texture2D" uid="uid://ci7ka628bhhmq" path="res://assets/sprites/rooms/stanza con circuito.jpg" id="2_fasdr"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="3_wlqq5"]
-[ext_resource type="Script" path="res://scenes/rooms/stanzaB/enigma_circuito.gd" id="5_wo2ym"]
+[ext_resource type="Script" uid="uid://b8q4xy0rsbohv" path="res://scenes/rooms/stanzaB/enigma_circuito.gd" id="5_wo2ym"]
 [ext_resource type="PackedScene" uid="uid://bx88p364mjevi" path="res://scenes/ui/circuit/circuit.tscn" id="6_snx6f"]
 [ext_resource type="PackedScene" uid="uid://bi1b1x3qm07g3" path="res://scenes/objects/dropped_item/dropped_item.tscn" id="6_xg4cf"]
 [ext_resource type="Resource" uid="uid://csslbadrp5juh" path="res://resources/items/sphere_inactive.tres" id="7_xg4cf"]
