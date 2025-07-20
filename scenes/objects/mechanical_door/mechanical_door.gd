@@ -6,8 +6,8 @@
 @export var key: Item = null # Optional key, if set the player must hold the key to pass through the doo
 @export_enum("locked","unlocked", "open") var state: String = "unlocked":
 	set(value):
-		state = value
 		apply_state(value)
+		state = value
 @export var sprites: SpriteFrames = null :
 	set(value):
 		sprites = value
@@ -20,17 +20,16 @@ func _ready() -> void:
 	animated_sprite_2d.play(state)
 	apply_state(state)
 
-func apply_state(state: String):
+func apply_state(new_state: String):
 	# This function may be called before @onready
-	
 	if animated_sprite_2d != null:
-		animated_sprite_2d.play(state)
+		animated_sprite_2d.play(new_state)
 		
 	if door_lock != null:
-		if state == "open":
-			door_lock.position.y = -200
-		else:
-			door_lock.position.y = -72
+		if new_state == "open" and state != "open":
+			door_lock.position.y -= 150
+		elif new_state != "open" and state == "open":
+			door_lock.position.y += 150
 
 func _on_enter_door_area_body_entered(body: Node2D) -> void:
 	if is_changing_room:

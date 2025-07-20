@@ -13,7 +13,7 @@ y_sort_enabled = true
 script = ExtResource("1_4laur")
 
 [node name="StanzaCentraleSenzaTavolo" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -4
 position = Vector2(960, 540)
 texture = ExtResource("2_u7nhs")
 

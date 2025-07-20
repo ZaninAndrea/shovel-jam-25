@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://dojovpy8e0psh"]
+
+[ext_resource type="Texture2D" uid="uid://dyre4qonwtq56" path="res://assets/sprites/doors/Stanza letto e ripostiglio/ROSSA_letto-ripostiglio.png" id="1_b04xa"]
+[ext_resource type="Texture2D" uid="uid://cn4wms4wfjc87" path="res://assets/sprites/doors/Stanza letto e ripostiglio/BLU_letto-ripostiglio_aperta.png" id="2_5nj0g"]
+[ext_resource type="Texture2D" uid="uid://bvilcxm7gdty7" path="res://assets/sprites/doors/Stanza letto e ripostiglio/BLU_letto-ripostiglio.png" id="3_8wl5l"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_b04xa")
+}],
+"loop": true,
+"name": &"locked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_5nj0g")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_8wl5l")
+}],
+"loop": true,
+"name": &"unlocked",
+"speed": 5.0
+}]
