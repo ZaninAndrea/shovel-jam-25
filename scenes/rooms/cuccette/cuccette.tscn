@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://bo07dld0sfo1r"]
+[gd_scene load_steps=8 format=3 uid="uid://bo07dld0sfo1r"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_g8m8x"]
-[ext_resource type="Texture2D" uid="uid://by67qbq7x2oad" path="res://assets/sprites/rooms/Stanza C_1920x1080.jpg" id="2_3e5rd"]
+[ext_resource type="Shader" uid="uid://b52soagb1spsk" path="res://scenes/rooms/cuccette/scroll.gdshader" id="2_qqkyw"]
+[ext_resource type="Texture2D" uid="uid://b1oc6mmvt5jfg" path="res://assets/sprites/CON STELLE GRANDI_in loop.jpg" id="3_nakql"]
+[ext_resource type="Texture2D" uid="uid://ikjiibwr1666" path="res://assets/sprites/rooms/Stanza C_1920x1080_no_cielo.png" id="3_qqkyw"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="3_x472f"]
 [ext_resource type="PackedScene" uid="uid://ccccyck8raxp2" path="res://scenes/objects/crate/crate.tscn" id="4_3e5rd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nakql"]
+shader = ExtResource("2_qqkyw")
 
 [node name="Cuccette" type="Node2D"]
 y_sort_enabled = true
@@ -14,11 +19,19 @@ top_scale = 1.8
 top_position = 0.3
 movement_rotation = 4.71239
 
+[node name="BackgroundCielo" type="Sprite2D" parent="."]
+z_index = -1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_nakql")
+position = Vector2(1969, 128)
+rotation = 4.71239
+texture = ExtResource("3_nakql")
+
 [node name="StanzaB1920x1080" type="Sprite2D" parent="."]
 z_index = -1
 y_sort_enabled = true
 position = Vector2(960, 540)
-texture = ExtResource("2_3e5rd")
+texture = ExtResource("3_qqkyw")
 
 [node name="Walls" type="Node2D" parent="."]
 visible = false
