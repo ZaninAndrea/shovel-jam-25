@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://hvf1gaf47bwu"]
+[gd_scene load_steps=12 format=3 uid="uid://hvf1gaf47bwu"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_4laur"]
 [ext_resource type="Texture2D" uid="uid://8y0ebluy1341" path="res://assets/sprites/rooms/stanza centrale senza tavolo.jpg" id="2_u7nhs"]
@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://k4jkbv3qye3q" path="res://scenes/objects/chest/chest.tscn" id="5_yw445"]
 [ext_resource type="Resource" uid="uid://bc5yjxgdixiqn" path="res://resources/items/crowbar.tres" id="6_7y7hj"]
 [ext_resource type="Resource" uid="uid://311nohfxqdke" path="res://resources/items/torch.tres" id="7_mimod"]
+[ext_resource type="Script" uid="uid://dia8fyfgaammb" path="res://scenes/objects/Posters/poster.gd" id="8_2cwxo"]
+[ext_resource type="PackedScene" uid="uid://d0lyn3s4v107i" path="res://scenes/objects/Posters/computer_code.tscn" id="9_2cwxo"]
+[ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="10_cx51i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6dsgg"]
+size = Vector2(204, 97.5)
 
 [node name="SalaComune" type="Node2D"]
 y_sort_enabled = true
@@ -71,6 +77,25 @@ key = ExtResource("6_7y7hj")
 drop = ExtResource("7_mimod")
 
 [node name="Chest2" parent="." instance=ExtResource("5_yw445")]
+visible = false
 position = Vector2(1307, 565)
 scale = Vector2(0.7, 0.7)
 key = ExtResource("6_7y7hj")
+
+[node name="Poster" type="Area2D" parent="." groups=["interactable"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("8_2cwxo")
+poster = ExtResource("9_2cwxo")
+
+[node name="Sprite2D" type="Sprite2D" parent="Poster"]
+position = Vector2(1287, 699)
+scale = Vector2(0.03, 0.03)
+skew = -0.427606
+texture = ExtResource("10_cx51i")
+
+[node name="InteractionArea" type="CollisionShape2D" parent="Poster" groups=["interactable"]]
+light_mask = 8
+visibility_layer = 2
+position = Vector2(1334, 700.25)
+shape = SubResource("RectangleShape2D_6dsgg")

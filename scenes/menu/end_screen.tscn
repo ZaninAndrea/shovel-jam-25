@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://cdpw6oceimh13"]
+[gd_scene load_steps=7 format=3 uid="uid://cdpw6oceimh13"]
 
 [ext_resource type="Script" uid="uid://duwnw0gnip6tj" path="res://scenes/menu/end_screen.gd" id="1_d3ujy"]
 [ext_resource type="Shader" uid="uid://cpw2ubgglxv1l" path="res://scenes/menu/scroll.gdshader" id="2_0wt88"]
 [ext_resource type="Texture2D" uid="uid://b1oc6mmvt5jfg" path="res://assets/sprites/CON STELLE GRANDI_in loop.jpg" id="3_ea3v3"]
 [ext_resource type="Texture2D" uid="uid://bs72jgr7r2ao1" path="res://assets/sprites/nave da applicare sopra a cielo per schermata iniziale.png" id="4_0wt88"]
+[ext_resource type="AudioStream" uid="uid://cckb80gi00ubh" path="res://assets/audio/calm-space-music-312291.mp3" id="5_ea3v3"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j2o1e"]
 shader = ExtResource("2_0wt88")
@@ -82,3 +83,8 @@ Art and Graphics:
 
 Music and sounds from licensed online resources"
 vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ea3v3")
+bus = &"Soundtrack"
+parameters/looping = true
