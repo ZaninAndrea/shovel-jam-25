@@ -34,6 +34,7 @@ doors=""
 pushable=""
 mirror=""
 laser_target=""
+interactable=""
 
 [gui]
 

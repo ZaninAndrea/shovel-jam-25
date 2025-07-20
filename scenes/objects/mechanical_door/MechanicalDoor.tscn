@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://dwnja3bsdv515"]
+
+[ext_resource type="Script" uid="uid://d1tsxymcah032" path="res://scenes/objects/mechanical_door/mechanical_door.gd" id="1_a68hk"]
+[ext_resource type="SpriteFrames" uid="uid://c8o0sr5ussorb" path="res://scenes/objects/mechanical_door/front_door_sprites.tres" id="2_u85oo"]
+[ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="4_ct7rl"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ct7rl"]
+size = Vector2(366.342, 33.1881)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ct7rl"]
+radius = 147.706
+height = 1044.44
+
+[node name="MechanicalDoor" type="Area2D" groups=["doors", "interactable"]]
+y_sort_enabled = true
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_a68hk")
+sprites = ExtResource("2_u85oo")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(5, -308)
+sprite_frames = ExtResource("2_u85oo")
+animation = &"unlocked"
+frame_progress = 0.174562
+
+[node name="StaticBody2D6" parent="." instance=ExtResource("4_ct7rl")]
+visible = false
+position = Vector2(365, 19)
+scale = Vector2(4.36, 1.09)
+
+[node name="StaticBody2D7" parent="." instance=ExtResource("4_ct7rl")]
+visible = false
+position = Vector2(-360, 18)
+scale = Vector2(4.2, 1.09)
+
+[node name="DoorLock" parent="." instance=ExtResource("4_ct7rl")]
+visible = false
+position = Vector2(16, -72)
+scale = Vector2(12.4, 3.91)
+
+[node name="EnterDoorArea" type="Area2D" parent="."]
+visible = false
+position = Vector2(1, 29)
+scale = Vector2(0.89, 0.902)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="EnterDoorArea"]
+position = Vector2(26.9663, -1.10865)
+shape = SubResource("RectangleShape2D_ct7rl")
+
+[node name="UnlockDoorArea" type="Area2D" parent="."]
+visible = false
+position = Vector2(0.500091, -0.913025)
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="UnlockDoorArea"]
+position = Vector2(1.21947, 48.5436)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ct7rl")
+
+[node name="InteractionArea2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(1.21947, 48.5436)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_ct7rl")
+
+[connection signal="body_entered" from="EnterDoorArea" to="." method="_on_enter_door_area_body_entered"]
+[connection signal="body_entered" from="UnlockDoorArea" to="." method="_on_unlock_door_area_body_entered"]
+[connection signal="body_exited" from="UnlockDoorArea" to="." method="_on_unlock_door_area_body_exited"]

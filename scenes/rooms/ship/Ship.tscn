@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://b73umic6cn61s"]
+[gd_scene load_steps=15 format=3 uid="uid://b73umic6cn61s"]
 
 [ext_resource type="Script" uid="uid://ckitgm786lx6c" path="res://scenes/rooms/ship/ship.gd" id="1_6snk8"]
 [ext_resource type="PackedScene" uid="uid://cvbwr4ufmwluc" path="res://scenes/rooms/cockpit/cockpit.tscn" id="2_g8w7e"]
@@ -6,8 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://r7vdat7ui1fr" path="res://scenes/rooms/engine_room/engine_room.tscn" id="3_82ana"]
 [ext_resource type="PackedScene" uid="uid://djmxp0glt8f8u" path="res://scenes/ui/inventory/InventoryUI.tscn" id="4_82ana"]
 [ext_resource type="PackedScene" uid="uid://cfjtgy2w2c04l" path="res://scenes/player/player.tscn" id="5_72jju"]
+[ext_resource type="Resource" uid="uid://x24ae5hu0ojh" path="res://resources/items/badge.tres" id="5_kgs04"]
 [ext_resource type="PackedScene" uid="uid://bo07dld0sfo1r" path="res://scenes/rooms/cuccette/cuccette.tscn" id="5_mccq1"]
 [ext_resource type="PackedScene" uid="uid://ryss6rhhwk0i" path="res://scenes/rooms/stanzaA/stanzaA.tscn" id="6_lf6ba"]
+[ext_resource type="PackedScene" uid="uid://dwnja3bsdv515" path="res://scenes/objects/mechanical_door/MechanicalDoor.tscn" id="7_f5as8"]
 [ext_resource type="PackedScene" uid="uid://4c6gwmwuyerm" path="res://scenes/ui/text_feedback/interactionUI.tscn" id="8_mccq1"]
 [ext_resource type="PackedScene" uid="uid://hvf1gaf47bwu" path="res://scenes/rooms/sala_comune/sala_comune.tscn" id="9_a2dgw"]
 [ext_resource type="PackedScene" uid="uid://cspeqk1g0vdqw" path="res://scenes/rooms/ripostiglio/ripostiglio.tscn" id="10_resca"]
@@ -16,7 +18,8 @@
 [node name="Ship" type="Node2D"]
 script = ExtResource("1_6snk8")
 
-[node name="Rooms" type="Node" parent="."]
+[node name="Rooms" type="Node2D" parent="."]
+position = Vector2(21, -1709)
 
 [node name="SalaComune" parent="Rooms" instance=ExtResource("9_a2dgw")]
 position = Vector2(-20, 1718)
@@ -42,12 +45,13 @@ scale = Vector2(1.77, 1)
 other_door = NodePath("../../Cuccette/CuccetteBasso")
 exit_shift = Vector2(80, 80)
 
-[node name="SalaComuneSopra" parent="Rooms/SalaComune" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-visible = false
-position = Vector2(947, 610)
-scale = Vector2(2.41, 1)
-other_door = NodePath("../../EngineRoom/EngineDoor")
-exit_shift = Vector2(0, 60)
+[node name="SalaComuneSopra" parent="Rooms/SalaComune" node_paths=PackedStringArray("other_door") instance=ExtResource("7_f5as8")]
+position = Vector2(946, 616)
+scale = Vector2(0.458, 0.458)
+key = ExtResource("5_kgs04")
+state = "locked"
+other_door = NodePath("../../EngineRoom/MechanicalDoor")
+exit_shift = Vector2(0, 40)
 
 [node name="SalaComuneDestra" parent="Rooms/SalaComune" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
 visible = false
@@ -73,10 +77,11 @@ exit_shift = Vector2(0, -150)
 [node name="EngineRoom" parent="Rooms" instance=ExtResource("3_82ana")]
 position = Vector2(6, 3083)
 
-[node name="EngineDoor" parent="Rooms/EngineRoom" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-visible = false
-position = Vector2(977, 730)
-scale = Vector2(3, 1)
+[node name="MechanicalDoor" parent="Rooms/EngineRoom" node_paths=PackedStringArray("other_door") instance=ExtResource("7_f5as8")]
+position = Vector2(969, 728)
+scale = Vector2(0.627, 0.627)
+key = ExtResource("5_kgs04")
+state = "locked"
 other_door = NodePath("../../SalaComune/SalaComuneSopra")
 exit_shift = Vector2(0, 40)
 
@@ -122,8 +127,10 @@ exit_shift = Vector2(200, 50)
 position = Vector2(-2002, 4716)
 
 [node name="RipostiglioDoor" parent="Rooms/Ripostiglio" node_paths=PackedStringArray("other_door") instance=ExtResource("3_10ivg")]
-position = Vector2(1874, 614)
-rotation = 1.5708
+visible = false
+position = Vector2(1567, 854)
+rotation = 0.663225
+scale = Vector2(1.6, 1)
 other_door = NodePath("../../StanzaA/StanzaALato")
 exit_shift = Vector2(-150, 0)
 
@@ -140,5 +147,6 @@ exit_shift = Vector2(200, 0)
 
 [node name="InventoryUI" parent="HUD" instance=ExtResource("4_82ana")]
 z_index = 100
+metadata/_edit_use_anchors_ = true
 
 [node name="InteractionUI" parent="." instance=ExtResource("8_mccq1")]
