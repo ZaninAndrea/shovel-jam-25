@@ -67,7 +67,7 @@ exit_shift = Vector2(0, 40)
 
 [node name="AnimatedSprite2D" parent="Rooms/SalaComune/SalaComuneSopra" index="0"]
 animation = &"locked"
-frame_progress = 0.0638483
+frame_progress = 0.897986
 
 [node name="InteractionArea2D" parent="Rooms/SalaComune/SalaComuneSopra" index="6"]
 visible = true
@@ -82,7 +82,7 @@ exit_shift = Vector2(-80, -110)
 
 [node name="AnimatedSprite2D" parent="Rooms/SalaComune/SalaComuneDestra" index="0"]
 sprite_frames = ExtResource("8_38whp")
-frame_progress = 0.579215
+frame_progress = 0.413353
 
 [node name="StaticBody2D6" parent="Rooms/SalaComune/SalaComuneDestra" index="1"]
 position = Vector2(192, -32)
@@ -127,7 +127,7 @@ exit_shift = Vector2(80, -110)
 
 [node name="AnimatedSprite2D" parent="Rooms/SalaComune/SalaComuneSinistra" index="0"]
 sprite_frames = ExtResource("9_igsog")
-frame_progress = 0.181118
+frame_progress = 0.0152537
 
 [node name="StaticBody2D6" parent="Rooms/SalaComune/SalaComuneSinistra" index="1"]
 position = Vector2(182, -304)
@@ -173,8 +173,6 @@ position = Vector2(6, 3083)
 [node name="MechanicalDoor" parent="Rooms/EngineRoom" node_paths=PackedStringArray("other_door") instance=ExtResource("7_f5as8")]
 position = Vector2(969, 728)
 scale = Vector2(0.627, 0.627)
-key = ExtResource("5_kgs04")
-state = "locked"
 other_door = NodePath("../../SalaComune/SalaComuneSopra")
 exit_shift = Vector2(0, 40)
 
@@ -197,7 +195,7 @@ exit_shift = Vector2(-110, -60)
 
 [node name="AnimatedSprite2D" parent="Rooms/Cuccette/CuccetteLato" index="0"]
 sprite_frames = ExtResource("14_xjl5q")
-frame_progress = 0.0890364
+frame_progress = 0.923173
 
 [node name="StaticBody2D6" parent="Rooms/Cuccette/CuccetteLato" index="1"]
 position = Vector2(207, 4.00001)
@@ -249,7 +247,7 @@ exit_shift = Vector2(110, -70)
 [node name="AnimatedSprite2D" parent="Rooms/StanzaA/StanzaALato" index="0"]
 sprite_frames = ExtResource("14_xjl5q")
 animation = &"locked"
-frame_progress = 0.387495
+frame_progress = 0.221631
 
 [node name="StaticBody2D6" parent="Rooms/StanzaA/StanzaALato" index="1"]
 position = Vector2(213, -4)
@@ -294,7 +292,7 @@ exit_shift = Vector2(-170, -60)
 [node name="AnimatedSprite2D" parent="Rooms/Ripostiglio/RipostiglioDoor" index="0"]
 sprite_frames = ExtResource("17_f71ke")
 animation = &"locked"
-frame_progress = 0.138225
+frame_progress = 0.972361
 
 [node name="StaticBody2D6" parent="Rooms/Ripostiglio/RipostiglioDoor" index="1"]
 position = Vector2(262.335, 102.286)
@@ -328,13 +326,15 @@ top_position = 0.3
 [node name="StanzaBDoor" parent="Rooms/StanzaB" node_paths=PackedStringArray("other_door") instance=ExtResource("7_f5as8")]
 position = Vector2(365, 913)
 scale = Vector2(0.831, 0.831)
+script = ExtResource("10_4fxht")
+torch = ExtResource("9_4fxht")
 sprites = ExtResource("17_n3wt0")
 other_door = NodePath("../../Cuccette/CuccetteLato")
 exit_shift = Vector2(140, -40)
 
 [node name="AnimatedSprite2D" parent="Rooms/StanzaB/StanzaBDoor" index="0"]
 sprite_frames = ExtResource("17_n3wt0")
-frame_progress = 0.0890364
+frame_progress = 0.923173
 
 [node name="StaticBody2D6" parent="Rooms/StanzaB/StanzaBDoor" index="1"]
 position = Vector2(185.319, -215.403)

@@ -576,6 +576,7 @@ rotation = 1.5708
 scale = Vector2(4, 4)
 
 [node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 0
 offset_left = 1267.0
 offset_top = 47.0
 offset_right = 2365.0

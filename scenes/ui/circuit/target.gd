@@ -19,5 +19,5 @@ func check_laser_state():
 	if laser_count == 1:
 		%TargetSprite.show()
 		# Delay a couple of seconds
-		await get_tree().create_timer(2.0).timeout
+		await get_tree().create_timer(0.5).timeout
 		solved.emit()
