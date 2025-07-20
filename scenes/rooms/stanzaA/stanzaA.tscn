@@ -94,15 +94,16 @@ key = ExtResource("5_vae3v")
 consume_key = true
 
 [node name="DroppedItem" parent="." instance=ExtResource("4_ilnad")]
-position = Vector2(547, 765)
+position = Vector2(611, 849)
 rotation = 3.14159
 scale = Vector2(2, 2)
 item = ExtResource("5_ilnad")
 
 [node name="CollisionShape2D" parent="DroppedItem" index="0"]
-position = Vector2(-17.9999, -24.5)
+position = Vector2(-1.49999, -2.00002)
 
 [node name="Sprite2D" parent="DroppedItem" index="1"]
+position = Vector2(29.4998, 61.5001)
 scale = Vector2(0.08, 0.08)
 texture = ExtResource("8_fwec3")
 

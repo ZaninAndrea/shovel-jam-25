@@ -117,14 +117,18 @@ func _input(event):
 		for area in overlapping_areas:
 			if area.is_in_group("interactable"):
 				var distance = area.position.distance_to(self.position)
+				print(area, distance)
 				if distance < minimum_distance:
+					minimum_distance = distance
 					closest_item = area
 				
 		var overlapping_bodies = interaction_area.get_overlapping_bodies()
 		for body in overlapping_bodies:
 			if body.is_in_group("interactable"):
 				var distance = body.position.distance_to(self.position)
+				print(body, distance)
 				if distance < minimum_distance:
+					minimum_distance = distance
 					closest_item = body
 				
 		if closest_item != null:
