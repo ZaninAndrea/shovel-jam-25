@@ -1,0 +1,387 @@
+[gd_scene load_steps=11 format=3 uid="uid://bx88p364mjevi"]
+
+[ext_resource type="Script" uid="uid://dbyhuh3iate7d" path="res://scenes/ui/circuit/circuit.gd" id="1_e7cct"]
+[ext_resource type="Texture2D" uid="uid://ccgo2b45fqllb" path="res://assets/sprites/circuito temp.png" id="2_7eeye"]
+[ext_resource type="PackedScene" uid="uid://duxhi2q5pdwdb" path="res://scenes/objects/laser/LaserEmitter.tscn" id="3_151nx"]
+[ext_resource type="PackedScene" uid="uid://d33fgv3s6g48v" path="res://scenes/objects/mirror/mirror.tscn" id="4_7eeye"]
+[ext_resource type="PackedScene" uid="uid://6lstklpyi8u4" path="res://scenes/ui/circuit/AND_gate/and_gate.tscn" id="5_151nx"]
+[ext_resource type="PackedScene" uid="uid://bxn6x21eihqll" path="res://scenes/ui/circuit/Splitter/splitter.tscn" id="6_flg3e"]
+[ext_resource type="PackedScene" uid="uid://dwgpjx0wprkws" path="res://scenes/ui/circuit/Splitter/splitter_type2.tscn" id="7_fdw8y"]
+[ext_resource type="PackedScene" uid="uid://204xycktjkpv" path="res://scenes/ui/circuit/XOR_gate/xor_gate.tscn" id="7_o15gh"]
+[ext_resource type="PackedScene" uid="uid://b17kbtph66b1h" path="res://scenes/ui/circuit/3AND_gate/3and_gate.tscn" id="8_f0nxm"]
+[ext_resource type="PackedScene" uid="uid://c6gpuptf0n3k5" path="res://scenes/ui/circuit/NOT_gate/not_gate.tscn" id="9_fdw8y"]
+
+[node name="Circuit" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e7cct")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(963, 543.5)
+scale = Vector2(0.805858, 0.991863)
+texture = ExtResource("2_7eeye")
+
+[node name="Emitter1" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 221.0
+offset_right = 252.0
+offset_bottom = 261.0
+
+[node name="Button1" type="Button" parent="Emitter1"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.28707, 6.69538)
+
+[node name="LaserEmitter1" parent="Emitter1" instance=ExtResource("3_151nx")]
+position = Vector2(47, 26)
+
+[node name="Emitter2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 435.0
+offset_top = 113.0
+offset_right = 475.0
+offset_bottom = 153.0
+rotation = 1.5708
+
+[node name="Button2" type="Button" parent="Emitter2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.28707, 6.69538)
+
+[node name="LaserEmitter2" parent="Emitter2" instance=ExtResource("3_151nx")]
+position = Vector2(47, 26)
+
+[node name="Emitter3" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 555.0
+offset_top = 112.0
+offset_right = 595.0
+offset_bottom = 152.0
+rotation = 1.5708
+
+[node name="Button3" type="Button" parent="Emitter3"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.28707, 6.69538)
+
+[node name="LaserEmitter3" parent="Emitter3" instance=ExtResource("3_151nx")]
+position = Vector2(47, 26)
+
+[node name="Emitter4" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 700.0
+offset_top = 111.0
+offset_right = 740.0
+offset_bottom = 151.0
+rotation = 1.5708
+
+[node name="Button4" type="Button" parent="Emitter4"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.28707, 6.69538)
+
+[node name="LaserEmitter4" parent="Emitter4" instance=ExtResource("3_151nx")]
+position = Vector2(47, 26)
+
+[node name="Emitter5" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 830.0
+offset_top = 116.0
+offset_right = 870.0
+offset_bottom = 156.0
+rotation = 1.5708
+
+[node name="Button5" type="Button" parent="Emitter5"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.28707, 6.69538)
+
+[node name="LaserEmitter5" parent="Emitter5" instance=ExtResource("3_151nx")]
+position = Vector2(47, 26)
+
+[node name="Emitter6" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 221.0
+offset_top = 587.0
+offset_right = 261.0
+offset_bottom = 627.0
+
+[node name="Button6" type="Button" parent="Emitter6"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.28707, 6.69538)
+
+[node name="LaserEmitter6" parent="Emitter6" instance=ExtResource("3_151nx")]
+position = Vector2(47, 26)
+
+[node name="Emitter7" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 222.0
+offset_top = 465.0
+offset_right = 262.0
+offset_bottom = 505.0
+
+[node name="Button7" type="Button" parent="Emitter7"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.28707, 6.69538)
+
+[node name="LaserEmitter7" parent="Emitter7" instance=ExtResource("3_151nx")]
+position = Vector2(47, 26)
+
+[node name="Emitter8" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 212.0
+offset_top = 345.0
+offset_right = 252.0
+offset_bottom = 385.0
+
+[node name="Button8" type="Button" parent="Emitter8"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -21.0
+offset_top = -21.0
+offset_right = -13.0
+offset_bottom = -13.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(6.28707, 6.69538)
+
+[node name="LaserEmitter8" parent="Emitter8" instance=ExtResource("3_151nx")]
+position = Vector2(47, 26)
+
+[node name="Mirrors" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Mirror" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(380, 364)
+
+[node name="Mirror2" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(541, 405)
+
+[node name="Mirror3" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(618, 568)
+rotation = 1.5708
+
+[node name="Mirror4" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(677, 492)
+rotation = 1.5708
+
+[node name="Mirror5" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(484, 623)
+
+[node name="Mirror6" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(987, 614)
+rotation = 1.5708
+
+[node name="Mirror7" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(975, 343)
+
+[node name="Mirror8" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(620, 201)
+
+[node name="Mirror9" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(665, 355)
+
+[node name="Mirror10" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(378, 630)
+rotation = 1.5708
+
+[node name="Mirror11" parent="Mirrors" instance=ExtResource("4_7eeye")]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(667, 422)
+rotation = 1.5708
+
+[node name="AND Gates" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AndGate" parent="AND Gates" instance=ExtResource("5_151nx")]
+position = Vector2(413, 256)
+scale = Vector2(3, 3)
+
+[node name="AndGate2" parent="AND Gates" instance=ExtResource("5_151nx")]
+position = Vector2(541, 562)
+scale = Vector2(3, 3)
+
+[node name="AndGate3" parent="AND Gates" instance=ExtResource("5_151nx")]
+position = Vector2(903, 354)
+scale = Vector2(3, 3)
+
+[node name="AndGate4" parent="AND Gates" instance=ExtResource("5_151nx")]
+position = Vector2(377, 421)
+scale = Vector2(3, 3)
+
+[node name="Splitters" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Splitter" parent="Splitters" instance=ExtResource("6_flg3e")]
+position = Vector2(372, 491)
+scale = Vector2(0.1, 0.1)
+
+[node name="Splitter2" parent="Splitters" instance=ExtResource("7_fdw8y")]
+position = Vector2(543, 209)
+scale = Vector2(0.1, 0.1)
+
+[node name="Splitter3" parent="Splitters" instance=ExtResource("7_fdw8y")]
+position = Vector2(809, 307)
+rotation = 1.5708
+scale = Vector2(0.1, 0.1)
+
+[node name="Splitter4" parent="Splitters" instance=ExtResource("7_fdw8y")]
+position = Vector2(493, 559)
+scale = Vector2(0.1, 0.1)
+
+[node name="XOR Gates" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="XorGate" parent="XOR Gates" instance=ExtResource("7_o15gh")]
+position = Vector2(374, 556)
+scale = Vector2(3, 3)
+
+[node name="XorGate2" parent="XOR Gates" instance=ExtResource("7_o15gh")]
+position = Vector2(610, 483)
+scale = Vector2(3, 3)
+
+[node name="XorGate3" parent="XOR Gates" instance=ExtResource("7_o15gh")]
+position = Vector2(816, 607)
+scale = Vector2(3, 3)
+
+[node name="XorGate4" parent="XOR Gates" instance=ExtResource("7_o15gh")]
+position = Vector2(542, 257)
+rotation = 1.5708
+scale = Vector2(3, 3)
+
+[node name="3AND Gates" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="3AndGate" parent="3AND Gates" instance=ExtResource("8_f0nxm")]
+position = Vector2(970, 425)
+scale = Vector2(4, 4)
+
+[node name="NOT Gates" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="NotGate" parent="NOT Gates" instance=ExtResource("9_fdw8y")]
+position = Vector2(450, 558)
+scale = Vector2(2, 2)
+
+[node name="NotGate2" parent="NOT Gates" instance=ExtResource("9_fdw8y")]
+position = Vector2(684, 308)
+rotation = 1.5708
+scale = Vector2(2, 2)
+
+[node name="NotGate3" parent="NOT Gates" instance=ExtResource("9_fdw8y")]
+position = Vector2(811, 249)
+rotation = 1.5708
+scale = Vector2(2, 2)
+
+[connection signal="pressed" from="Emitter1/Button1" to="." method="_on_button_1_pressed"]
+[connection signal="pressed" from="Emitter2/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Emitter3/Button3" to="." method="_on_button_3_pressed"]
+[connection signal="pressed" from="Emitter4/Button4" to="." method="_on_button_4_pressed"]
+[connection signal="pressed" from="Emitter5/Button5" to="." method="_on_button_5_pressed"]
+[connection signal="pressed" from="Emitter6/Button6" to="." method="_on_button_6_pressed"]
+[connection signal="pressed" from="Emitter7/Button7" to="." method="_on_button_7_pressed"]
+[connection signal="pressed" from="Emitter8/Button8" to="." method="_on_button_8_pressed"]

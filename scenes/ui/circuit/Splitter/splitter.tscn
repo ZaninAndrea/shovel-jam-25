@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxn6x21eihqll"]
+
+[ext_resource type="Script" uid="uid://dcl6takuiltl0" path="res://scenes/ui/circuit/Splitter/splitter.gd" id="1_55whx"]
+[ext_resource type="PackedScene" uid="uid://duxhi2q5pdwdb" path="res://scenes/objects/laser/LaserEmitter.tscn" id="2_4im3p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_55whx"]
+
+[node name="Splitter" type="CharacterBody2D" groups=["laser_target"]]
+script = ExtResource("1_55whx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_55whx")
+
+[node name="LaserEmitter" parent="." instance=ExtResource("2_4im3p")]
+position = Vector2(0, -10)
+rotation = -1.5708
+
+[node name="LaserEmitter2" parent="." instance=ExtResource("2_4im3p")]
+position = Vector2(0, 10)
+rotation = 1.5708

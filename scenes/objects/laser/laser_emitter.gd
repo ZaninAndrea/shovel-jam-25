@@ -2,10 +2,20 @@ extends Node2D
 
 @export var max_bounces := 5
 @export var max_distance := 1000.0
+@export var is_active := false
+
 @onready var beam: Line2D = $LaserBeam
 
+var last_target: Node = null
+
 func _process(_delta):
-	cast_laser(global_position, global_rotation)
+	if (is_active):
+		cast_laser(global_position, global_rotation)
+	else:
+		beam.points = []
+		if last_target and last_target.has_method("unregister_laser_hit"):
+			last_target.unregister_laser_hit()
+			last_target = null
 
 func cast_laser(start_pos: Vector2, angle: float):
 	var points = [start_pos]
@@ -24,17 +34,31 @@ func cast_laser(start_pos: Vector2, angle: float):
 			var normal = result.normal
 			var collider = result.collider
 			points.append(hit_pos)
+			
 			if collider.is_in_group("mirror"):
 				current_origin = hit_pos
 				current_dir = current_dir.bounce(normal)
 				remaining_bounces -= 1
 			else:
-				# Hit target or wall
+				# Hit a new target
 				if collider.is_in_group("laser_target"):
-					collider.call("on_laser_hit")
+					if last_target != collider:
+						if last_target and last_target.has_method("unregister_laser_hit"):
+							last_target.unregister_laser_hit()
+						if collider.has_method("register_laser_hit"):
+							collider.register_laser_hit()
+						last_target = collider
+				else:
+					# Hit something else (like a wall), unregister if needed
+					if last_target and last_target.has_method("unregister_laser_hit"):
+						last_target.unregister_laser_hit()
+						last_target = null
 				break
 		else:
 			# No hit — laser goes off into the void
+			if last_target and last_target.has_method("unregister_laser_hit"):
+				last_target.unregister_laser_hit()
+				last_target = null
 			points.append(current_origin + current_dir * max_distance)
 			break
 	

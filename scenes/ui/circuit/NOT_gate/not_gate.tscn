@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c6gpuptf0n3k5"]
+
+[ext_resource type="Script" uid="uid://ch01t7vkhgh3j" path="res://scenes/ui/circuit/NOT_gate/not_gate.gd" id="1_6bjaj"]
+[ext_resource type="PackedScene" uid="uid://duxhi2q5pdwdb" path="res://scenes/objects/laser/LaserEmitter.tscn" id="2_au5fj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m6847"]
+
+[node name="NotGate" type="CharacterBody2D" groups=["laser_target"]]
+script = ExtResource("1_6bjaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_m6847")
+
+[node name="LaserEmitter" parent="." instance=ExtResource("2_au5fj")]
+position = Vector2(10, 0)

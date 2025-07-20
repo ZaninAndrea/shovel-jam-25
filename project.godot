@@ -33,6 +33,7 @@ player=""
 doors=""
 pushable=""
 mirror=""
+laser_target=""
 
 [gui]
 
