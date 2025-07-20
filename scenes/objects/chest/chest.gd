@@ -28,7 +28,7 @@ func push(force: Vector2):
 func interact():
 	var key_slot = Inventory.find_item(key)
 	if key_slot == -1:
-		print("You don't have the key")
+		UIManager.show_feedback("I need something to open this chest", 4.0)
 		return
 	
 	# Remove the key if needed
