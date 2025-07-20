@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bt4sdv27yeoku"]
+[gd_scene load_steps=13 format=3 uid="uid://bt4sdv27yeoku"]
 
 [ext_resource type="Script" uid="uid://xsm88hofruub" path="res://scenes/ui/pinpad/pc_passcode.gd" id="1_isg46"]
 [ext_resource type="Texture2D" uid="uid://baxgykyjalxpe" path="res://assets/sprites/Pinpad/plancia enigma simboli.png" id="2_386ce"]
@@ -10,6 +10,8 @@
 [ext_resource type="Texture2D" uid="uid://dabtt7a3jvq77" path="res://assets/sprites/Pinpad/Simbolo6_2.png" id="8_w1jhx"]
 [ext_resource type="Texture2D" uid="uid://cuulyffyew1ia" path="res://assets/sprites/Pinpad/Simbolo7_2.png" id="9_8ku2u"]
 [ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="10_a61n5"]
+[ext_resource type="Texture2D" uid="uid://cap6ihngxdbor" path="res://assets/sprites/ui/bottone su.png" id="10_yc0lb"]
+[ext_resource type="Texture2D" uid="uid://dbrava2qun55l" path="res://assets/sprites/ui/bottone giu.png" id="11_x7nn8"]
 
 [node name="Pinpad" type="Control"]
 z_index = 5
@@ -161,14 +163,28 @@ position = Vector2(527, 367)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("9_8ku2u")
 
-[node name="Back Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1390.0
-offset_top = 158.0
-offset_right = 1755.0
-offset_bottom = 289.0
-theme = ExtResource("10_a61n5")
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1350.0
+offset_top = 78.0
+offset_right = 2448.0
+offset_bottom = 443.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("10_yc0lb")
+texture_pressed = ExtResource("11_x7nn8")
+texture_hover = ExtResource("11_x7nn8")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 150
 text = "GO BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Cancel" type="Button" parent="."]
 layout_mode = 0
@@ -186,5 +202,5 @@ text = "CANCEL"
 [connection signal="pressed" from="Buttons/TextureButton5" to="." method="_on_texture_button_5_pressed"]
 [connection signal="pressed" from="Buttons/TextureButton6" to="." method="_on_texture_button_6_pressed"]
 [connection signal="pressed" from="Buttons/TextureButton7" to="." method="_on_texture_button_7_pressed"]
-[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_back_button_pressed"]
 [connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]

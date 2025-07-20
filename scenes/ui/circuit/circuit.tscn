@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bx88p364mjevi"]
+[gd_scene load_steps=25 format=3 uid="uid://bx88p364mjevi"]
 
 [ext_resource type="Script" uid="uid://dbyhuh3iate7d" path="res://scenes/ui/circuit/circuit.gd" id="1_e7cct"]
 [ext_resource type="Texture2D" uid="uid://71ftjo6t2ib" path="res://assets/sprites/circuito/circuito light fondo giallo.png" id="2_fdw8y"]
@@ -10,8 +10,9 @@
 [ext_resource type="PackedScene" uid="uid://204xycktjkpv" path="res://scenes/ui/circuit/XOR_gate/xor_gate.tscn" id="7_o15gh"]
 [ext_resource type="PackedScene" uid="uid://b17kbtph66b1h" path="res://scenes/ui/circuit/3AND_gate/3and_gate.tscn" id="8_f0nxm"]
 [ext_resource type="PackedScene" uid="uid://c6gpuptf0n3k5" path="res://scenes/ui/circuit/NOT_gate/not_gate.tscn" id="9_fdw8y"]
-[ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="11_5i57m"]
+[ext_resource type="Texture2D" uid="uid://cap6ihngxdbor" path="res://assets/sprites/ui/bottone su.png" id="11_r8pvu"]
 [ext_resource type="Script" uid="uid://b86nl8wfflgty" path="res://scenes/ui/circuit/target.gd" id="12_4byp8"]
+[ext_resource type="Texture2D" uid="uid://dbrava2qun55l" path="res://assets/sprites/ui/bottone giu.png" id="12_bm1d6"]
 [ext_resource type="Texture2D" uid="uid://d3jni4trs2wk4" path="res://assets/sprites/circuito/stella circuito.png" id="13_ytff4"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ytff4"]
@@ -574,14 +575,28 @@ position = Vector2(999, 340)
 rotation = 1.5708
 scale = Vector2(4, 4)
 
-[node name="Back Button" type="Button" parent="."]
-layout_mode = 0
-offset_left = 1333.0
-offset_top = 50.0
-offset_right = 1698.0
-offset_bottom = 181.0
-theme = ExtResource("11_5i57m")
+[node name="TextureButton" type="TextureButton" parent="."]
+offset_left = 1267.0
+offset_top = 47.0
+offset_right = 2365.0
+offset_bottom = 412.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("11_r8pvu")
+texture_pressed = ExtResource("12_bm1d6")
+texture_hover = ExtResource("12_bm1d6")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 150
 text = "GO BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Target" type="Control" parent="."]
 anchors_preset = 0
@@ -612,7 +627,7 @@ texture = ExtResource("13_ytff4")
 [connection signal="pressed" from="Emitter6/Button6" to="." method="_on_button_6_pressed"]
 [connection signal="pressed" from="Emitter7/Button7" to="." method="_on_button_7_pressed"]
 [connection signal="pressed" from="Emitter8/Button8" to="." method="_on_button_8_pressed"]
-[connection signal="pressed" from="Back Button" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_back_pressed"]
 
 [editable path="AND Gates/AndGate"]
 [editable path="AND Gates/AndGate2"]

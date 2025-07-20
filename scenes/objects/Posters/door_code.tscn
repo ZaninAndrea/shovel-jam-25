@@ -1,13 +1,14 @@
-[gd_scene load_steps=9 format=3 uid="uid://tg82e203x15d"]
+[gd_scene load_steps=10 format=3 uid="uid://tg82e203x15d"]
 
-[ext_resource type="Script" path="res://scenes/objects/Posters/poster_ui_handle.gd" id="1_hjj5a"]
+[ext_resource type="Script" uid="uid://cde8a1kikrady" path="res://scenes/objects/Posters/poster_ui_handle.gd" id="1_hjj5a"]
 [ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="2_odhvj"]
-[ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="3_lktxg"]
 [ext_resource type="Texture2D" uid="uid://b0rv67641i12o" path="res://assets/sprites/paper_popup_cut.png" id="4_beanq"]
 [ext_resource type="FontFile" uid="uid://d1udguboqc78k" path="res://assets/fonts/Emocja.ttf" id="5_ydm0g"]
 [ext_resource type="Texture2D" uid="uid://nbf70nubm3i0" path="res://assets/sprites/Pinpad/Simbolo1.png" id="6_sk6xf"]
 [ext_resource type="Texture2D" uid="uid://cte0ega8etlny" path="res://assets/sprites/Pinpad/Simbolo2.png" id="7_43d5y"]
 [ext_resource type="Texture2D" uid="uid://dgw64nisbqped" path="res://assets/sprites/Pinpad/Simbolo3.png" id="8_o4i0j"]
+[ext_resource type="Texture2D" uid="uid://cap6ihngxdbor" path="res://assets/sprites/ui/bottone su.png" id="9_lktxg"]
+[ext_resource type="Texture2D" uid="uid://dbrava2qun55l" path="res://assets/sprites/ui/bottone giu.png" id="10_beanq"]
 
 [node name="CodeDoor" type="Control"]
 layout_mode = 3
@@ -19,14 +20,29 @@ position = Vector2(595, 542)
 scale = Vector2(0.5, 0.532385)
 texture = ExtResource("2_odhvj")
 
-[node name="Back Button" type="Button" parent="."]
+[node name="TextureButton" type="TextureButton" parent="."]
 layout_mode = 0
-offset_left = 1390.0
-offset_top = 158.0
-offset_right = 1755.0
-offset_bottom = 289.0
-theme = ExtResource("3_lktxg")
+offset_left = 1342.0
+offset_top = 193.0
+offset_right = 2440.0
+offset_bottom = 558.0
+scale = Vector2(0.4, 0.4)
+texture_normal = ExtResource("9_lktxg")
+texture_pressed = ExtResource("10_beanq")
+texture_hover = ExtResource("10_beanq")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="TextureButton"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_font_sizes/normal_font_size = 150
 text = "GO BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
@@ -81,4 +97,4 @@ rotation = -0.261799
 scale = Vector2(0.35, 0.35)
 texture = ExtResource("6_sk6xf")
 
-[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="TextureButton" to="." method="_on_back_button_pressed"]
