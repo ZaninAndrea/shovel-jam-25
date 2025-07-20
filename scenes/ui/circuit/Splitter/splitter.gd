@@ -6,6 +6,9 @@ extends CharacterBody2D
 var laser_count := 0
 
 
+func _ready() -> void:
+	laser_count = 0
+
 func register_laser_hit():
 	laser_count += 1
 	check_laser_state()

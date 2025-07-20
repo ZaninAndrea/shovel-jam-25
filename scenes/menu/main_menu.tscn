@@ -1,22 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://qlyvx7wx83y0"]
+[gd_scene load_steps=8 format=3 uid="uid://qlyvx7wx83y0"]
 
 [ext_resource type="Shader" uid="uid://cpw2ubgglxv1l" path="res://scenes/menu/scroll.gdshader" id="1_3rkf3"]
-[ext_resource type="StyleBox" uid="uid://68xi5kj5llqa" path="res://resources/Theme & Style/normal_button.tres" id="1_247la"]
-[ext_resource type="StyleBox" uid="uid://bojmc0vcogibm" path="res://resources/Theme & Style/pressed_button.tres" id="1_hj162"]
-[ext_resource type="StyleBox" uid="uid://624fob5qo6ja" path="res://resources/Theme & Style/hover_button.tres" id="1_kiqgm"]
+[ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="1_xn6kt"]
 [ext_resource type="Texture2D" uid="uid://b1oc6mmvt5jfg" path="res://assets/sprites/CON STELLE GRANDI_in loop.jpg" id="2_247la"]
 [ext_resource type="Script" uid="uid://c1rbrpkv46vxn" path="res://scenes/menu/main_menu.gd" id="4_xn6kt"]
 [ext_resource type="Texture2D" uid="uid://bs72jgr7r2ao1" path="res://assets/sprites/nave da applicare sopra a cielo per schermata iniziale.png" id="5_vovv2"]
 [ext_resource type="AudioStream" uid="uid://cckb80gi00ubh" path="res://assets/audio/calm-space-music-312291.mp3" id="8_qgo02"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kiqgm"]
-
-[sub_resource type="Theme" id="Theme_kiqgm"]
-Button/font_sizes/font_size = 64
-Button/styles/focus = SubResource("StyleBoxEmpty_kiqgm")
-Button/styles/hover = ExtResource("1_kiqgm")
-Button/styles/normal = ExtResource("1_247la")
-Button/styles/pressed = ExtResource("1_hj162")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_kiqgm"]
 shader = ExtResource("1_3rkf3")
@@ -28,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_kiqgm")
+theme = ExtResource("1_xn6kt")
 script = ExtResource("4_xn6kt")
 
 [node name="Menu" type="Control" parent="."]
