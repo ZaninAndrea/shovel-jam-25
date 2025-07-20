@@ -23,6 +23,7 @@ signal item_used(item)
 var previous_room_rotation: float = 0.0
 
 func _physics_process(_delta):
+	rotation = 0
 	var direction = Vector2(
 		Input.get_action_strength("ui_right") - Input.get_action_strength("ui_left"),
 		Input.get_action_strength("ui_down") - Input.get_action_strength("ui_up")
