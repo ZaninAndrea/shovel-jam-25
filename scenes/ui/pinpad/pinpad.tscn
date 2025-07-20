@@ -1,9 +1,15 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgtnj3mfvmi5w"]
+[gd_scene load_steps=11 format=3 uid="uid://dgtnj3mfvmi5w"]
 
 [ext_resource type="Script" uid="uid://dcsqu8pg67oax" path="res://scenes/ui/pinpad/pinpad.gd" id="1_og77o"]
-[ext_resource type="Texture2D" uid="uid://dfdpjon0pqgm3" path="res://assets/sprites/Pinpad/char1.png" id="2_hry08"]
-[ext_resource type="Texture2D" uid="uid://cjlwq3asirglb" path="res://assets/sprites/Pinpad/char2.png" id="3_g1bdf"]
-[ext_resource type="Texture2D" uid="uid://drgfjd6y8bjaw" path="res://assets/sprites/Pinpad/char3.png" id="4_368vv"]
+[ext_resource type="Texture2D" uid="uid://baxgykyjalxpe" path="res://assets/sprites/Pinpad/plancia enigma simboli.png" id="2_q6mly"]
+[ext_resource type="Texture2D" uid="uid://nbf70nubm3i0" path="res://assets/sprites/Pinpad/Simbolo1.png" id="3_8kdwr"]
+[ext_resource type="Texture2D" uid="uid://cte0ega8etlny" path="res://assets/sprites/Pinpad/Simbolo2.png" id="4_iv4uf"]
+[ext_resource type="Texture2D" uid="uid://dgw64nisbqped" path="res://assets/sprites/Pinpad/Simbolo3.png" id="5_m0w4x"]
+[ext_resource type="Texture2D" uid="uid://do0m1mq6e3igq" path="res://assets/sprites/Pinpad/Simbolo4.png" id="6_2rbkh"]
+[ext_resource type="Texture2D" uid="uid://dwgsh53wcqpwp" path="res://assets/sprites/Pinpad/Simbolo5.png" id="7_qltg1"]
+[ext_resource type="Texture2D" uid="uid://dlc16hr8vb53h" path="res://assets/sprites/Pinpad/Simbolo6.png" id="8_3rjxy"]
+[ext_resource type="Texture2D" uid="uid://dqhgmf1mei6gy" path="res://assets/sprites/Pinpad/Simbolo7.png" id="9_bxsk2"]
+[ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="10_8kdwr"]
 
 [node name="Pinpad" type="Control"]
 layout_mode = 3
@@ -14,83 +20,143 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_og77o")
 
-[node name="ColorRect" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(754, 545)
+scale = Vector2(0.8191, 0.78392)
+texture = ExtResource("2_q6mly")
+
+[node name="Slot1" type="TextureRect" parent="."]
+offset_left = 395.0
+offset_top = 831.0
+offset_right = 552.0
+offset_bottom = 1089.0
+scale = Vector2(0.3, 0.3)
+stretch_mode = 3
+
+[node name="Slot2" type="TextureRect" parent="."]
+offset_left = 569.0
+offset_top = 830.0
+offset_right = 713.0
+offset_bottom = 1095.0
+scale = Vector2(0.3, 0.3)
+stretch_mode = 3
+
+[node name="Slot3" type="TextureRect" parent="."]
+offset_left = 735.0
+offset_top = 834.0
+offset_right = 886.0
+offset_bottom = 1093.0
+scale = Vector2(0.3, 0.3)
+stretch_mode = 3
+
+[node name="Slot4" type="TextureRect" parent="."]
+offset_left = 903.0
+offset_top = 830.0
+offset_right = 1057.0
+offset_bottom = 1091.0
+scale = Vector2(0.3, 0.3)
+stretch_mode = 3
 
 [node name="Buttons" type="Control" parent="."]
+layout_mode = 3
 anchors_preset = 0
 offset_left = 252.0
 offset_top = 247.0
 offset_right = 483.0
 offset_bottom = 636.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Buttons"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureButton" type="TextureButton" parent="Buttons/VBoxContainer"]
+[node name="TextureButton" type="TextureButton" parent="Buttons"]
 layout_mode = 2
-texture_normal = ExtResource("2_hry08")
+offset_left = 397.0
+offset_top = -193.0
+offset_right = 741.0
+offset_bottom = 346.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("3_8kdwr")
 stretch_mode = 3
 
-[node name="TextureButton2" type="TextureButton" parent="Buttons/VBoxContainer"]
+[node name="TextureButton2" type="TextureButton" parent="Buttons"]
 layout_mode = 2
-texture_normal = ExtResource("3_g1bdf")
+offset_left = 687.0
+offset_top = -130.0
+offset_right = 1031.0
+offset_bottom = 409.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("4_iv4uf")
 stretch_mode = 3
 
-[node name="TextureButton3" type="TextureButton" parent="Buttons/VBoxContainer"]
+[node name="TextureButton3" type="TextureButton" parent="Buttons"]
 layout_mode = 2
-texture_normal = ExtResource("4_368vv")
+offset_left = 148.0
+offset_top = -45.0001
+offset_right = 520.0
+offset_bottom = 494.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("5_m0w4x")
 stretch_mode = 3
 
-[node name="Display" type="Control" parent="."]
-anchors_preset = 0
-offset_left = 910.0
-offset_top = 220.0
-offset_right = 1754.0
-offset_bottom = 773.0
-
-[node name="Slot1" type="TextureRect" parent="Display"]
-layout_mode = 0
-offset_left = -179.0
-offset_top = 39.0
-offset_right = 110.0
-offset_bottom = 515.0
+[node name="TextureButton4" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+offset_left = 441.0
+offset_top = 52.9999
+offset_right = 828.0
+offset_bottom = 592.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("6_2rbkh")
 stretch_mode = 3
 
-[node name="Slot2" type="TextureRect" parent="Display"]
-layout_mode = 0
-offset_left = 143.0
-offset_top = 45.0
-offset_right = 432.0
-offset_bottom = 521.0
+[node name="TextureButton5" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+offset_left = 702.0
+offset_top = 114.0
+offset_right = 1070.0
+offset_bottom = 653.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("7_qltg1")
 stretch_mode = 3
 
-[node name="Slot3" type="TextureRect" parent="Display"]
-layout_mode = 0
-offset_left = 382.0
-offset_top = 36.0
-offset_right = 671.0
-offset_bottom = 512.0
+[node name="TextureButton6" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+offset_left = 201.0
+offset_top = 207.0
+offset_right = 545.0
+offset_bottom = 746.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("8_3rjxy")
 stretch_mode = 3
 
-[node name="Slot4" type="TextureRect" parent="Display"]
-layout_mode = 0
-offset_left = 657.0
-offset_top = 23.0
-offset_right = 946.0
-offset_bottom = 499.0
+[node name="TextureButton7" type="TextureButton" parent="Buttons"]
+layout_mode = 2
+offset_left = 469.0
+offset_top = 300.0
+offset_right = 813.0
+offset_bottom = 839.0
+scale = Vector2(0.25, 0.25)
+texture_normal = ExtResource("9_bxsk2")
 stretch_mode = 3
 
-[connection signal="pressed" from="Buttons/VBoxContainer/TextureButton" to="." method="_on_texture_button_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/TextureButton2" to="." method="_on_texture_button_2_pressed"]
-[connection signal="pressed" from="Buttons/VBoxContainer/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[node name="Back Button" type="Button" parent="."]
+offset_left = 1390.0
+offset_top = 158.0
+offset_right = 1755.0
+offset_bottom = 289.0
+theme = ExtResource("10_8kdwr")
+text = "GO BACK"
+
+[node name="Cancel" type="Button" parent="."]
+offset_left = 1390.0
+offset_top = 771.0
+offset_right = 1755.0
+offset_bottom = 902.0
+theme = ExtResource("10_8kdwr")
+text = "CANCEL"
+
+[connection signal="pressed" from="Buttons/TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="Buttons/TextureButton2" to="." method="_on_texture_button_2_pressed"]
+[connection signal="pressed" from="Buttons/TextureButton3" to="." method="_on_texture_button_3_pressed"]
+[connection signal="pressed" from="Buttons/TextureButton4" to="." method="_on_texture_button_4_pressed"]
+[connection signal="pressed" from="Buttons/TextureButton5" to="." method="_on_texture_button_5_pressed"]
+[connection signal="pressed" from="Buttons/TextureButton6" to="." method="_on_texture_button_6_pressed"]
+[connection signal="pressed" from="Buttons/TextureButton7" to="." method="_on_texture_button_7_pressed"]
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="Cancel" to="." method="_on_cancel_pressed"]
