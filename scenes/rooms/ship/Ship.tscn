@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=3 uid="uid://b73umic6cn61s"]
+[gd_scene load_steps=27 format=3 uid="uid://b73umic6cn61s"]
 
 [ext_resource type="Script" uid="uid://ckitgm786lx6c" path="res://scenes/rooms/ship/ship.gd" id="1_6snk8"]
 [ext_resource type="PackedScene" uid="uid://cvbwr4ufmwluc" path="res://scenes/rooms/cockpit/cockpit.tscn" id="2_g8w7e"]
@@ -14,14 +14,24 @@
 [ext_resource type="PackedScene" uid="uid://dwnja3bsdv515" path="res://scenes/objects/mechanical_door/MechanicalDoor.tscn" id="7_f5as8"]
 [ext_resource type="SpriteFrames" uid="uid://b1rrai5mbv74l" path="res://scenes/objects/mechanical_door/centrale_dx.tres" id="8_38whp"]
 [ext_resource type="PackedScene" uid="uid://4c6gwmwuyerm" path="res://scenes/ui/text_feedback/interactionUI.tscn" id="8_mccq1"]
+[ext_resource type="Resource" uid="uid://311nohfxqdke" path="res://resources/items/torch.tres" id="9_4fxht"]
 [ext_resource type="PackedScene" uid="uid://hvf1gaf47bwu" path="res://scenes/rooms/sala_comune/sala_comune.tscn" id="9_a2dgw"]
 [ext_resource type="SpriteFrames" uid="uid://c015c12lphkwd" path="res://scenes/objects/mechanical_door/centrale_sx.tres" id="9_igsog"]
+[ext_resource type="Script" uid="uid://bnwpxdupu5mey" path="res://scenes/objects/mechanical_door/sala_comune_left_door.gd" id="10_4fxht"]
 [ext_resource type="PackedScene" uid="uid://cspeqk1g0vdqw" path="res://scenes/rooms/ripostiglio/ripostiglio.tscn" id="10_resca"]
 [ext_resource type="PackedScene" uid="uid://bccl4sqjl4dgq" path="res://scenes/rooms/stanzaB/stanzaB.tscn" id="11_resca"]
 [ext_resource type="SpriteFrames" uid="uid://dojovpy8e0psh" path="res://scenes/objects/mechanical_door/cuccette_door.tres" id="14_xjl5q"]
 [ext_resource type="SpriteFrames" uid="uid://cliirti07s0u8" path="res://scenes/objects/mechanical_door/robot_door.tres" id="17_f71ke"]
 [ext_resource type="SpriteFrames" uid="uid://c35jhf0aqdtro" path="res://scenes/objects/mechanical_door/circuit_door.tres" id="17_n3wt0"]
 [ext_resource type="Resource" path="res://resources/items/badge_active.tres" id="17_u81b8"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_4fxht"]
+radius = 60.0
+height = 294.0
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_n5bkm"]
+radius = 56.4564
+height = 306.439
 
 [node name="Ship" type="Node2D"]
 script = ExtResource("1_6snk8")
@@ -30,7 +40,7 @@ script = ExtResource("1_6snk8")
 position = Vector2(21, -1709)
 
 [node name="SalaComune" parent="Rooms" instance=ExtResource("9_a2dgw")]
-position = Vector2(3, 1727)
+position = Vector2(-8, 1463)
 speed = Vector2(120, 300)
 bottom_scale = 2.5
 top_scale = 1.5
@@ -55,6 +65,14 @@ state = "locked"
 other_door = NodePath("../../EngineRoom/MechanicalDoor")
 exit_shift = Vector2(0, 40)
 
+[node name="AnimatedSprite2D" parent="Rooms/SalaComune/SalaComuneSopra" index="0"]
+animation = &"locked"
+frame_progress = 0.873204
+
+[node name="InteractionArea2D" parent="Rooms/SalaComune/SalaComuneSopra" index="6"]
+visible = true
+position = Vector2(17.4672, 17.4672)
+
 [node name="SalaComuneDestra" parent="Rooms/SalaComune" node_paths=PackedStringArray("other_door") instance=ExtResource("7_f5as8")]
 z_index = -1
 position = Vector2(1641, 994)
@@ -64,7 +82,7 @@ exit_shift = Vector2(-80, -110)
 
 [node name="AnimatedSprite2D" parent="Rooms/SalaComune/SalaComuneDestra" index="0"]
 sprite_frames = ExtResource("8_38whp")
-frame_progress = 0.225375
+frame_progress = 0.388571
 
 [node name="StaticBody2D6" parent="Rooms/SalaComune/SalaComuneDestra" index="1"]
 position = Vector2(192, -32)
@@ -76,6 +94,7 @@ position = Vector2(-148, -315)
 rotation = 0.698132
 
 [node name="DoorLock" parent="Rooms/SalaComune/SalaComuneDestra" index="3"]
+z_index = 1
 position = Vector2(21, -186)
 rotation = 0.698132
 scale = Vector2(4.49, 1.33)
@@ -88,6 +107,11 @@ rotation = 0.698132
 position = Vector2(-12.4998, -125.087)
 rotation = 2.26893
 
+[node name="InteractionArea2D" parent="Rooms/SalaComune/SalaComuneDestra" index="6"]
+position = Vector2(-6, -133)
+rotation = -0.872665
+shape = SubResource("CapsuleShape2D_4fxht")
+
 [node name="Player" parent="Rooms/SalaComune" instance=ExtResource("5_72jju")]
 position = Vector2(606, 1003)
 scale = Vector2(2.3, 2.3)
@@ -95,13 +119,15 @@ scale = Vector2(2.3, 2.3)
 [node name="SalaComuneSinistra" parent="Rooms/SalaComune" node_paths=PackedStringArray("other_door") instance=ExtResource("7_f5as8")]
 z_index = -1
 position = Vector2(289, 960)
+script = ExtResource("10_4fxht")
+torch = ExtResource("9_4fxht")
 sprites = ExtResource("9_igsog")
 other_door = NodePath("../../Cuccette/CuccetteBasso")
 exit_shift = Vector2(80, -110)
 
 [node name="AnimatedSprite2D" parent="Rooms/SalaComune/SalaComuneSinistra" index="0"]
 sprite_frames = ExtResource("9_igsog")
-frame_progress = 0.347154
+frame_progress = 0.990475
 
 [node name="StaticBody2D6" parent="Rooms/SalaComune/SalaComuneSinistra" index="1"]
 position = Vector2(182, -304)
@@ -117,14 +143,20 @@ rotation = -0.628319
 scale = Vector2(5.69, 2.8)
 
 [node name="EnterDoorArea" parent="Rooms/SalaComune/SalaComuneSinistra" index="4"]
-position = Vector2(1, -177)
+position = Vector2(21, -175)
 rotation = -0.628319
+scale = Vector2(-0.57, 0.902)
 
 [node name="UnlockDoorArea" parent="Rooms/SalaComune/SalaComuneSinistra" index="5"]
 rotation = -0.628319
 
 [node name="CollisionShape2D" parent="Rooms/SalaComune/SalaComuneSinistra/UnlockDoorArea" index="0"]
 position = Vector2(102.813, -121.945)
+
+[node name="InteractionArea2D" parent="Rooms/SalaComune/SalaComuneSinistra" index="6"]
+position = Vector2(-27, -119)
+rotation = 0.872665
+shape = SubResource("CapsuleShape2D_n5bkm")
 
 [node name="Cockpit" parent="Rooms" instance=ExtResource("2_g8w7e")]
 
@@ -165,7 +197,7 @@ exit_shift = Vector2(-110, -60)
 
 [node name="AnimatedSprite2D" parent="Rooms/Cuccette/CuccetteLato" index="0"]
 sprite_frames = ExtResource("14_xjl5q")
-frame_progress = 0.255062
+frame_progress = 0.898392
 
 [node name="StaticBody2D6" parent="Rooms/Cuccette/CuccetteLato" index="1"]
 position = Vector2(207, 4.00001)
@@ -180,10 +212,11 @@ position = Vector2(108, -154)
 rotation = 0.513147
 
 [node name="EnterDoorArea" parent="Rooms/Cuccette/CuccetteLato" index="4"]
-position = Vector2(93, -53)
+position = Vector2(88, -45)
 rotation = 0.513147
 
 [node name="CollisionShape2D2" parent="Rooms/Cuccette/CuccetteLato/EnterDoorArea" index="0"]
+visible = true
 position = Vector2(-72.0469, -1.10889)
 
 [node name="UnlockDoorArea" parent="Rooms/Cuccette/CuccetteLato" index="5"]
@@ -205,7 +238,7 @@ other_door = NodePath("../../SalaComune/SalaComuneDestra")
 exit_shift = Vector2(0, -150)
 
 [node name="StanzaALato" parent="Rooms/StanzaA" node_paths=PackedStringArray("other_door") instance=ExtResource("7_f5as8")]
-position = Vector2(164, 932)
+position = Vector2(164, 931)
 scale = Vector2(-1, 1)
 key = ExtResource("17_u81b8")
 state = "locked"
@@ -216,7 +249,7 @@ exit_shift = Vector2(110, -70)
 [node name="AnimatedSprite2D" parent="Rooms/StanzaA/StanzaALato" index="0"]
 sprite_frames = ExtResource("14_xjl5q")
 animation = &"locked"
-frame_progress = 0.553518
+frame_progress = 0.196849
 
 [node name="StaticBody2D6" parent="Rooms/StanzaA/StanzaALato" index="1"]
 position = Vector2(213, -4)
@@ -234,9 +267,17 @@ rotation = 0.509868
 position = Vector2(68, -78)
 rotation = 0.509868
 
+[node name="CollisionShape2D2" parent="Rooms/StanzaA/StanzaALato/EnterDoorArea" index="0"]
+position = Vector2(-46.5669, 11.2679)
+
 [node name="UnlockDoorArea" parent="Rooms/StanzaA/StanzaALato" index="5"]
 position = Vector2(67.5001, -107.913)
 rotation = 0.509868
+
+[node name="InteractionArea2D" parent="Rooms/StanzaA/StanzaALato" index="6"]
+visible = true
+position = Vector2(11, -73)
+rotation = 2.13755
 
 [node name="Ripostiglio" parent="Rooms" instance=ExtResource("10_resca")]
 position = Vector2(-2002, 4716)
@@ -253,7 +294,7 @@ exit_shift = Vector2(-170, -60)
 [node name="AnimatedSprite2D" parent="Rooms/Ripostiglio/RipostiglioDoor" index="0"]
 sprite_frames = ExtResource("17_f71ke")
 animation = &"locked"
-frame_progress = 0.304256
+frame_progress = 0.947581
 
 [node name="StaticBody2D6" parent="Rooms/Ripostiglio/RipostiglioDoor" index="1"]
 position = Vector2(262.335, 102.286)
@@ -270,6 +311,9 @@ rotation = 0.622072
 [node name="EnterDoorArea" parent="Rooms/Ripostiglio/RipostiglioDoor" index="4"]
 position = Vector2(68.5813, -39.7942)
 rotation = 0.622072
+
+[node name="CollisionShape2D2" parent="Rooms/Ripostiglio/RipostiglioDoor/EnterDoorArea" index="0"]
+position = Vector2(-5.4087, 15.4314)
 
 [node name="UnlockDoorArea" parent="Rooms/Ripostiglio/RipostiglioDoor" index="5"]
 position = Vector2(68.0814, -69.7072)
@@ -290,7 +334,7 @@ exit_shift = Vector2(140, -40)
 
 [node name="AnimatedSprite2D" parent="Rooms/StanzaB/StanzaBDoor" index="0"]
 sprite_frames = ExtResource("17_n3wt0")
-frame_progress = 0.255062
+frame_progress = 0.898392
 
 [node name="StaticBody2D6" parent="Rooms/StanzaB/StanzaBDoor" index="1"]
 position = Vector2(185.319, -215.403)
@@ -309,7 +353,7 @@ position = Vector2(-66.1961, -50.6245)
 rotation = -0.630494
 
 [node name="CollisionShape2D2" parent="Rooms/StanzaB/StanzaBDoor/EnterDoorArea" index="0"]
-position = Vector2(92.2589, 26.9156)
+position = Vector2(90.458, 33.8762)
 
 [node name="UnlockDoorArea" parent="Rooms/StanzaB/StanzaBDoor" index="5"]
 position = Vector2(-66.696, -80.5375)
@@ -326,6 +370,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="InteractionUI" parent="." instance=ExtResource("8_mccq1")]
 
+[editable path="Rooms/SalaComune/SalaComuneSopra"]
 [editable path="Rooms/SalaComune/SalaComuneDestra"]
 [editable path="Rooms/SalaComune/SalaComuneSinistra"]
 [editable path="Rooms/Cuccette/CuccetteLato"]

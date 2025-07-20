@@ -110,16 +110,24 @@ func _on_push_area_body_exited(body: Node2D) -> void:
 
 func _input(event):
 	if event.is_action_pressed("select_slot_1"): # custom action mapped to key "1"
+		var closest_item = null
+		var minimum_distance = 10000000.0
+		
 		var overlapping_areas = interaction_area.get_overlapping_areas()
 		for area in overlapping_areas:
 			if area.is_in_group("interactable"):
-				area.interact()
-				return
+				var distance = area.position.distance_to(self.position)
+				if distance < minimum_distance:
+					closest_item = area
 				
 		var overlapping_bodies = interaction_area.get_overlapping_bodies()
 		for body in overlapping_bodies:
 			if body.is_in_group("interactable"):
-				body.interact()
-				return
-		
-		UIManager.show_feedback("There is nothing here.", 3)
+				var distance = body.position.distance_to(self.position)
+				if distance < minimum_distance:
+					closest_item = body
+				
+		if closest_item != null:
+			closest_item.interact()
+		else:
+			UIManager.show_feedback("There is nothing here.", 3)

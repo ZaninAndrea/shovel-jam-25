@@ -27,9 +27,9 @@ func apply_state(new_state: String):
 		
 	if door_lock != null:
 		if new_state == "open" and state != "open":
-			door_lock.position.y -= 150
+			door_lock.position.y -= 30
 		elif new_state != "open" and state == "open":
-			door_lock.position.y += 150
+			door_lock.position.y += 30
 
 func _on_enter_door_area_body_entered(body: Node2D) -> void:
 	if is_changing_room:
