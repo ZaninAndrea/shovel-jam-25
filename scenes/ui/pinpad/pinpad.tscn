@@ -12,6 +12,7 @@
 [ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="10_8kdwr"]
 
 [node name="Pinpad" type="Control"]
+z_index = 5
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -26,6 +27,7 @@ scale = Vector2(0.8191, 0.78392)
 texture = ExtResource("2_q6mly")
 
 [node name="Slot1" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 395.0
 offset_top = 831.0
 offset_right = 552.0
@@ -34,6 +36,7 @@ scale = Vector2(0.3, 0.3)
 stretch_mode = 3
 
 [node name="Slot2" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 569.0
 offset_top = 830.0
 offset_right = 713.0
@@ -42,6 +45,7 @@ scale = Vector2(0.3, 0.3)
 stretch_mode = 3
 
 [node name="Slot3" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 735.0
 offset_top = 834.0
 offset_right = 886.0
@@ -50,6 +54,7 @@ scale = Vector2(0.3, 0.3)
 stretch_mode = 3
 
 [node name="Slot4" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 903.0
 offset_top = 830.0
 offset_right = 1057.0
@@ -136,6 +141,7 @@ texture_normal = ExtResource("9_bxsk2")
 stretch_mode = 3
 
 [node name="Back Button" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1390.0
 offset_top = 158.0
 offset_right = 1755.0
@@ -144,6 +150,7 @@ theme = ExtResource("10_8kdwr")
 text = "GO BACK"
 
 [node name="Cancel" type="Button" parent="."]
+layout_mode = 0
 offset_left = 1390.0
 offset_top = 771.0
 offset_right = 1755.0

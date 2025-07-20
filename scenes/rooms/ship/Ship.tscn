@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://b73umic6cn61s"]
+[gd_scene load_steps=17 format=3 uid="uid://b73umic6cn61s"]
 
 [ext_resource type="Script" uid="uid://ckitgm786lx6c" path="res://scenes/rooms/ship/ship.gd" id="1_6snk8"]
 [ext_resource type="PackedScene" uid="uid://cvbwr4ufmwluc" path="res://scenes/rooms/cockpit/cockpit.tscn" id="2_g8w7e"]
@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://cfjtgy2w2c04l" path="res://scenes/player/player.tscn" id="5_72jju"]
 [ext_resource type="Resource" uid="uid://x24ae5hu0ojh" path="res://resources/items/badge.tres" id="5_kgs04"]
 [ext_resource type="PackedScene" uid="uid://bo07dld0sfo1r" path="res://scenes/rooms/cuccette/cuccette.tscn" id="5_mccq1"]
+[ext_resource type="Script" uid="uid://bycm0pqh1gp8w" path="res://scenes/objects/mechanical_door/enigma_door.gd" id="5_r47wi"]
 [ext_resource type="PackedScene" uid="uid://ryss6rhhwk0i" path="res://scenes/rooms/stanzaA/stanzaA.tscn" id="6_lf6ba"]
+[ext_resource type="PackedScene" uid="uid://dgtnj3mfvmi5w" path="res://scenes/ui/pinpad/pinpad.tscn" id="6_n6ma2"]
 [ext_resource type="PackedScene" uid="uid://dwnja3bsdv515" path="res://scenes/objects/mechanical_door/MechanicalDoor.tscn" id="7_f5as8"]
 [ext_resource type="PackedScene" uid="uid://4c6gwmwuyerm" path="res://scenes/ui/text_feedback/interactionUI.tscn" id="8_mccq1"]
 [ext_resource type="PackedScene" uid="uid://hvf1gaf47bwu" path="res://scenes/rooms/sala_comune/sala_comune.tscn" id="9_a2dgw"]
@@ -48,6 +50,8 @@ exit_shift = Vector2(80, 80)
 [node name="SalaComuneSopra" parent="Rooms/SalaComune" node_paths=PackedStringArray("other_door") instance=ExtResource("7_f5as8")]
 position = Vector2(946, 616)
 scale = Vector2(0.458, 0.458)
+script = ExtResource("5_r47wi")
+enigma = ExtResource("6_n6ma2")
 key = ExtResource("5_kgs04")
 state = "locked"
 other_door = NodePath("../../EngineRoom/MechanicalDoor")

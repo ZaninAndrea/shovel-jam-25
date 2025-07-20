@@ -1,4 +1,4 @@
-extends Control
+extends Enigma
 
 @onready var laser_emitters: Array[Node2D] = [
 	$Emitter1/LaserEmitter1,

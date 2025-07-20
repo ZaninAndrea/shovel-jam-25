@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c7mespaw1x775" path="res://scenes/ui/clock/clock.tscn" id="3_rqne3"]
 
 [node name="InventoryUI" type="Control"]
+z_index = 10
 layout_mode = 3
 anchors_preset = 0
 script = ExtResource("1_vyf8a")

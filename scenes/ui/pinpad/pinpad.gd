@@ -1,4 +1,4 @@
-extends Control
+extends Enigma
 
 var textures = {
 	"char1": preload("res://assets/sprites/Pinpad/Simbolo1.png"),
@@ -28,6 +28,7 @@ var current_input: Array[String] = []
 
 
 func on_button_pressed(character: String):
+	print(character)
 	if current_input.size() >= 4:
 		return
 	
@@ -40,9 +41,14 @@ func on_button_pressed(character: String):
 
 func check_password():
 	if current_input == solution:
-		print("Correct!")
+		print("Solved")
+		solved.emit()
 	else:
 		print("Wrong!")
+		await get_tree().create_timer(0.5).timeout
+		for slot in slots:
+			slot.texture = null
+		current_input = []
 
 
 func _on_texture_button_pressed() -> void:
@@ -74,7 +80,7 @@ func _on_texture_button_7_pressed() -> void:
 
 
 func _on_back_button_pressed() -> void:
-	print("go back")
+	closed.emit()
 
 
 func _on_cancel_pressed() -> void:
