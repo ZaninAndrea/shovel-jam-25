@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://ryss6rhhwk0i"]
+[gd_scene load_steps=9 format=3 uid="uid://ryss6rhhwk0i"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_2ovkv"]
 [ext_resource type="Texture2D" uid="uid://drvhsa00esihh" path="res://assets/sprites/rooms/Stanza B_1920x1080.jpg" id="2_ilnad"]
@@ -7,6 +7,7 @@
 [ext_resource type="Resource" uid="uid://bc5yjxgdixiqn" path="res://resources/items/crowbar.tres" id="5_ilnad"]
 [ext_resource type="Resource" uid="uid://dtysatcy7i5im" path="res://resources/items/saldatrice.tres" id="5_vae3v"]
 [ext_resource type="PackedScene" uid="uid://1sg0hvmx3j1h" path="res://scenes/objects/divider/divider.tscn" id="6_ceyv1"]
+[ext_resource type="Texture2D" uid="uid://c3upea6l5fsqi" path="res://assets/sprites/items/piede di porco.png" id="8_fwec3"]
 
 [node name="StanzaA" type="Node2D"]
 script = ExtResource("1_2ovkv")
@@ -97,3 +98,12 @@ position = Vector2(547, 765)
 rotation = 3.14159
 scale = Vector2(2, 2)
 item = ExtResource("5_ilnad")
+
+[node name="CollisionShape2D" parent="DroppedItem" index="0"]
+position = Vector2(-17.9999, -24.5)
+
+[node name="Sprite2D" parent="DroppedItem" index="1"]
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("8_fwec3")
+
+[editable path="DroppedItem"]

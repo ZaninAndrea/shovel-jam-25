@@ -22,7 +22,7 @@ sprites = ExtResource("2_u85oo")
 position = Vector2(5, -308)
 sprite_frames = ExtResource("2_u85oo")
 animation = &"unlocked"
-frame_progress = 0.141344
+frame_progress = 0.94522
 
 [node name="StaticBody2D6" parent="." instance=ExtResource("4_ct7rl")]
 visible = false
@@ -47,6 +47,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="EnterDoorArea"]
+visible = false
 position = Vector2(26.9663, -1.10865)
 shape = SubResource("RectangleShape2D_ct7rl")
 
