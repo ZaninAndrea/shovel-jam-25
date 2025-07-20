@@ -27,6 +27,11 @@ func start_reset_sequence():
 func end_reset_sequence():
 	print("END")
 	InputFreeze.lock_input = false
+	if !Lore.shown_space_message:
+		Lore.shown_space_message = true
+		UIManager.show_feedback("I'm back at the start of the loop!", 4.0)
+		await get_tree().create_timer(5).timeout
+		UIManager.show_feedback("Now I remember that I can press <SPACE> to ponder for a bit", 4.0)
 	
 func reset_time():
 	get_tree().reload_current_scene()
