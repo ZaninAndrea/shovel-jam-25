@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bi1b1x3qm07g3"]
+[gd_scene load_steps=5 format=3 uid="uid://bi1b1x3qm07g3"]
 
 [ext_resource type="Script" uid="uid://cvvfhmmdhnn65" path="res://scenes/objects/dropped_item/dropped_item.gd" id="1_28c6i"]
+[ext_resource type="Shader" uid="uid://cy51k03vgrmbf" path="res://scenes/objects/dropped_item/random_shake.gdshader" id="2_ugmra"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_28c6i"]
 radius = 20.025
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h1t4t"]
+shader = ExtResource("2_ugmra")
 
 [node name="DroppedItem" type="Area2D" groups=["interactable"]]
 collision_layer = 8
@@ -14,3 +18,4 @@ script = ExtResource("1_28c6i")
 shape = SubResource("CircleShape2D_28c6i")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_h1t4t")
