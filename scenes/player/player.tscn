@@ -1,13 +1,16 @@
-[gd_scene load_steps=15 format=3 uid="uid://cfjtgy2w2c04l"]
+[gd_scene load_steps=18 format=3 uid="uid://cfjtgy2w2c04l"]
 
 [ext_resource type="Script" uid="uid://doqvxyu2lonkd" path="res://scenes/player/player.gd" id="1_dovo2"]
 [ext_resource type="Texture2D" uid="uid://b0wsbe84lgou3" path="res://assets/sprites/Alien/BD alieno movimento1.png" id="2_5gtgg"]
 [ext_resource type="Texture2D" uid="uid://bkm882cvbuvjf" path="res://assets/sprites/Alien1.png" id="2_dovo2"]
 [ext_resource type="Texture2D" uid="uid://dyqqmnirwlsuo" path="res://assets/sprites/Alien/AD alieno movimento1.png" id="2_p47bc"]
 [ext_resource type="Texture2D" uid="uid://c7pcqmca2l0wa" path="res://assets/sprites/Alien/AD alieno movimento2.png" id="3_75vfm"]
+[ext_resource type="Texture2D" uid="uid://cufn0wgxghkqj" path="res://assets/sprites/Alien/Alien B2.png" id="3_gx1jg"]
 [ext_resource type="Texture2D" uid="uid://cfoqgheeuu3yb" path="res://assets/sprites/Alien/BD alieno movimento2.png" id="3_h17s1"]
 [ext_resource type="Texture2D" uid="uid://ima7wrwcdb6y" path="res://assets/sprites/Alien/AD alieno movimento3.png" id="4_0owmy"]
 [ext_resource type="Texture2D" uid="uid://batnvhl2kl68g" path="res://assets/sprites/Alien/BD alieno movimento3.png" id="4_je7p5"]
+[ext_resource type="Texture2D" uid="uid://cqkib3sfg44ny" path="res://assets/sprites/Alien/Alien B3.png" id="4_ugbui"]
+[ext_resource type="Texture2D" uid="uid://bd7f6nqtctgmg" path="res://assets/sprites/Alien/Alien B4.png" id="5_fcs02"]
 [ext_resource type="Texture2D" uid="uid://d3n3dvae4tala" path="res://assets/sprites/Alien/BD alieno movimento4.png" id="5_fm80t"]
 [ext_resource type="Texture2D" uid="uid://d3vxhngv064y" path="res://assets/sprites/Alien/AD alieno movimento4.png" id="5_qek5x"]
 
@@ -16,6 +19,15 @@ animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_dovo2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gx1jg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ugbui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_fcs02")
 }],
 "loop": true,
 "name": &"idle",

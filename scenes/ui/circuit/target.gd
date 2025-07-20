@@ -17,7 +17,6 @@ func unregister_laser_hit():
 
 func check_laser_state():
 	if laser_count == 1:
-		print("You Win")
 		%TargetSprite.show()
 		# Delay a couple of seconds
 		await get_tree().create_timer(2.0).timeout

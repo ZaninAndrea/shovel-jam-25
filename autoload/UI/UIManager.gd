@@ -57,6 +57,5 @@ func _on_hide_timer_timeout():
 	_on_fade_finished()
 
 func _on_fade_finished():
-	print("Fade finished")
 	if canvas_layer:
 		canvas_layer.visible = false
