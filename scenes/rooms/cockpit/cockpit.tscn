@@ -1,11 +1,13 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvbwr4ufmwluc"]
+[gd_scene load_steps=10 format=3 uid="uid://cvbwr4ufmwluc"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_6s8b5"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="2_u631n"]
 [ext_resource type="Texture2D" uid="uid://b1oc6mmvt5jfg" path="res://assets/sprites/CON STELLE GRANDI_in loop.jpg" id="3_1j8gf"]
 [ext_resource type="Texture2D" uid="uid://dsq3co8dkhdgr" path="res://assets/sprites/rooms/cockpit senza sfondo.png" id="4_1j8gf"]
 [ext_resource type="Script" uid="uid://rjm17poxiem0" path="res://scenes/rooms/cockpit/computer.gd" id="5_1j8gf"]
+[ext_resource type="Resource" uid="uid://x24ae5hu0ojh" path="res://resources/items/badge.tres" id="6_5l60j"]
 [ext_resource type="PackedScene" uid="uid://cnweuxe5f7yw4" path="res://scenes/ui/pinpad/pc_passcode.tscn" id="6_kcbey"]
+[ext_resource type="Resource" uid="uid://bvey5bmplmmm0" path="res://resources/items/badge_active.tres" id="7_y1fps"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_07vwx"]
 size = Vector2(555, 124)
@@ -43,6 +45,8 @@ scale = Vector2(25.11, 1.09)
 [node name="Computer" type="Area2D" parent="." groups=["interactable"]]
 collision_layer = 8
 script = ExtResource("5_1j8gf")
+badge = ExtResource("6_5l60j")
+active_badge = ExtResource("7_y1fps")
 enigma = ExtResource("6_kcbey")
 
 [node name="InteractionArea" type="CollisionShape2D" parent="Computer" groups=["interactable"]]

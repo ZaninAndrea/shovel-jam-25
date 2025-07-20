@@ -1,5 +1,7 @@
 class_name Computer extends Area2D
 
+@export var badge: Item = null
+@export var active_badge: Item = null
 @export var enigma: PackedScene = null
 @export_enum("locked", "unlocked") var state: String = "locked"
 var enigma_instance: Enigma = null
@@ -23,9 +25,15 @@ func interact():
 		enigma_instance.closed.connect(closed_enigma)
 		enigma_instance.solved.connect(solved_enigma)
 	
-	else: 
+	else:
 		# If it is unlocked, activate the badge
-		print("I'm active!")
+		var badge_position = Inventory.find_item(badge)
+		if badge_position <= 0:
+			UIManager.show_feedback("The main computer can be used to activate a badge.")
+		else:
+			Inventory.remove_item(badge_position)
+			Inventory.set_item(active_badge)
+			UIManager.show_feedback("The main computer activated my badge!")
 		return
 
 func closed_enigma():
@@ -36,3 +44,9 @@ func solved_enigma():
 	state = "unlocked"
 	enigma_instance.queue_free()
 	enigma_instance = null
+	# On enigma solution, directly activate the badge
+	var badge_position = Inventory.find_item(badge)
+	if badge_position > 0:
+		Inventory.remove_item(badge_position)
+		Inventory.set_item(active_badge)
+		UIManager.show_feedback("The main computer activated my badge!")
