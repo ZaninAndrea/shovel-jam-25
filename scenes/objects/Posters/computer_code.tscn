@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://d0lyn3s4v107i"]
+
+[ext_resource type="Script" uid="uid://dia8fyfgaammb" path="res://scenes/objects/Posters/poster.gd" id="1_fh34t"]
+[ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="2_fw2qj"]
+[ext_resource type="Theme" uid="uid://dkhftya2u7dp0" path="res://resources/Theme & Style/main_menu_theme.tres" id="3_1micn"]
+[ext_resource type="Texture2D" uid="uid://b0rv67641i12o" path="res://assets/sprites/paper_popup_cut.png" id="4_71hwk"]
+[ext_resource type="FontFile" uid="uid://d1udguboqc78k" path="res://assets/fonts/Emocja.ttf" id="5_cdtds"]
+[ext_resource type="Texture2D" uid="uid://cjour3csd55qd" path="res://assets/sprites/Pinpad/Simbolo5_2.png" id="6_fw2qj"]
+[ext_resource type="Texture2D" uid="uid://80vikg6io1m0" path="res://assets/sprites/Pinpad/Simbolo4_4.png" id="7_1micn"]
+[ext_resource type="Texture2D" uid="uid://cuulyffyew1ia" path="res://assets/sprites/Pinpad/Simbolo7_2.png" id="8_71hwk"]
+[ext_resource type="Texture2D" uid="uid://djf7wox5k8p28" path="res://assets/sprites/Pinpad/Simbolo2_2.png" id="9_cdtds"]
+
+[node name="CodeDoor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_fh34t")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(584, 468)
+scale = Vector2(0.5, 0.532385)
+texture = ExtResource("2_fw2qj")
+
+[node name="Back Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1390.0
+offset_top = 158.0
+offset_right = 1755.0
+offset_bottom = 289.0
+theme = ExtResource("3_1micn")
+text = "GO BACK"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 1557.0
+offset_top = 822.0
+offset_right = 1597.0
+offset_bottom = 862.0
+
+[node name="Sprite2D" type="Sprite2D" parent="Control"]
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_71hwk")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/Sprite2D"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -760.0
+offset_top = -506.667
+offset_right = -760.0
+offset_bottom = -506.667
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+size_flags_horizontal = 6
+size_flags_vertical = 6
+theme_override_colors/default_color = Color(0, 0, 0.380392, 1)
+theme_override_fonts/normal_font = ExtResource("5_cdtds")
+theme_override_font_sizes/normal_font_size = 200
+text = "This seems to be some kind of code"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Simbolo1" type="Sprite2D" parent="."]
+position = Vector2(282, 480)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("6_fw2qj")
+
+[node name="Simbolo2" type="Sprite2D" parent="."]
+position = Vector2(477, 448)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("7_1micn")
+
+[node name="Simbolo3" type="Sprite2D" parent="."]
+position = Vector2(672, 480)
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("8_71hwk")
+
+[node name="Simbolo4" type="Sprite2D" parent="."]
+position = Vector2(850, 455)
+rotation = -0.261799
+scale = Vector2(0.35, 0.35)
+texture = ExtResource("9_cdtds")
+
+[connection signal="pressed" from="Back Button" to="." method="_on_back_button_pressed"]

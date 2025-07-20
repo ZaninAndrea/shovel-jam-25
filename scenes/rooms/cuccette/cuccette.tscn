@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bo07dld0sfo1r"]
+[gd_scene load_steps=16 format=3 uid="uid://bo07dld0sfo1r"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_g8m8x"]
 [ext_resource type="Shader" uid="uid://b52soagb1spsk" path="res://scenes/rooms/cuccette/scroll.gdshader" id="2_qqkyw"]
@@ -9,12 +9,18 @@
 [ext_resource type="PackedScene" uid="uid://bi1b1x3qm07g3" path="res://scenes/objects/dropped_item/dropped_item.tscn" id="7_3cdu1"]
 [ext_resource type="Resource" uid="uid://x24ae5hu0ojh" path="res://resources/items/badge.tres" id="8_evldj"]
 [ext_resource type="Texture2D" uid="uid://42d6cxxk52ug" path="res://assets/sprites/items/badge.png" id="9_7mskf"]
+[ext_resource type="Script" uid="uid://dti5ppk7k5kyp" path="res://scenes/rooms/cuccette/poster.gd" id="10_7mskf"]
+[ext_resource type="Texture2D" uid="uid://dim28iownowdy" path="res://assets/sprites/paper_popup.png" id="11_dq8y7"]
+[ext_resource type="PackedScene" uid="uid://cs3ubhatuxpt8" path="res://scenes/objects/Posters/ship_map.tscn" id="11_whvpp"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_nakql"]
 shader = ExtResource("2_qqkyw")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dq8y7"]
 size = Vector2(266, 70)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_whvpp"]
+size = Vector2(302, 89)
 
 [node name="Cuccette" type="Node2D"]
 y_sort_enabled = true
@@ -111,5 +117,23 @@ position = Vector2(38, 8)
 rotation = -0.76969
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("9_7mskf")
+
+[node name="Poster" type="Area2D" parent="." groups=["interactable"]]
+collision_layer = 8
+collision_mask = 2
+script = ExtResource("10_7mskf")
+poster = ExtResource("11_whvpp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Poster"]
+position = Vector2(1167, 519)
+rotation = 1.5708
+scale = Vector2(0.08, 0.08)
+texture = ExtResource("11_dq8y7")
+
+[node name="InteractionArea" type="CollisionShape2D" parent="Poster" groups=["interactable"]]
+light_mask = 8
+visibility_layer = 2
+position = Vector2(1172, 794)
+shape = SubResource("RectangleShape2D_whvpp")
 
 [editable path="DroppedItem"]
