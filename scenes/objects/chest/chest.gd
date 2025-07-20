@@ -1,4 +1,4 @@
-class_name Chest extends Interactable
+class_name Chest extends CharacterBody2D
 
 @export var key: Item = null
 @export var drop: Item = null
@@ -6,6 +6,24 @@ class_name Chest extends Interactable
 @export var consume_chest: bool = true
 @export var drop_offset: Vector2 = Vector2(0, 32)
 const DROPPED_ITEM = preload("res://scenes/objects/dropped_item/dropped_item.tscn")
+
+var external_push := Vector2.ZERO  # Temporary push input from the player
+
+func _physics_process(delta):
+	if external_push.length() > 0.1:
+		# Only move if there's a push
+		velocity = external_push
+		move_and_slide()
+		
+		# Reset push so it doesn't continue moving on its own
+		external_push = Vector2.ZERO
+	else:
+		velocity = Vector2.ZERO  # Stay still when not pushed
+
+func push(force: Vector2):
+	# Called by the player to apply a push
+	external_push = force
+
 
 func interact():
 	var key_slot = Inventory.find_item(key)

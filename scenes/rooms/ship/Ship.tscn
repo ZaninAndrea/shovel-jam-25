@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cfjtgy2w2c04l" path="res://scenes/player/player.tscn" id="5_72jju"]
 [ext_resource type="Resource" uid="uid://x24ae5hu0ojh" path="res://resources/items/badge.tres" id="5_kgs04"]
 [ext_resource type="PackedScene" uid="uid://bo07dld0sfo1r" path="res://scenes/rooms/cuccette/cuccette.tscn" id="5_mccq1"]
-[ext_resource type="Script" path="res://scenes/objects/mechanical_door/enigma_door.gd" id="5_r47wi"]
+[ext_resource type="Script" uid="uid://bycm0pqh1gp8w" path="res://scenes/objects/mechanical_door/enigma_door.gd" id="5_r47wi"]
 [ext_resource type="PackedScene" uid="uid://ryss6rhhwk0i" path="res://scenes/rooms/stanzaA/stanzaA.tscn" id="6_lf6ba"]
 [ext_resource type="PackedScene" uid="uid://dgtnj3mfvmi5w" path="res://scenes/ui/pinpad/pinpad.tscn" id="6_n6ma2"]
 [ext_resource type="PackedScene" uid="uid://dwnja3bsdv515" path="res://scenes/objects/mechanical_door/MechanicalDoor.tscn" id="7_f5as8"]

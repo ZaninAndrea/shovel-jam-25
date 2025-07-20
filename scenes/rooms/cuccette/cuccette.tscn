@@ -1,7 +1,7 @@
 [gd_scene load_steps=12 format=3 uid="uid://bo07dld0sfo1r"]
 
 [ext_resource type="Script" uid="uid://ecdea1s3ran8" path="res://scripts/components/room.gd" id="1_g8m8x"]
-[ext_resource type="Shader" path="res://scenes/rooms/cuccette/scroll.gdshader" id="2_qqkyw"]
+[ext_resource type="Shader" uid="uid://b52soagb1spsk" path="res://scenes/rooms/cuccette/scroll.gdshader" id="2_qqkyw"]
 [ext_resource type="Texture2D" uid="uid://b1oc6mmvt5jfg" path="res://assets/sprites/CON STELLE GRANDI_in loop.jpg" id="3_nakql"]
 [ext_resource type="Texture2D" uid="uid://ikjiibwr1666" path="res://assets/sprites/rooms/Stanza C_1920x1080_no_cielo.png" id="3_qqkyw"]
 [ext_resource type="PackedScene" uid="uid://nvkcrxp1kued" path="res://scenes/objects/wall.tscn" id="3_x472f"]
@@ -26,7 +26,7 @@ top_position = 0.3
 movement_rotation = 4.71239
 
 [node name="BackgroundCielo" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -3
 texture_repeat = 2
 material = SubResource("ShaderMaterial_nakql")
 position = Vector2(1969, 128)
@@ -34,7 +34,7 @@ rotation = 4.71239
 texture = ExtResource("3_nakql")
 
 [node name="StanzaB1920x1080" type="Sprite2D" parent="."]
-z_index = -1
+z_index = -2
 y_sort_enabled = true
 position = Vector2(960, 540)
 texture = ExtResource("3_qqkyw")
@@ -95,6 +95,8 @@ position = Vector2(960, 540)
 position = Vector2(1750, 1048)
 
 [node name="DroppedItem" parent="." instance=ExtResource("7_3cdu1")]
+z_index = -1
+y_sort_enabled = true
 position = Vector2(345, 787)
 scale = Vector2(0.5, 0.5)
 item = ExtResource("8_evldj")
@@ -104,6 +106,7 @@ position = Vector2(-3, 208)
 shape = SubResource("RectangleShape2D_dq8y7")
 
 [node name="Sprite2D" parent="DroppedItem" index="1"]
+y_sort_enabled = true
 position = Vector2(38, 8)
 rotation = -0.76969
 scale = Vector2(0.1, 0.1)

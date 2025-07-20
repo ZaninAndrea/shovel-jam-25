@@ -6,16 +6,18 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vmxm4"]
 size = Vector2(245, 89)
 
-[node name="Chest" type="StaticBody2D" groups=["interactable", "pushable"]]
+[node name="Chest" type="CharacterBody2D" groups=["interactable", "pushable"]]
 y_sort_enabled = true
-collision_layer = 6
-collision_mask = 0
+collision_layer = 4
+collision_mask = 7
 script = ExtResource("1_vmxm4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 y_sort_enabled = true
+position = Vector2(-2, -20)
 texture = ExtResource("2_vmxm4")
+offset = Vector2(0, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 77.5)
+position = Vector2(-1, 159)
 shape = SubResource("RectangleShape2D_vmxm4")
