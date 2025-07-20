@@ -133,4 +133,8 @@ position = Vector2(1792, 908)
 rotation = 0.645772
 shape = SubResource("RectangleShape2D_45lbt")
 
+[node name="DroppedItem2" parent="." instance=ExtResource("4_ilnad")]
+position = Vector2(795, 991)
+item = ExtResource("5_vae3v")
+
 [editable path="DroppedItem"]

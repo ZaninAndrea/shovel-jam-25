@@ -29,10 +29,12 @@ func interact():
 		# If it is unlocked, activate the badge
 		var badge_position = Inventory.find_item(badge)
 		if badge_position <= 0:
+			SFX.play("boop")
 			UIManager.show_feedback("The main computer can be used to activate a badge.")
 		else:
 			Inventory.remove_item(badge_position)
 			Inventory.set_item(active_badge)
+			SFX.play("boop")
 			UIManager.show_feedback("The main computer activated my badge!")
 		return
 
@@ -49,4 +51,5 @@ func solved_enigma():
 	if badge_position > 0:
 		Inventory.remove_item(badge_position)
 		Inventory.set_item(active_badge)
+		SFX.play("boop")
 		UIManager.show_feedback("The main computer activated my badge!")

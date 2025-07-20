@@ -20,4 +20,5 @@ func _update_icon():
 func interact():
 	Inventory.set_item(item)
 	self.queue_free()
-	UIManager.show_feedback("You collected a "+item.name, 4)
+	SFX.play("boop")
+	UIManager.show_feedback("You collected a " + item.name, 4)

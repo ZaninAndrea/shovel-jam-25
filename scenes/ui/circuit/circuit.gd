@@ -46,6 +46,7 @@ func _process(_delta: float) -> void:
 
 func _on_button_1_pressed() -> void:
 	button_pressed[0] = !button_pressed[0]
+	SFX.play("click")
 	if labels[0].text == "ON":
 		labels[0].text = "OFF"
 	else:
@@ -54,6 +55,7 @@ func _on_button_1_pressed() -> void:
 
 func _on_button_2_pressed() -> void:
 	button_pressed[1] = !button_pressed[1]
+	SFX.play("click")
 	if labels[1].text == "ON":
 		labels[1].text = "OFF"
 	else:
@@ -62,6 +64,7 @@ func _on_button_2_pressed() -> void:
 
 func _on_button_3_pressed() -> void:
 	button_pressed[2] = !button_pressed[2]
+	SFX.play("click")
 	if labels[2].text == "ON":
 		labels[2].text = "OFF"
 	else:
@@ -70,6 +73,7 @@ func _on_button_3_pressed() -> void:
 
 func _on_button_4_pressed() -> void:
 	button_pressed[3] = !button_pressed[3]
+	SFX.play("click")
 	if labels[3].text == "ON":
 		labels[3].text = "OFF"
 	else:
@@ -78,6 +82,7 @@ func _on_button_4_pressed() -> void:
 
 func _on_button_5_pressed() -> void:
 	button_pressed[4] = !button_pressed[4]
+	SFX.play("click")
 	if labels[4].text == "ON":
 		labels[4].text = "OFF"
 	else:
@@ -86,6 +91,7 @@ func _on_button_5_pressed() -> void:
 
 func _on_button_6_pressed() -> void:
 	button_pressed[5] = !button_pressed[5]
+	SFX.play("click")
 	if labels[5].text == "ON":
 		labels[5].text = "OFF"
 	else:
@@ -94,6 +100,7 @@ func _on_button_6_pressed() -> void:
 
 func _on_button_7_pressed() -> void:
 	button_pressed[6] = !button_pressed[6]
+	SFX.play("click")
 	if labels[6].text == "ON":
 		labels[6].text = "OFF"
 	else:
@@ -102,6 +109,7 @@ func _on_button_7_pressed() -> void:
 
 func _on_button_8_pressed() -> void:
 	button_pressed[7] = !button_pressed[7]
+	SFX.play("click")
 	if labels[7].text == "ON":
 		labels[7].text = "OFF"
 	else:
@@ -109,6 +117,7 @@ func _on_button_8_pressed() -> void:
 
 
 func _on_back_pressed() -> void:
+	SFX.play("click")
 	closed.emit()
 
 

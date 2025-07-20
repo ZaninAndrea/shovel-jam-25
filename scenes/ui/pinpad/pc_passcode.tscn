@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://cnweuxe5f7yw4"]
+[gd_scene load_steps=11 format=3 uid="uid://bt4sdv27yeoku"]
 
 [ext_resource type="Script" uid="uid://xsm88hofruub" path="res://scenes/ui/pinpad/pc_passcode.gd" id="1_isg46"]
 [ext_resource type="Texture2D" uid="uid://baxgykyjalxpe" path="res://assets/sprites/Pinpad/plancia enigma simboli.png" id="2_386ce"]

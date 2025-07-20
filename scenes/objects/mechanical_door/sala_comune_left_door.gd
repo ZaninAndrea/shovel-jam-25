@@ -8,6 +8,7 @@ func _on_enter_door_area_body_entered(body: Node2D) -> void:
 		return
 	
 	if Inventory.find_item(torch) == -1:
+		SFX.play("boop")
 		UIManager.show_feedback("This room is too dark, I need a light", 3)
 		return
 	

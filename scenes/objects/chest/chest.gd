@@ -7,7 +7,7 @@ class_name Chest extends CharacterBody2D
 @export var drop_offset: Vector2 = Vector2(0, 32)
 const DROPPED_ITEM = preload("res://scenes/objects/dropped_item/dropped_item.tscn")
 
-var external_push := Vector2.ZERO  # Temporary push input from the player
+var external_push := Vector2.ZERO # Temporary push input from the player
 
 func _physics_process(delta):
 	if external_push.length() > 0.1:
@@ -18,7 +18,7 @@ func _physics_process(delta):
 		# Reset push so it doesn't continue moving on its own
 		external_push = Vector2.ZERO
 	else:
-		velocity = Vector2.ZERO  # Stay still when not pushed
+		velocity = Vector2.ZERO # Stay still when not pushed
 
 func push(force: Vector2):
 	# Called by the player to apply a push
@@ -28,12 +28,15 @@ func push(force: Vector2):
 func interact():
 	var key_slot = Inventory.find_item(key)
 	if key_slot == -1:
+		SFX.play("boop")
 		UIManager.show_feedback("I need something to open this chest", 4.0)
 		return
 	
 	# Remove the key if needed
 	if consume_key:
 		Inventory.remove_item(key_slot)
+
+	SFX.play("click")
 
 	# Spawn the dropped item
 	if drop:

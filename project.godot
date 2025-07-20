@@ -20,6 +20,7 @@ Inventory="*res://autoload/inventory/inventory.gd"
 UIManager="*res://autoload/UI/UIManager.gd"
 Clock="*res://autoload/UI/clock.gd"
 InputFreeze="*res://autoload/UI/input_freeze.gd"
+SFX="*res://autoload/sfx/SFXManager.tscn"
 
 [display]
 

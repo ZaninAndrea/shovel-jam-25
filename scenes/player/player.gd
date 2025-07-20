@@ -131,4 +131,5 @@ func _input(event):
 		if closest_item != null:
 			closest_item.interact()
 		else:
+			SFX.play("boop")
 			UIManager.show_feedback("There is nothing here.", 3)

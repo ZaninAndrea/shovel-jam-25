@@ -4,11 +4,11 @@
 @onready var door_lock: StaticBody2D = $DoorLock
 
 @export var key: Item = null # Optional key, if set the player must hold the key to pass through the doo
-@export_enum("locked","unlocked", "open") var state: String = "unlocked":
+@export_enum("locked", "unlocked", "open") var state: String = "unlocked":
 	set(value):
 		apply_state(value)
 		state = value
-@export var sprites: SpriteFrames = null :
+@export var sprites: SpriteFrames = null:
 	set(value):
 		sprites = value
 		if animated_sprite_2d != null:
@@ -33,7 +33,7 @@ func apply_state(new_state: String):
 		elif new_state != "open" and state == "open":
 			door_lock.position.y += 30
 			
-func check_lock_again(a,b):
+func check_lock_again(a, b):
 	if key == null:
 		return
 		
@@ -96,7 +96,8 @@ func interact():
 			return
 		
 		if Inventory.find_item(key) == -1:
-			UIManager.show_feedback("Il marchingegno non si muove", 3)
+			SFX.play("boop")
+			UIManager.show_feedback("This door is locked", 3)
 			return
 		
 		state = "open"
